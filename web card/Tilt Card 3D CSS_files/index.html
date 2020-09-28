@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<!-- saved from url=(0089)https://cdpn.io/boomboom/v2/index.html?key=iFrameKey-8bbaba5a-0aba-dee9-18c3-d6950ca3a7ac -->
+<html lang="en" class=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  
+  <title>CodePen Demo</title>
+
+  <meta name="robots" content="noindex">
+
+  <link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+  <link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111">
+  <link rel="canonical" href="https://codepen.io/RuttyJ/pen/BKQLZO">
+  
+  
+  
+
+  <style class="INLINE_PEN_STYLESHEET_ID">
+    * {
+  touch-action: manipulation;
+  box-sizing: border-box;
+}
+
+html, body {
+  
+  height: 100%;
+  background: #3d3d3d;
+  font-family: 'Roboto', sans-serif;
+  margin: 0px;
+}
+
+h1 {
+  text-align:center;
+  background-color: black;
+  color: white;
+  padding: 20px;
+}
+
+
+.container {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  margin: auto;
+  transform-style: preserve-3d;
+  
+}
+
+.bkgd {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  right: 0px;
+  left: 0px;
+  content:'';
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url("https://cbp.s3.amazonaws.com/layouts/wolf-parade/presale/bg2.png");
+  opacity: 0.2;
+  -webkit-filter: grayscale(100%) blur(10px);
+  filter: grayscale(100%) blur(10px);
+  box-sizing: border-box;  
+}
+.row {
+  display: table;
+  width: 100%;
+  height: 100%;
+
+}
+.col {
+  position: relative;
+  display: table-cell;
+  width: 100%;
+  
+  height: 100%;
+  padding: 20px;
+}
+
+.card {
+  margin:auto;
+  width: 330px;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transform: perspective(600px);
+          transform: perspective(600px);
+    background: black;
+  border-radius: 10px;
+}
+.card::before {
+  -webkit-filter: drop-shadow(15px 15px 7px rgba(0,0,0,0.1));
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  background: rgba(80,80,80,0);
+  background: -moz-radial-gradient(center, ellipse cover, rgba(80,80,80,1) 0%, rgba(80,80,80,0) 90%);
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(80,80,80,1)), color-stop(90%, rgba(80,80,80,0)));
+  background: -webkit-radial-gradient(center, ellipse cover, rgba(80,80,80,1) 0%, rgba(80,80,80,0) 90%);
+  background: -o-radial-gradient(center, ellipse cover, rgba(80,80,80,1) 0%, rgba(80,80,80,0) 90%);
+  background: -ms-radial-gradient(center, ellipse cover, rgba(80,80,80,1) 0%, rgba(80,80,80,0) 90%);
+  background: radial-gradient(ellipse at center, rgba(80,80,80,1) 0%, rgba(80,80,80,0) 90%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#505050', endColorstr='#505050', GradientType=1 );
+}
+
+.photo-wrapper{
+  position: relative;
+  width: 100%;
+  height: 300px;
+}
+.photo {
+  position: absolute;
+  top:-12px;
+  color: #E24E0D;
+  font-size: 20px;
+  width: 100%;
+  height: 300px;
+  background: url("https://cbp.s3.amazonaws.com/img/0/0/5/3/9/1/cla050003-classified-greatful-12-vinyl-d-2.png") no-repeat 0 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-transform: translateZ(40px) translateX(-0%) translateY(0px) scale(0.75);
+          transform: translateZ(40px) translateX(-0%) translateY(0px) scale(0.75);
+
+	-webkit-filter: drop-shadow(15px 15px 7px rgba(0,0,0,0.5));
+  
+
+}
+
+.photo-cd {
+  position: absolute;
+  color: #E24E0D;
+  bottom: 40px;
+  right: 20px;
+  font-size: 20px;
+  width: 150px;
+  height: 150px;
+  background: url("https://cbp.s3.amazonaws.com/img/0/0/5/3/9/0/cla050002-classified-greatful-cd-d.png") no-repeat 0 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-transform: translateZ(47px) translateX(-0%) translateY(10px) scale(0.75);
+          transform: translateZ(47px) translateX(-0%) translateY(10px) scale(0.75);
+  -webkit-filter: drop-shadow(15px 15px 7px rgba(0,0,0,0.4));
+}
+
+
+
+
+.title {
+  width: 95%;
+  
+  margin: auto;
+  height: 100%;
+  -webkit-transform: translateZ(40px) translateY(35px);
+          transform: translateZ(40px) translateY(35px);
+  z-index:1;
+  text-align: center;
+  font-size: 20px;
+  padding: 0px;
+  color: #E24E0D;
+  cursor: pointer;
+  
+  opacity: 1;
+  transition: all 0.2s ease-in-out;
+  box-sizing: border-box;
+  
+}
+
+
+.text {
+  width: 100%;
+  margin: auto;
+  height:100%;
+  -webkit-transform: translateZ(45px) translateY(-35px);
+          transform: translateZ(45px) translateY(-35px);
+  text-align: center;
+  font-size: 20px;
+  padding: 10px;
+  color: white;
+  cursor: pointer;
+  opacity: 1;
+  transition: all 0.2s ease-in-out;
+  border-radius: 7px;
+  box-sizing: border-box;
+  background-color: rgba(226, 78, 13, 0.7);/*#E24E0D*/
+}
+
+
+.text.pressed {
+    -webkit-transform: translateZ(35px) translateY(-30px);
+          transform: translateZ(35px) translateY(-30px);
+}
+
+.text:hover {
+  color: white;
+  background-color: rgba(226, 78, 13, 0.95);/*#E24E0D*/
+}
+
+  </style>
+
+  
+<script src="./iframeConsoleRunner-7f4d47902dc785f30dedcac9c996b9f31d4dfcc33567cc48f0431bc918c2bf05.js.Без названия"></script>
+<script src="./iframeRefreshCSS-e03f509ba0a671350b4b363ff105b2eb009850f34a2b4deaadaa63ed5d970b37.js.Без названия"></script>
+<script src="./iframeRuntimeErrors-29f059e28a3c6d3878960591ef98b1e303c1fe1935197dae7797c017a3ca1e82.js.Без названия"></script>
+
+</head>
+
+<body>
+  <div class="container">
+  <div class="bkgd"></div>
+  <div class="row">
+    <div class="col">
+      
+      <div class="card" data-dblfollowx="3.5999999999999996" data-dblfollowy="-3.5999999999999996" data-x="3.5999999999999908" data-y="-3.5999999999760814" style="transform: perspective(600px) rotateY(-3.6deg) rotateX(-3.6deg);">
+        <div class="title">
+          Greatful Vinyl + CD Bundle
+        </div>
+        <div class="photo-wrapper">
+          <div class="photo"></div>
+          <div class="photo-cd"></div>
+        </div>
+        <div class="text">
+          Pre-order Now
+        </div>
+      </div><!--end card -->
+    </div><!--end col -->
+  </div><!--end row -->
+</div>
+
+  
+  
+<script src="./stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js.Без названия"></script>
+<script src="./jquery.min.js.Без названия"></script>
+  <script id="INLINE_PEN_JS_ID">
+    $('.card').each(function () {
+  $(this).attr('data-dblfollowx', 0);
+  $(this).attr('data-dblfollowy', 0);
+  $(this).attr('data-x', 0);
+  $(this).attr('data-y', 0);
+});
+
+$('.text').on('click', function () {
+  $(this).toggleClass('pressed');
+});
+$(window).on('mousemove click tap', function (e) {
+  $('.card').each(function () {
+    var maxDelta = 30,
+    maxTurn = 1.2 / 10,
+    mouseX = Math.max(-maxDelta, Math.min(maxDelta, GetCenterCoords(this).left - e.clientX));
+
+    mouseY = Math.max(-maxDelta, Math.min(maxDelta, GetCenterCoords(this).left - e.clientY));
+
+    $(this).attr('data-dblfollowx', mouseX * maxTurn);
+
+    $(this).attr('data-dblfollowy', mouseY * maxTurn);
+  });
+});
+
+function GetCenterCoords(elem) {// crossbrowser version
+  var box, body, docEl, scrollTop, scrollLeft, clientTop, clientLeft, top, left;
+  box = elem.getBoundingClientRect();
+  body = document.body;
+  docEl = document.documentElement;
+  scrollTop = window.pageYOffset || docEl.scrollTop || body.scrollTop;
+  scrollLeft = window.pageXOffset || docEl.scrollLeft || body.scrollLeft;
+  clientTop = docEl.clientTop || body.clientTop || 0;
+  clientLeft = docEl.clientLeft || body.clientLeft || 0;
+  top = box.top + scrollTop - clientTop + box.height / 2;
+  left = box.left + scrollLeft - clientLeft + box.width / 2;
+  return { top: Math.round(top), left: Math.round(left) };
+}
+function CardAnimation() {
+  $('.card').each(function () {
+    var turnSpeed = 1.2 / 50;
+    var x = parseFloat($(this).attr('data-x'));
+    var y = parseFloat($(this).attr('data-y'));
+    x += (parseFloat($(this).attr('data-dblfollowx')) - x) * turnSpeed;
+    y += (parseFloat($(this).attr('data-dblfollowy')) - y) * turnSpeed;
+    //console.log(x);
+    $(this).attr('data-x', x);
+    $(this).attr('data-y', y);
+    $(this).css({ 'transform': 'perspective(600px) rotateY(' + -x + 'deg) rotateX(' + y + 'deg)' });
+  });
+  window.requestAnimationFrame(CardAnimation);
+}
+CardAnimation();
+    //# sourceURL=pen.js
+  </script>
+
+
+</body></html>
