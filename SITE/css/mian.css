@@ -21,45 +21,75 @@ src: url(../font/Gilroy-ExtraBold.ttf);
 body{
     background-color: #CEECF2;
 }
+
 header{
     display: grid;
     grid-template-columns: 4fr 10fr 4fr;
-    grid-column-gap: 30px;
+    grid-template-rows: 1fr;
+    grid-template-areas: "logo" "nav" "place";
+    min-height:190px;
+}
+header .headerLogo{
+    grid-area: "logo";
 }
 
-.headerNav{
-    background-color: #6F8CA6;
-    border-radius: 30px;
-    height: 30px;
+header .headerNav{
+    grid-area: "nav";
+    text-align: center;
+}
+
+header .headerPlaceBtn{
+    grid-area: "place";
 }
 
 .headerNavLink{
-    color:#E6F7FF;
+    color:#000;
     text-decoration: none;
     font-family: GBold;
     padding: 8px;
 }
 
-#mainLogo{
-    grid-column-start: 4;
-    grid-column-end: 5;
-    grid-row-start: 1;
-    grid-row-end: 3;
-}
-
-
-#ContentSpace h1{
+.HeaderText h1{
     font-family: GEBold;
     color: #586BA6;
+    font-size: 37pt;
+    padding-bottom: 2px;
+    letter-spacing: 1.90px;
 }
-#ContentSpace h2{
+.HeaderText h2{
     font-family: GBold;
     color: #6F8CA6;
+    font-size: 29pt;
+    letter-spacing: 1.46px;
+}
+.ContentSpace{
+    display: grid;
+    grid-template-columns: 1fr 5fr 8fr;
+    grid-template-areas: ". text img";
+    min-height: 310px;
+    grid-column-gap:30px;
+} 
+.ContentSpace .HeaderText{
+    grid-area: text;
+}
+
+.ContentSpace .ImageCont{
+    grid-area: img;
+}
+
+.button{
+    text-align: left;
 }
 /*
 .headerPlaceBtn{
-background: #586BA6;
-width: 200px;
-height: 44px;
-border-radius: 60px;
+    background: #586BA6;
+    width: 200px;
+    height: 44px;
+    border-radius: 60px;
 }*/
+
+.headerNav{
+    background-color: #6F8CA6;
+    border-radius: 30px;
+    height: 40px;
+}

@@ -1,0 +1,67 @@
+@font-face{
+    font-family: GBlack;
+    src: url(../font/Gilroy-Black.ttf);
+}
+
+@font-face{
+font-family: GEBold;
+src: url(../font/Gilroy-ExtraBold.ttf);
+}
+
+@font-face{
+    font-family: GBold;
+    src: url(../font/Gilroy-Bold.ttf);
+}
+    
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #CEECF2;
+}
+
+header{
+    display: grid;
+    &-nav
+    grid-column-gap: 30px;
+    
+}
+/*
+.headerNav{
+    background-color: #6F8CA6;
+    border-radius: 30px;
+    height: 30px;
+}
+*/
+.headerNavLink{
+    color:#000;
+    text-decoration: none;
+    font-family: GBold;
+    padding: 8px;
+}
+
+#mainLogo{
+    grid-column-start: 4;
+    grid-column-end: 5;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+
+#ContentSpace h1{
+    font-family: GEBold;
+    color: #586BA6;
+}
+#ContentSpace h2{
+    font-family: GBold;
+    color: #6F8CA6;
+}
+/*
+.headerPlaceBtn{
+background: #586BA6;
+width: 200px;
+height: 44px;
+border-radius: 60px;
+}*/
