@@ -18,19 +18,33 @@ src: url(../font/Gilroy-ExtraBold.ttf);
     padding: 0;
     box-sizing: border-box;
 }
-body{
-    background-color: #CEECF2;
+
+html, body{
+    background: #000;
+    height: 100%;
 }
 
-
-header{
+.headerNavigationBlock{
     display: grid;
-    grid-template-columns: 4fr 10fr 4fr;    
+    grid-template-columns: auto 50% auto;   
     grid-column-gap: 20px;
     grid-template-areas: "logo nav place";
     min-height:190px;
     padding-top: 35px;
-    grid-area: mHeader;
+    grid-area: navBlock;
+}
+
+header{
+    display: grid;
+    grid-template-rows: 24% 5fr;
+    grid-template-columns: 100%;
+    grid-template-areas: 
+                    "navBlock"
+                    "contentSpace";
+
+    min-height:190px;
+    background-color: #CEECF2;
+    height: 100%;
 }
 header .headerLogo{
     grid-area: logo;
@@ -42,15 +56,15 @@ header .headerLogo{
 }
 
 header .headerNav{
+    display: grid;
     grid-area: nav;
     text-align: center;
     padding-right: 21px;
     padding-left: 21px;
-    display: grid;
     grid-template-columns: repeat(6, auto);
     background-color: #6F8CA6;
     border-radius: 30px;
-    height: 41px;
+    height: 45px;
 }
 
 header .headerPlaceBtn{
@@ -61,11 +75,11 @@ header .headerPlaceBtn{
     justify-self: center;
     align-items: center;
     background: #586BA6;
-    height: 41px;
+    height: 45px;
     padding-left: 20px;
     padding-right: 20px;
     border-radius: 60px;
-    font-size: 16.4px;
+    font-size: 120%;
     letter-spacing: 1.15px;
     color: #CEECF2;
     text-decoration: none;
@@ -76,9 +90,10 @@ header .headerPlaceBtn{
     color:#E6F7FF;
     text-decoration: none;
     font-family: GBold;
-    font-size: 16.4px;
+    font-size: 120%;
     letter-spacing: 1.90px;
     padding: 10px;
+    align-self: center;
     transition: 0.5s;
 }
 
@@ -90,20 +105,20 @@ header .headerPlaceBtn{
 .HeaderText h1{
     font-family: GEBold;
     color: #586BA6;
-    font-size: 330%;
+    font-size: 380%;
     padding-bottom: 2px;
     letter-spacing: 1.90px;
 }
 .HeaderText h2{
     font-family: GBold;
     color: #6F8CA6;
-    font-size: 30pt;
+    font-size: 300%;
     letter-spacing: 1.46px;
 }
 .ContentSpace{
     display: grid;
     grid-template-columns: 1fr 5fr 8fr;
-    grid-template-rows: 4fr 0.8fr 0.8fr 2.5fr;
+    grid-template-rows: 1.7fr auto auto 2fr;
     grid-template-areas: 
                     ". text img"
                     ". CalcBtn ."
@@ -112,6 +127,7 @@ header .headerPlaceBtn{
     grid-row-gap: 7px;               
     min-height: 100px;
     grid-column-gap:30px;
+    grid-area: contentSpace;
 } 
 .ContentSpace .HeaderText{
     grid-area: text;
@@ -130,7 +146,7 @@ header .headerPlaceBtn{
 .ContentSpace #CallBtn{
     display: grid;
     grid-area: CallBtn;
-    max-width: 45%;
+    max-width: 40%;
     grid-template-columns: 5fr 1fr 5px;
     align-items: center;
 }
@@ -148,26 +164,26 @@ header .headerPlaceBtn{
     border: solid 3.4px #586BA6;
     text-decoration: none;
     font-family: GBold;
-    font-size: 16.4px;
+    font-size: 120%;
     color:#586BA6;
-    max-width: 56%;
+    max-width: 50%;
     height: 55px;
     padding-left: 17px;
 }
 
-
-.ContentSpace .buttonBtm {
+.buttonBtm {
     display: grid;
     grid-template-columns: 1fr 7.5fr;
     grid-column-gap: 5px;
     grid-area: tScroll;
-    align-self: end;
     font-family: GBold;
     text-decoration: none;
     color: #6F8CA6;
     font-size: 15pt;
     letter-spacing: 1.7px;
     align-items: center;
+    align-self: end;
+    margin-bottom: 70px;
     
 }
 .buttonBtm img{
