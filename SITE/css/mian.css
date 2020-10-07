@@ -22,51 +22,95 @@ body{
     background-color: #CEECF2;
 }
 
+
 header{
     display: grid;
-    grid-template-columns: 4fr 10fr 4fr;
-    grid-template-rows: 1fr;
-    grid-template-areas: "logo" "nav" "place";
+    grid-template-columns: 4fr 10fr 4fr;    
+    grid-column-gap: 20px;
+    grid-template-areas: "logo nav place";
     min-height:190px;
+    padding-top: 35px;
+    grid-area: mHeader;
 }
 header .headerLogo{
-    grid-area: "logo";
+    grid-area: logo;
+    justify-self: center;
+}
+
+.headerLogo img{
+    justify-self: center;
 }
 
 header .headerNav{
-    grid-area: "nav";
+    grid-area: nav;
     text-align: center;
+    padding-right: 21px;
+    padding-left: 21px;
+    display: grid;
+    grid-template-columns: repeat(6, auto);
+    background-color: #6F8CA6;
+    border-radius: 30px;
+    height: 41px;
 }
 
 header .headerPlaceBtn{
-    grid-area: "place";
+    grid-area: place;
+    display: grid;
+    grid-template-columns: 6fr 1fr;
+    grid-column-gap: 10px;
+    justify-self: center;
+    align-items: center;
+    background: #586BA6;
+    height: 41px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 60px;
+    font-size: 16.4px;
+    letter-spacing: 1.15px;
+    color: #CEECF2;
+    text-decoration: none;
+    font-family: GBold;
 }
 
 .headerNavLink{
-    color:#000;
+    color:#E6F7FF;
     text-decoration: none;
     font-family: GBold;
-    padding: 8px;
+    font-size: 16.4px;
+    letter-spacing: 1.90px;
+    padding: 10px;
+    transition: 0.5s;
+}
+
+.headerNavLink:hover{
+    color: #fff;
+    transition: 0.5s;
 }
 
 .HeaderText h1{
     font-family: GEBold;
     color: #586BA6;
-    font-size: 37pt;
+    font-size: 38pt;
     padding-bottom: 2px;
     letter-spacing: 1.90px;
 }
 .HeaderText h2{
     font-family: GBold;
     color: #6F8CA6;
-    font-size: 29pt;
+    font-size: 30pt;
     letter-spacing: 1.46px;
 }
 .ContentSpace{
     display: grid;
     grid-template-columns: 1fr 5fr 8fr;
-    grid-template-areas: ". text img";
-    min-height: 310px;
+    grid-template-rows: 4fr 0.8fr 0.8fr 2.5fr;
+    grid-template-areas: 
+                    ". text img"
+                    ". CalcBtn ."
+                    ". CallBtn ."
+                    ". tScroll .";
+    grid-row-gap: 7px;               
+    min-height: 100px;
     grid-column-gap:30px;
 } 
 .ContentSpace .HeaderText{
@@ -77,19 +121,57 @@ header .headerPlaceBtn{
     grid-area: img;
 }
 
-.button{
-    text-align: left;
+.ContentSpace #CalcBtn{
+    grid-area: CalcBtn;
+    display: grid;
+    align-items: center;
 }
-/*
-.headerPlaceBtn{
-    background: #586BA6;
-    width: 200px;
-    height: 44px;
-    border-radius: 60px;
-}*/
 
-.headerNav{
-    background-color: #6F8CA6;
-    border-radius: 30px;
-    height: 40px;
+.ContentSpace #CallBtn{
+    display: grid;
+    grid-area: CallBtn;
+    max-width: 45%;
+    grid-template-columns: 5fr 1fr 5px;
+    align-items: center;
+}
+
+.ContentSpace #CallBtn img{
+    background: #586BA6;
+    height: 42px;
+    width: 42px;
+    border: solid 10px #586BA6;
+    border-radius: 18px;
+}
+
+.ContentSpace .button{
+    border-radius: 60px;
+    border: solid 3.4px #586BA6;
+    text-decoration: none;
+    font-family: GBold;
+    font-size: 16.4px;
+    color:#586BA6;
+    max-width: 56%;
+    height: 55px;
+    padding-left: 17px;
+}
+
+
+.ContentSpace .buttonBtm {
+    display: grid;
+    grid-template-columns: 1fr 7.5fr;
+    grid-column-gap: 5px;
+    grid-area: tScroll;
+    align-self: end;
+    font-family: GBold;
+    text-decoration: none;
+    color: #6F8CA6;
+    font-size: 15pt;
+    letter-spacing: 1.7px;
+    align-items: center;
+    
+}
+.buttonBtm img{
+    padding:7px;
+    background: #6F8CA6;
+    border-radius: 100%;
 }
