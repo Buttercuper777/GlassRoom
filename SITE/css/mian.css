@@ -104,14 +104,14 @@ header .headerPlaceBtn{
 .HeaderText h1{
     font-family: GEBold;
     color: #586BA6;
-    font-size: 51pt;
+    font-size: 60px;
     padding-bottom: 2px;
     letter-spacing: 1.90px;
 }
 .HeaderText h2{
     font-family: GBold;
     color: #6F8CA6;
-    font-size: 40pt;
+    font-size: 46px;
     letter-spacing: 1.46px;
 }
 .ContentSpace{
@@ -127,7 +127,7 @@ header .headerPlaceBtn{
     min-height: 100px;
     grid-column-gap:30px;
     grid-area: contentSpace;
-    padding-bottom: 90px;
+    padding-bottom: 3%;
 } 
 .ContentSpace .HeaderText{
     grid-area: text;
@@ -178,6 +178,7 @@ header .headerPlaceBtn{
     color: #CEECF2;
     transition: 0.2s;
 }
+
 
 .buttonBtm {
     display: grid;
