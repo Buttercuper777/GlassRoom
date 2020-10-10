@@ -26,17 +26,17 @@ html, body{
 
 .headerNavigationBlock{
     display: grid;
-    grid-template-columns: auto 50% auto;   
+    grid-template-columns: auto 50% auto;  
     grid-column-gap: 20px;
     grid-template-areas: "logo nav place";
-    min-height:190px;
+    min-height:160px;
     padding-top: 35px;
     grid-area: navBlock;
 }
 
 header{
     display: grid;
-    grid-template-rows: 24% 5fr;
+    grid-template-rows: 160px auto;
     grid-template-columns: 100%;
     grid-template-areas: 
                     "navBlock"
@@ -104,32 +104,34 @@ header .headerPlaceBtn{
 .HeaderText h1{
     font-family: GEBold;
     color: #586BA6;
-    font-size: 4vw;
+    font-size: 51pt;
     padding-bottom: 2px;
     letter-spacing: 1.90px;
 }
 .HeaderText h2{
     font-family: GBold;
     color: #6F8CA6;
-    font-size: 3vw;
+    font-size: 40pt;
     letter-spacing: 1.46px;
 }
 .ContentSpace{
     display: grid;
     grid-template-columns: 1fr 6fr 8fr;
-    grid-template-rows: 1.7fr auto auto 2fr;
+    grid-template-rows: 0.7fr 55px 55px auto;
     grid-template-areas: 
                     ". text img"
-                    ". CalcBtn ."
-                    ". CallBtn ."
-                    ". tScroll .";
+                    ". CalcBtn img"
+                    ". CallBtn img"
+                    ". tScroll img";
     grid-row-gap: 7px;               
     min-height: 100px;
     grid-column-gap:30px;
     grid-area: contentSpace;
+    padding-bottom: 90px;
 } 
 .ContentSpace .HeaderText{
     grid-area: text;
+    align-self: end;
 }
 
 .ContentSpace .ImageCont{
@@ -179,18 +181,18 @@ header .headerPlaceBtn{
 
 .buttonBtm {
     display: grid;
-    grid-template-columns: 1fr 7.5fr;
-    grid-column-gap: 5px;
     grid-area: tScroll;
+    grid-template-columns: 60px 1fr;
+    grid-column-gap: 5px;
     font-family: GBold;
     text-decoration: none;
     color: #6F8CA6;
     font-size: 1.3vw;
     letter-spacing: 1.7px;
     align-items: center;
+    justify-items: start;
     align-self: end;
-    margin-bottom: 70px;
-    
+    min-height: 50px;
 }
 .buttonBtm img{
     padding:7px;
