@@ -117,34 +117,44 @@ header .headerPlaceBtn{
 .ContentSpace{
     display: grid;
     grid-template-columns: 1fr 6fr 8fr;
-    grid-template-rows: 0.7fr 55px 55px auto;
+    grid-template-rows: auto auto;
     grid-template-areas: 
-                    ". text img"
-                    ". CalcBtn img"
-                    ". CallBtn img"
+                    ". lContent img"
                     ". tScroll img";
     grid-row-gap: 7px;               
     min-height: 100px;
     grid-column-gap:30px;
     grid-area: contentSpace;
     padding-bottom: 3%;
-} 
-.ContentSpace .HeaderText{
-    grid-area: text;
-    align-self: end;
+}
+.leftContent{
+    grid-area: lContent;
+    display: grid;
+    grid-template-rows: 0.6fr 55px 55px;
+    grid-row-gap: 10px;
+    grid-template-areas: 
+                    "text"
+                    "CalcBtn"
+                    "CallBtn";
+    align-self: center;
+
+}
+.leftContent .HeaderText{
+    grid-area: text;    
+    align-self: center;
 }
 
 .ContentSpace .ImageCont{
     grid-area: img;
 }
 
-.ContentSpace #CalcBtn{
+.leftContent #CalcBtn{
     grid-area: CalcBtn;
     display: grid;
     align-items: center;
 }
 
-.ContentSpace #CallBtn{
+.leftContent #CallBtn{
     display: grid;
     grid-area: CallBtn;
     max-width: 40%;
@@ -152,7 +162,7 @@ header .headerPlaceBtn{
     align-items: center;
 }
 
-.ContentSpace #CallBtn img{
+.leftContent #CallBtn img{
     background: #586BA6;
     height: 42px;
     width: 42px;
@@ -160,7 +170,7 @@ header .headerPlaceBtn{
     border-radius: 18px;
 }
 
-.ContentSpace .button{
+.leftContent .button{
     border-radius: 60px;
     border: solid 3.4px #586BA6;
     text-decoration: none;
@@ -173,7 +183,7 @@ header .headerPlaceBtn{
     transition: 0.2s;
 }
 
-.ContentSpace .button:hover{
+.leftContent .button:hover{
     background: #586BA6;
     color: #CEECF2;
     transition: 0.2s;
