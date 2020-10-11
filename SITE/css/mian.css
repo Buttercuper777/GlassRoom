@@ -32,8 +32,15 @@ html, body{
     min-height:160px;
     padding-top: 35px;
     grid-area: navBlock;
+    z-index: 1;
 }
-
+.bg_logo{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    opacity: 0.7;
+}
 header{
     display: grid;
     grid-template-rows: 160px auto;
@@ -49,6 +56,7 @@ header{
 header .headerLogo{
     grid-area: logo;
     justify-self: center;
+    z-index: 1;
 }
 
 .headerLogo img{
@@ -75,11 +83,11 @@ header .headerPlaceBtn{
     justify-self: center;
     align-items: center;
     background: #586BA6;
-    height: 45px;
+    height: 43px;
     padding-left: 20px;
     padding-right: 20px;
     border-radius: 60px;
-    font-size: 1.2vw;
+    font-size: 1.1vw;
     letter-spacing: 1.15px;
     color: #CEECF2;
     text-decoration: none;
@@ -126,12 +134,13 @@ header .headerPlaceBtn{
     grid-column-gap:30px;
     grid-area: contentSpace;
     padding-bottom: 3%;
+    z-index: 1;
 }
 .leftContent{
     grid-area: lContent;
     display: grid;
     grid-template-rows: 0.6fr 55px 55px;
-    grid-row-gap: 10px;
+    grid-row-gap: 7px;
     grid-template-areas: 
                     "text"
                     "CalcBtn"
@@ -142,6 +151,7 @@ header .headerPlaceBtn{
 .leftContent .HeaderText{
     grid-area: text;    
     align-self: center;
+    padding-bottom: 7px;
 }
 
 .ContentSpace .ImageCont{
@@ -157,7 +167,7 @@ header .headerPlaceBtn{
 .leftContent #CallBtn{
     display: grid;
     grid-area: CallBtn;
-    max-width: 40%;
+    max-width: 240px;
     grid-template-columns: 5fr 1fr 5px;
     align-items: center;
 }
@@ -175,9 +185,9 @@ header .headerPlaceBtn{
     border: solid 3.4px #586BA6;
     text-decoration: none;
     font-family: GBold;
-    font-size: 1.1vw;
+    font-size: 17px;
     color:#586BA6;
-    max-width: 52%;
+    width: 300px;
     height: 55px;
     padding-left: 3%;
     transition: 0.2s;
