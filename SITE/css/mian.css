@@ -124,11 +124,11 @@ header .headerPlaceBtn{
 }
 .ContentSpace{
     display: grid;
-    grid-template-columns: 1fr 6fr 8fr;
+    grid-template-columns: 1fr 6fr 8fr 1fr;
     grid-template-rows: auto auto;
     grid-template-areas: 
-                    ". lContent img"
-                    ". tScroll img";
+                    ". lContent img ."
+                    ". tScroll img .";
     grid-row-gap: 7px;               
     min-height: 100px;
     grid-column-gap:30px;
@@ -156,6 +156,9 @@ header .headerPlaceBtn{
 
 .ContentSpace .ImageCont{
     grid-area: img;
+    display: grid;
+    justify-items: end;
+    align-items: center;
 }
 
 .leftContent #CalcBtn{
@@ -219,6 +222,12 @@ header .headerPlaceBtn{
     padding:7px;
     background: #6F8CA6;
     border-radius: 100%;
+}
+
+.svg-1{
+    fill: #6F8CA6;
+    height:70vh;
+    float: right;
 }
 
 /*
