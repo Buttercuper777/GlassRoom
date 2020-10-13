@@ -6,6 +6,13 @@
     --lm_color: #dee1e2;
     --dg_color: #8B847E;
     --bl_color: #2D7AB7;
+    --pu_color: #9295DE;
+
+    --dg_bl_color: #B0BCD9;
+    --dg_pu_color: #78728C;
+
+    --gd_gr_color: #9f7e61;
+    --pu_gr_color: #9295de;
 }
 
 @font-face{
@@ -92,7 +99,7 @@ header .headerNav{
     padding-right: 21px;
     padding-left: 21px;
     grid-template-columns: repeat(6, auto);
-    //background-color: var(--_color);
+    
     border-radius: 30px;
     height: 45px;
 }
@@ -104,7 +111,6 @@ header .headerPlaceBtn{
     grid-column-gap: 10px;
     justify-self: center;
     align-items: center;
-    //background: var(--m_color);
     height: 43px;
     padding-left: 20px;
     padding-right: 20px;
@@ -114,6 +120,14 @@ header .headerPlaceBtn{
     color: var(--l_color);;
     text-decoration: none;
     font-family: GBold;
+
+    background: rgb(159,126,97);
+    background: -moz-linear-gradient(47deg,    var(--gd_gr_color) 0%,  var(--pu_gr_color) 74%);
+    background: -webkit-linear-gradient(47deg, var(--gd_gr_color) 0%, var(--pu_gr_color) 74%);
+    background: linear-gradient(47deg,         var(--gd_gr_color) 0%,         var(--pu_gr_color) 74%);
+
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#9f7e61",endColorstr="#9295de",GradientType=1);
+    
 }
 
 .headerNavLink{
@@ -251,7 +265,11 @@ header .headerPlaceBtn{
 
 .buttonBtm img{
     padding:7px;
-    background: var(--dg_color);
+    background: rgb(159,126,97);
+    background: -moz-radial-gradient(circle,     var(--gd_gr_color) 0%, 0%, var(--pu_gr_color) 0%, 100%);
+    background: -webkit-radial-gradient(circle,  var(--gd_gr_color) 0%, 0%, var(--pu_gr_color) 100%);
+    background: radial-gradient(circle,          var(--gd_gr_color) 0%, 0%, var(--pu_gr_color) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#9f7e61",endColorstr="#9295de",GradientType=1);
     border-radius: 100%;
 }
 
