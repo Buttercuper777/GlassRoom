@@ -1,0 +1,132 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1153.53" height="810.38" viewBox="0 0 1153.53 810.38">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#Безымянный_градиент_16);
+      }
+
+      .cls-2 {
+        fill: url(#Безымянный_градиент_101);
+      }
+
+      .cls-3 {
+        fill: url(#Безымянный_градиент_127);
+      }
+
+      .cls-4 {
+        fill: url(#Безымянный_градиент_127-2);
+      }
+
+      .cls-5 {
+        fill: url(#Безымянный_градиент_101-2);
+      }
+
+      .cls-6 {
+        fill: url(#Безымянный_градиент_101-3);
+      }
+
+      .cls-7 {
+        fill: url(#Безымянный_градиент_127-3);
+      }
+
+      .cls-8 {
+        fill: url(#Безымянный_градиент_101-4);
+      }
+
+      .cls-9 {
+        fill: url(#Безымянный_градиент_127-4);
+      }
+
+      .cls-10 {
+        fill: url(#Безымянный_градиент_101-5);
+      }
+
+      .cls-11 {
+        fill: url(#Безымянный_градиент_127-5);
+      }
+
+      .cls-12 {
+        fill: url(#Безымянный_градиент_101-6);
+      }
+
+      .cls-13 {
+        fill: url(#Безымянный_градиент_127-6);
+      }
+    </style>
+    <linearGradient id="Безымянный_градиент_16" data-name="Безымянный градиент 16" x1="119.72" y1="397.18" x2="1061.9" y2="397.18" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#7255d0"/>
+      <stop offset="0.26" stop-color="#8163ab"/>
+      <stop offset="0.58" stop-color="#917183"/>
+      <stop offset="0.84" stop-color="#9b7b6a"/>
+      <stop offset="1" stop-color="#9f7e61"/>
+    </linearGradient>
+    <linearGradient id="Безымянный_градиент_101" data-name="Безымянный градиент 101" x1="187.47" y1="608.89" x2="495.21" y2="786.57" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#7255d0"/>
+      <stop offset="0.13" stop-color="#8b73d7" stop-opacity="0.92"/>
+      <stop offset="0.38" stop-color="#ccc4e8" stop-opacity="0.72"/>
+      <stop offset="0.5" stop-color="#f2f2f2" stop-opacity="0.6"/>
+      <stop offset="1" stop-color="#9f7e61"/>
+    </linearGradient>
+    <linearGradient id="Безымянный_градиент_127" data-name="Безымянный градиент 127" x1="320.88" y1="564.3" x2="421.87" y2="739.22" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#7255d0"/>
+      <stop offset="0.31" stop-color="#c7bee7" stop-opacity="0.73"/>
+      <stop offset="0.46" stop-color="#f2f2f2" stop-opacity="0.6"/>
+      <stop offset="0.55" stop-color="#e0d9d3" stop-opacity="0.69"/>
+      <stop offset="0.83" stop-color="#b19780" stop-opacity="0.91"/>
+      <stop offset="1" stop-color="#9f7e61"/>
+    </linearGradient>
+    <linearGradient id="Безымянный_градиент_127-2" x1="393.24" y1="472.53" x2="494.23" y2="647.45" xlink:href="#Безымянный_градиент_127"/>
+    <linearGradient id="Безымянный_градиент_101-2" x1="259.83" y1="517.12" x2="567.57" y2="694.79" xlink:href="#Безымянный_градиент_101"/>
+    <linearGradient id="Безымянный_градиент_101-3" x1="331.88" y1="425.34" x2="639.63" y2="603.02" xlink:href="#Безымянный_градиент_101"/>
+    <linearGradient id="Безымянный_градиент_127-3" x1="465.3" y1="380.75" x2="566.29" y2="555.67" xlink:href="#Безымянный_градиент_127"/>
+    <linearGradient id="Безымянный_градиент_101-4" x1="403.63" y1="333.57" x2="711.37" y2="511.24" xlink:href="#Безымянный_градиент_101"/>
+    <linearGradient id="Безымянный_градиент_127-4" x1="537.04" y1="288.98" x2="638.03" y2="463.9" xlink:href="#Безымянный_градиент_127"/>
+    <linearGradient id="Безымянный_градиент_101-5" x1="475.19" y1="241.79" x2="782.94" y2="419.47" xlink:href="#Безымянный_градиент_101"/>
+    <linearGradient id="Безымянный_градиент_127-5" x1="608.61" y1="197.2" x2="709.6" y2="372.12" xlink:href="#Безымянный_градиент_127"/>
+    <linearGradient id="Безымянный_градиент_101-6" x1="547.02" y1="150.01" x2="854.77" y2="327.69" xlink:href="#Безымянный_градиент_101"/>
+    <linearGradient id="Безымянный_градиент_127-6" x1="680.44" y1="105.43" x2="781.43" y2="280.35" xlink:href="#Безымянный_градиент_127"/>
+  </defs>
+  <title>Монтажная область 1</title>
+  <g id="Слой_14" data-name="Слой 14">
+    <rect width="1153.53" height="810.38"/>
+  </g>
+  <g id="BG">
+    <path class="cls-1" d="M291.75,130.14A452.86,452.86,0,0,1,451.91,83.23c25.71-2.51,76.36-7,138.21,8.51,41.32,10.38,42.73,13.08,77.49,28.37C726.44,146,810,131.88,859.39,123.64s118.84,4.71,149.43,41.18,102.36,224.73,0,389.45C944.35,658,872.4,705.71,801.23,712.72c-16.28,1.61-72.76,5.24-123-26.67-19.21-12.19-17.09-16.67-43.48-36-13.86-10.16-59.85-43.23-115.4-53.1-40.26-7.16-67.46,1.1-98,6.12-23.66,3.89-172.1,28.3-245.11-33.7-81.4-69.12-69.49-236.8,2-341.1C214.82,174.88,262,145.35,291.75,130.14Z"/>
+  </g>
+  <g id="F">
+    <rect class="cls-2" x="156.11" y="657.59" width="352.78" height="70.07"/>
+  </g>
+  <g id="B">
+    <polygon class="cls-3" points="508.89 657.59 156.11 657.59 227.74 635.88 580.85 635.88 508.89 657.59"/>
+  </g>
+  <g id="B_1" data-name="B 1">
+    <polygon class="cls-4" points="581.25 565.82 228.47 565.82 300.1 544.11 653.2 544.11 581.25 565.82"/>
+  </g>
+  <g id="F_1" data-name="F 1">
+    <rect class="cls-5" x="228.47" y="565.82" width="352.78" height="70.07"/>
+  </g>
+  <g id="F_2" data-name="F 2">
+    <rect class="cls-6" x="300.52" y="474.04" width="352.78" height="70.07"/>
+  </g>
+  <g id="B_2" data-name="B 2">
+    <polygon class="cls-7" points="653.3 474.04 300.52 474.04 372.15 452.33 725.26 452.33 653.3 474.04"/>
+  </g>
+  <g id="F_3" data-name="F 3">
+    <rect class="cls-8" x="372.27" y="382.27" width="352.78" height="70.07"/>
+  </g>
+  <g id="B_3" data-name="B 3">
+    <polygon class="cls-9" points="725.05 382.27 372.27 382.27 443.9 360.56 797 360.56 725.05 382.27"/>
+  </g>
+  <g id="F_4" data-name="F 4">
+    <rect class="cls-10" x="443.83" y="290.49" width="352.78" height="70.07"/>
+  </g>
+  <g id="B_4" data-name="B 4">
+    <polygon class="cls-11" points="796.61 290.49 443.83 290.49 515.46 268.78 868.57 268.78 796.61 290.49"/>
+  </g>
+  <g id="F_5" data-name="F 5">
+    <rect class="cls-12" x="515.66" y="198.71" width="352.78" height="70.07"/>
+  </g>
+  <g id="B_5" data-name="B 5">
+    <polygon class="cls-13" points="868.44 198.72 515.66 198.72 587.29 177.01 940.4 177.01 868.44 198.72"/>
+  </g>
+</svg>

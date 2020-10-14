@@ -226,6 +226,18 @@ header .headerPlaceBtn:hover{
 
 .ContentSpace .ImageCont{
     grid-area: img;
+    display: grid;
+    justify-items: center;
+    align-items: start;
+}
+
+#_escal{
+    width: 90%;
+    display: grid;
+}
+
+#_escal:hover{
+    opacity: 0%;
 }
 
 .leftContent #CalcBtn{
@@ -293,16 +305,9 @@ header .headerPlaceBtn:hover{
 }
 
 .buttonBtm img{
-    background: var(--pu_gr_color);
+    background: var(--pu_color);
     border-radius: 100%;
     border: solid 5px var(--pu_color);
 
-    background: linear-gradient(22deg,  var(--gd_gr_color),  var(--pu_color));
-    background-size: 200% 300%;
-    
-    -webkit-animation: AnimationName 5s ease infinite;
-    -moz-animation: AnimationName 5s ease infinite;
-    -o-animation: AnimationName 5s;
-    animation: AnimationName 5s ease infinite;
 }
 
