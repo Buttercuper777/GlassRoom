@@ -12,7 +12,7 @@
     --dg_pu_color: #78728C;
 
     --gd_gr_color: #9f7e61;
-    --pu_gr_color: #9295de;
+    --pu_gr_color: #7255D0;
 }
 
 @font-face{
@@ -121,14 +121,43 @@ header .headerPlaceBtn{
     text-decoration: none;
     font-family: GBold;
 
-    background: rgb(159,126,97);
-    background: -moz-linear-gradient(47deg,    var(--gd_gr_color) 0%,  var(--pu_gr_color) 74%);
-    background: -webkit-linear-gradient(47deg, var(--gd_gr_color) 0%, var(--pu_gr_color) 74%);
-    background: linear-gradient(47deg,         var(--gd_gr_color) 0%,         var(--pu_gr_color) 74%);
-
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#9f7e61",endColorstr="#9295de",GradientType=1);
+    background: linear-gradient(90deg, var(--pu_gr_color) 0%, var(--gd_gr_color) 15%,  var(--pu_gr_color) 100%);
+    background-size: 200% 120%;
     
+    -webkit-animation: AnimationName 10s ease infinite;
+    -moz-animation: AnimationName 10s ease infinite;
+    -o-animation: AnimationName 10s;
+    animation: AnimationName 10s ease infinite;
+
 }
+
+header .headerPlaceBtn:hover{
+    background: linear-gradient(45deg, var(--pu_gr_color) 30%, var(--gd_gr_color) 50%,  var(--pu_gr_color) 70%);
+    background-size: 500% 120%;
+    
+
+    -webkit-animation: AnimationName 2.5s ease-out infinite;
+    -moz-animation: AnimationName 2.5s ease-out infinite;
+    -o-animation: AnimationName 2.5s;
+    animation: AnimationName 2.5s ease-out infinite;
+}
+
+    @-webkit-keyframes AnimationName {
+        0%{background-position:57% 0%}
+        50%{background-position:44% 100%}
+        100%{background-position:57% 0%}
+    }
+    @-moz-keyframes AnimationName {
+        0%{background-position:57% 0%}
+        50%{background-position:44% 100%}
+        100%{background-position:57% 0%}
+    }
+  
+    @keyframes AnimationName {
+        0%{background-position:57% 0%}
+        50%{background-position:44% 100%}
+        100%{background-position:57% 0%}
+    }
 
 .headerNavLink{
     color:var(--m_color);
@@ -264,15 +293,16 @@ header .headerPlaceBtn{
 }
 
 .buttonBtm img{
-    padding:7px;
-    background: rgb(159,126,97);
-    background: -moz-radial-gradient(circle,     var(--gd_gr_color) 0%, 0%, var(--pu_gr_color) 0%, 100%);
-    background: -webkit-radial-gradient(circle,  var(--gd_gr_color) 0%, 0%, var(--pu_gr_color) 100%);
-    background: radial-gradient(circle,          var(--gd_gr_color) 0%, 0%, var(--pu_gr_color) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#9f7e61",endColorstr="#9295de",GradientType=1);
+    background: var(--pu_gr_color);
     border-radius: 100%;
+    border: solid 5px var(--pu_color);
+
+    background: linear-gradient(22deg,  var(--gd_gr_color),  var(--pu_color));
+    background-size: 200% 300%;
+    
+    -webkit-animation: AnimationName 5s ease infinite;
+    -moz-animation: AnimationName 5s ease infinite;
+    -o-animation: AnimationName 5s;
+    animation: AnimationName 5s ease infinite;
 }
 
-/*
-jhlhl
-*/
