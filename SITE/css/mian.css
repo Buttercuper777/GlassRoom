@@ -42,6 +42,12 @@ html, body{
     height: 100%;
 }
 
+.fs_block{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
 .headerNavigationBlock{
     display: grid;
     grid-template-columns: auto 50% auto;  
@@ -229,15 +235,12 @@ header .headerPlaceBtn:hover{
     display: grid;
     justify-items: center;
     align-items: start;
+    position: relative;
 }
 
 #_escal{
     width: 90%;
     display: grid;
-}
-
-#_escal:hover{
-    opacity: 0%;
 }
 
 .leftContent #CalcBtn{

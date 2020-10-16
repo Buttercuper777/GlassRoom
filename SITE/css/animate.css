@@ -6,6 +6,14 @@
     --old-gr-one: #7A5FFF;
     --old_gr-two: #01FF89;
 }
+
+#_escal{
+    width: 90%;
+    transform: scale(0);
+    position: absolute;
+}
+
+
 .cls-2, .cls-3, .cls-4, .cls-5, .cls-6, .cls-7, .cls-8, .cls-9, .cls-10, .cls-11, .cls-12, .cls-13{
     animation: build_esc 1.1s ease-in-out 1;
     animation-fill-mode: forwards;
@@ -26,6 +34,21 @@
 .cls-12{animation-delay: 1.0s;}
 .cls-13{animation-delay: 1.1s;}
 
+.cls-1 {
+    fill: url(#logo-gradient);
+    transform-origin: center;
+    animation: scale_bg_esc 1s ease-out;
+    transition: all 0.6s ease-out;
+}
+
+#_escal:hover .cls-1{
+    transform: scale(1.04);
+    transition: all 0.6s ease-out;
+}
+
+#_escal:hover{
+    cursor: pointer;
+}
 
 @keyframes build_esc {
     
@@ -39,9 +62,20 @@
         opacity: 100%;
         width: 352.78px;
     }
-
 }
-.cls-1 {fill: url(#gr_16);}
+
+@keyframes scale_bg_esc{
+    0%{
+        transform: scale(1.1);
+        opacity: 0%;
+    }
+
+    100%{
+        transform: scale(1);
+        opacity: 100%;
+    }
+}
+
 .cls-2 {fill: url(#81-2);}
 .cls-3 {fill: url(#81-2);}
 .cls-4 {fill: url(#81-3);}
@@ -55,3 +89,109 @@
 .cls-12 {fill: url(#81-11);}
 .cls-13 {fill: url(#81-12); }
 
+/*------------------------------bath--------------------------------*/
+
+.bath_svg{
+    width: 350px;
+    height: 450px;
+}
+.bath_bottom{
+    width: 214px;
+    height: 67px;
+    fill: #7255D0;
+    transform: skew(-60deg);
+    y:375.3px;
+    x:774.7px;
+}
+
+.border_bath_bottom{
+    width: 0px;
+    height: 0px;
+    
+    /*width: 222px;
+    height: 71px;*/
+    fill: #fff;
+    transform: skewX(-60deg);
+    y:374px;
+    x:772px;
+    animation: build_bath ease 1s ;
+    animation-fill-mode: forwards;
+}
+
+@keyframes build_bath{
+    0%{
+        width: 0px;
+        height: 0px;
+    }
+    100%{
+        width: 222px;
+        height: 71px;
+    }
+}
+
+.front_wall{
+    fill: url(#logo-gradient);
+    animation: build_f_wall ease 1.8s;
+    animation-fill-mode: forwards;
+    animation-delay: 1s;
+    transform-origin: bottom;
+    transform: scaleY(0);
+    position: absolute;
+    width: 222px;
+    height: 360px;
+    y:85px;
+}
+
+@keyframes build_f_wall{
+    0%{
+        transform: scaleY(0);
+        
+    }
+    100%{
+        transform: scaleY(1);
+    }
+}
+
+.right_wall{
+    fill: url(#logo-gradient);
+    animation: build_r_wall ease 1.8s;
+    animation-fill-mode: forwards;
+    animation-delay: 1s;
+    transform-origin: bottom;
+    height: 0px;
+    width: 124px;
+    transform: skewY(-30deg);
+    x:222px;
+    y:112.6px;
+}
+
+@keyframes build_r_wall{
+    0%{
+      height: 0px;  
+    }
+    100%{
+        height: 360px;
+    }
+}
+
+.bath_top{
+    fill:url(#dark_gr);
+
+    animation: build_bath_top ease-in-out 1.2s;
+    animation-fill-mode: forwards;
+    animation-delay: 2.2s;
+
+    width: 222px;
+    height: 71px;
+    transform: skewX(-60deg);
+    transform-origin: bottom right;
+    opacity: 0%;
+    x:-180.8%;
+    y:14px;
+}
+
+@keyframes build_bath_top{
+    100%{
+       opacity: 100%;
+    }
+}
