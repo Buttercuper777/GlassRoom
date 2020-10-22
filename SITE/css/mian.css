@@ -38,7 +38,7 @@ src: url(../font/Gilroy-ExtraBold.ttf);
 }
 
 html, body{
-    background: #000;
+    background: var(--d_color);
     height: 100%;
 }
 
@@ -313,4 +313,5 @@ header .headerPlaceBtn:hover{
     border: solid 5px var(--pu_color);
 
 }
+
 

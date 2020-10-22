@@ -1,0 +1,128 @@
+<style>
+.bath_svg{
+    min-width: 349px;    
+    height: 450px;
+    transform: scale(1);
+    transform-origin: center;
+}
+.bath_bottom{
+    width: 214px;
+    height: 67px;
+    fill: #7255D0;
+    transform: skew(-60deg);
+    y:375.3px;
+    x:774.7px;
+}
+
+.border_bath_bottom{
+    width: 0px;
+    height: 0px;
+    
+    /*width: 222px;
+    height: 71px;*/
+    fill: #fff;
+    transform: skewX(-60deg);
+    y:374px;
+    x:772px;
+}
+
+.front_wall{
+    fill: url(#blue_gr_1);
+    transform-origin: bottom;
+    transform: scaleY(0);
+    position: absolute;
+    width: 222px;
+    height: 360px;
+    y:85px;
+}
+
+.right_wall{
+    fill: url(#blue_gr_2);
+    transform-origin: bottom;
+    height: 0px;
+    width: 124px;
+    transform: skewY(-30deg);
+    transform-origin: top left;
+    x:222px;
+    y:213px;
+}
+
+.bath_top{
+    fill:url(#dark_gr);
+
+    width: 222px;
+    height: 71px;
+    transform: skewX(-60deg);
+    transform-origin: bottom right;
+    opacity: 0%;
+    x:-632px;
+    y:14px;
+}
+
+.line_bottom{
+    width: 0px;
+    height: 20px;
+    fill: #dedede;
+    y:425px;
+}
+
+.line_right{
+    transform: skewY(-30deg);
+    transform-origin: left top;
+    width: 0px;
+    height: 20px;
+    fill: #c2c2c2;
+    x:222px;
+    y:553px;
+}
+
+.cls-two-bg{
+    fill: url(#blue_gr_1);
+   transform-origin: center;
+   position: absolute;
+   
+}
+</style>
+
+ 
+ <svg class="bath_svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+   
+   <defs>
+
+        <linearGradient id="blue_gr_1" x1="0%" y1="49%" x2="86%" y2="0%" > 
+            <stop offset="0%" stop-color="#4bd19e">
+                <animate attributeName="stop-color" values="#4bd19e; #7255D0; #4bd19e" dur="10s" repeatCount="indefinite"></animate>
+            </stop>
+            <stop offset="100%" stop-color="#7255D0">
+                <animate attributeName="stop-color" values="#7255D0; #4bd19e; #7255D0" dur="10s" repeatCount="indefinite"></animate>
+            </stop>
+        </linearGradient> 
+
+        <linearGradient id="blue_gr_2" x1="0%" y1="49%" x2="86%" y2="0%" > 
+            <stop offset="0%" stop-color="#7255D0">
+                <animate attributeName="stop-color" values="#7255D0; #4bd19e; #7255D0" dur="10s" repeatCount="indefinite"></animate>
+            </stop>
+            <stop offset="100%" stop-color="#4bd19e">
+                <animate attributeName="stop-color" values="#4bd19e; #7255D0; #4bd19e" dur="10s" repeatCount="indefinite"></animate>
+            </stop>
+        </linearGradient> 
+
+        <linearGradient spreadMethod="pad" id="dark_gr" x1="0%" y1="49%" x2="86%" y2="0%">
+        <stop offset="0%" style="stop-color:rgba(35, 32, 45, 0.1);stop-opacity:1;" />
+            <stop offset="27%" style="stop-color: #57419E;stop-opacity:1;" />
+            <stop offset="100%" style="stop-color:rgba(35, 32, 45, 0.1);stop-opacity:1;" />
+        </linearGradient>
+
+   </defs>
+
+    <rect class="border_bath_bottom"></rect>
+    <rect class="bath_bottom"></rect>
+    <rect class="front_wall"></rect>
+    <rect class="right_wall"></rect>
+    <rect class="bath_top"></rect>
+
+    <rect class="line_bottom"></rect>
+    <rect class="line_right"></rect>
+
+    <path class="cls-two-bg" d="M291.75,130.14A452.86,452.86,0,0,1,451.91,83.23c25.71-2.51,76.36-7,138.21,8.51,41.32,10.38,42.73,13.08,77.49,28.37C726.44,146,810,131.88,859.39,123.64s118.84,4.71,149.43,41.18,102.36,224.73,0,389.45C944.35,658,872.4,705.71,801.23,712.72c-16.28,1.61-72.76,5.24-123-26.67-19.21-12.19-17.09-16.67-43.48-36-13.86-10.16-59.85-43.23-115.4-53.1-40.26-7.16-67.46,1.1-98,6.12-23.66,3.89-172.1,28.3-245.11-33.7-81.4-69.12-69.49-236.8,2-341.1C214.82,174.88,262,145.35,291.75,130.14Z"/>
+</svg>

@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="475" height="500" viewBox="0 0 475 500">
+  <defs>
+    <style>
+      .cls-1 {
+        stroke: #000;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <title>5Монтажная область 1</title>
+  <g id="Слой_1" data-name="Слой 1">
+    <rect class="cls-1" width="475" height="500"/>
+  </g>
+  <g id="Слой_2" data-name="Слой 2">
+    <circle class="cls-2" cx="363.63" cy="250" r="89.62"/>
+    <circle class="cls-2" cx="387.72" cy="164.88" r="65.52"/>
+    <circle class="cls-2" cx="268.9" cy="218.74" r="130.98"/>
+    <circle class="cls-2" cx="158.61" cy="179.68" r="94.21"/>
+    <circle class="cls-2" cx="288.82" cy="249.8" r="144"/>
+    <circle class="cls-2" cx="117.24" cy="314.49" r="90.38"/>
+    <circle class="cls-2" cx="93.4" cy="164.88" r="48.08"/>
+    <circle class="cls-2" cx="64.39" cy="92.18" r="23.74"/>
+    <circle class="cls-2" cx="83.79" cy="57.3" r="13.62"/>
+    <circle class="cls-2" cx="66.77" cy="36.87" r="6.81"/>
+    <circle class="cls-2" cx="70.17" cy="23.51" r="2.89"/>
+    <circle class="cls-2" cx="399.88" cy="322.82" r="33.19"/>
+  </g>
+</svg>
