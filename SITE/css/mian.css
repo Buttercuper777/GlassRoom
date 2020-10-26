@@ -1,5 +1,6 @@
 
 :root{
+
     --d_color: #23202D;
     --m_color: #81919D;
     --l_color: #e9edee;
@@ -38,7 +39,7 @@ src: url(../font/Gilroy-ExtraBold.ttf);
 }
 
 html, body{
-    background: var(--d_color);
+    background-color: var(--d_color);
     height: 100%;
 }
 
@@ -236,6 +237,7 @@ header .headerPlaceBtn:hover{
     justify-items: center;
     align-items: start;
     position: relative;
+    z-index: 2;
 }
 
 #_escal{
@@ -264,6 +266,8 @@ header .headerPlaceBtn:hover{
     border: solid 10px var(--dg_color);
     border-radius: 18px;
 }
+
+
 
 .leftContent .button{
     border-radius: 60px;
@@ -314,4 +318,37 @@ header .headerPlaceBtn:hover{
 
 }
 
+#BackWall{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index:3;
+    transform: scale(0);
+    cursor: pointer;
+}
 
+#BackWall a{
+    color: #fff;
+    font-family: GBold;
+    position: absolute;
+    align-self: bottom;
+    bottom:5%;
+    transform: translateX(-50%);
+    left: 73%;
+}
+
+#ChooseForm{
+    min-width: 400px;
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    background: #16131e;
+    opacity: 0.8;
+    z-index: 4;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: 0.5s ease-in-out;
+}
+#ChooseForm.active{
+    transform: scaleX(1);  
+}

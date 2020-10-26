@@ -21,7 +21,24 @@
 
 
 #bath{
+    visibility: hidden;
+    
+}
+
+#border_svg{
+    width: 85%;
     visibility: visible;
+    position: absolute;
+    justify-self: center;
+  }
+
+.glass{
+    align-self: start;
+    position: absolute;
+}
+
+.border{
+    display: grid;
 }
 
 
@@ -305,3 +322,252 @@
     }
 }
 
+/*-------------------------Borders---------------------------*/
+
+.cls-bordder-1, .cls-bordder-10, .cls-bordder-11, .cls-bordder-12, .cls-bordder-13, .cls-bordder-14, .cls-bordder-2, .cls-bordder-3, .cls-bordder-4, .cls-bordder-5, .cls-bordder-6, .cls-bordder-7, .cls-bordder-8, .cls-bordder-9 {
+    fill: none;
+  }
+
+  .cls-bordder-1, .cls-bordder-10, .cls-bordder-11, .cls-bordder-12, .cls-bordder-13, .cls-bordder-14, .cls-bordder-15, .cls-bordder-16, .cls-bordder-2, .cls-bordder-3, .cls-bordder-4, .cls-bordder-5, .cls-bordder-6, .cls-bordder-7, .cls-bordder-8, .cls-bordder-9 {
+    stroke-miterlimit: 10;
+  }
+
+  .cls-bordder-1 {
+    stroke-width: 4px;
+    stroke: url(#border_bg_352);
+  }
+
+  .cls-bordder-2 {
+    stroke-width: 4.25px;
+    stroke: url(#border_bg_3798);
+  }
+
+  .cls-bordder-3 {
+    stroke-width: 4.5px;
+    stroke: url(#border_bg_3797);
+  }
+
+  .cls-bordder-4 {
+    stroke-width: 4.75px;
+    stroke: url(#border_bg_3796);
+  }
+
+  .cls-bordder-5 {
+    stroke-width: 5px;
+    stroke: url(#border_bg_3795);
+  }
+
+  .cls-bordder-6 {
+    stroke-width: 5.25px;
+    stroke: url(#border_bg_3794);
+  }
+
+  .cls-bordder-7 {
+    stroke-width: 5.5px;
+    stroke: url(#border_bg_3793);
+  }
+
+  .cls-bordder-8 {
+    stroke-width: 5.75px;
+    stroke: url(#border_bg_3792);
+  }
+
+  .cls-bordder-9 {
+    stroke-width: 6px;
+    stroke: url(#border_bg_3791);
+  }
+
+  .cls-bordder-10 {
+    stroke-width: 6.25px;
+    stroke: url(#border_bg_3790);
+  }
+
+  .cls-bordder-11 {
+    stroke-width: 6.5px;
+    stroke: url(#border_bg_3789);
+  }
+
+  .cls-bordder-12 {
+    stroke-width: 6.75px;
+    stroke: url(#border_bg_3788);
+  }
+
+  .cls-bordder-13 {
+    stroke-width: 7px;
+    stroke: url(#border_bg_46);
+  }
+
+  .cls-bordder-14 {
+    stroke-width: 3px;
+    stroke: url(#border_bg_46-2);
+  }
+
+  .cls-bordder-15, .cls-bordder-16 {
+    stroke: #9b8dc7;
+  }
+
+  .cls-bordder-15 {
+    fill: url(#border_bg_2013);
+  }
+
+  .cls-bordder-16 {
+    fill: url(#border_bg_1981);
+  }
+
+  .border{
+      width: 100%;
+      height: 100%;
+      position: absolute;
+ 
+  }
+  .cls-bordder-14{
+      transform: translateY(150px);
+      animation: glass_up 1.3s ease-in-out;
+      animation-fill-mode: forwards;
+      animation-delay: 2.8s;
+      opacity: 0;
+  }
+  @keyframes glass_up{ 
+      0%{
+        transform: translateY(150px);
+        opacity: 0;;
+      }
+      100%{
+        transform: translateY(0);
+        opacity: 1;
+      }
+  }
+
+#Front, #Back{
+    opacity: 0;
+    animation: borders_vis 1.5s ease-in-out;
+    animation-fill-mode: forwards;
+    transform-origin: center;
+    animation-delay: 4s;
+}
+@keyframes borders_vis{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        
+        opacity: 1;
+    }
+}
+
+.cls-bordder-13{
+    opacity: 0;
+    animation: halls_border 1s ease-in-out forwards;
+    
+}
+
+@keyframes halls_border{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+.cls-bordder-12{
+    opacity: 0;
+    
+    animation: hall_animation 0.7s ease-in-out forwards;
+    animation-delay: 2.5s;
+}
+.cls-bordder-11{
+    opacity: 0;
+    
+    animation: hall_animation 0.7s ease-in-out forwards;
+    animation-delay: 2.3s;
+}
+.cls-bordder-10{
+    opacity: 0;
+    
+    animation: hall_animation 0.7s ease-in-out forwards;
+    animation-delay: 2.1s;
+}
+.cls-bordder-9{
+    opacity: 0;
+    
+    animation: hall_animation 0.7s ease-in-out forwards;
+    animation-delay: 1.9s;
+}
+.cls-bordder-8{
+    opacity: 0;
+    
+    animation: hall_animation 0.7s ease-in-out forwards;
+    animation-delay: 1.7s;
+}
+.cls-bordder-7{
+    opacity: 0;
+    
+    animation: hall_animation 0.7s ease-in-out forwards;
+    animation-delay: 1.5s;
+}
+.cls-bordder-6{
+    opacity: 0;
+
+    
+    animation: hall_animation 0.7s ease-in-out forwards;
+    animation-delay: 1.3s;
+}
+.cls-bordder-5{
+    opacity: 0;
+
+    animation: hall_animation 0.7s ease-in-out forwards;
+    animation-delay: 1.1s;
+}
+.cls-bordder-4{
+    opacity: 0;
+
+    animation: hall_animation 0.7s ease-in-out forwards;
+    animation-delay: 0.9s;
+}
+.cls-bordder-3{
+    opacity: 0;
+
+    animation: hall_animation 0.7s ease-in-out forwards;
+    animation-delay: 0.7s;
+}
+.cls-bordder-2{
+    animation: hall_animation 0.7s ease-in-out forwards;
+    animation-delay: 0.5s;
+    opacity: 0;
+}
+.cls-bordder-1{
+    animation: hall_animation 0.7s ease-in-out forwards;
+    animation-delay: 0.3s;
+    opacity: 0;
+}
+@keyframes hall_animation{
+    0%{
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+#border_svg{
+    animation: plato 4s ease;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-play-state: running;
+    animation-fill-mode: both;
+    animation-delay: 5s;
+}
+
+@keyframes plato{
+    0%{
+        transform: translateY(0px);
+    }
+    50%{
+        transform: translateY(-5px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
