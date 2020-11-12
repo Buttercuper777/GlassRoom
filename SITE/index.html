@@ -8,14 +8,81 @@
         <meta name = "viewport" content = "width=device-width">
 
         <script src="JS/JQ.js"></script>
+        <script src="JS/jquery.maskedinput.js"></script>
         <script src="JS/main_script.js"></script>
 	</head>
 	<body>
         <header>
             <div id="ChooseForm"></div>
             <div id="BackWall">
-              <a>Нажми, чтобы закрыть меню</a>
+              <a>Нажми, чтобы закрыть меню.</a>
             </div>
+
+            <div class="popup_bg">
+
+              <div class="PlacePop">
+                <img src="images/close.svg" class="close_svg" width="10px">
+                <div class="chooseBlock">
+                <div class="selected">
+                  <a>Краснодар</a>
+                </div>
+                <div class="PlaceList">
+                  <ul>
+                    <li><a href="">Краснодар</a></li>
+                    <li><a href="">Сочи</a></li>
+                    <li><a href="">Новороссийск</a></li>
+                    <li><a href="">Армавир</a></li>
+                    <li><a href="">Ейск</a></li>
+                    <li><a href="">Туапсе</a></li>
+                    <li><a href="">Крымск</a></li>
+                    <li><a href="">Анапа</a></li>
+                    <li><a href="">Тимашевск</a></li>
+                    <li><a href="">Геленджик</a></li>
+                  </ul>
+                </div>
+                <div class="CheckPlace">
+                  <a class="aboutPlace">Узнать о моем городе...</a>
+                </div>
+                </div>
+                <div class="aboutBlock">
+                  <a>Если Ваш город входит в состав<br>Южного Федерального округа,<br>то наши двери открыты и для вас!</a>
+                  <h3>Вы можете связаться с нами:</h3>
+                    <div class="imgs_about">
+                      <img class ="ico_img_about" src="images/mail_ico.svg" width="90%"  id = "mail_svg"  onclick="myFunction(mail_copy)">
+                      <img class ="ico_img_about" src="images/call_ico.svg" width="100%" id = "call_svg">
+                      <img class ="ico_img_about" src="images/phone_ico.svg"width="90%"  id = "phone_svg">
+                    </div>
+                    <h4 id="about_choosed_type">...</h4>
+                    <!--<a class="back_click" style="font-size: 18px; color:#9295DE">Назад...</a>-->
+                  </div>
+              </div>
+
+              <div class="popup">
+                <img src="images/close.svg" class="close_svg" width="13px">
+
+                <center><a>Оставь номер тут, а мы<br>перезвоним!</a></center>
+
+                <div class="input">
+                  <div class="pop_input">
+                    <input type="text" placeholder="Имя:"></input>
+                  </div>
+  
+                  <div class="pop_input">
+                    <input type="phone" placeholder="Телефон:"></input>
+                  </div>
+
+                  <div class="pop_input">
+                    <input type="submit"></input>
+                  </div>
+                </div>
+                <div class="mail_lb">
+                  <a>Также можно написать нам на почту:</a>
+                  <a id="mail_copy" href="mailto:steklopro23@mail.ru">steklopro23@mail.ru</a>
+                </div>
+              </div>
+
+            </div>
+            
             <img src="images/logo2_alphж.png" class="bg_logo" height="80%">
             <div class="headerNavigationBlock">
                 <a href="#" class="headerLogo">
@@ -25,7 +92,7 @@
 
                 <div class="headerNav">
                 <a href="#" class="headerNavLink" id="main_link">Главная</a>
-                <a href="#" class="headerNavLink">Калькулятор цен</a>
+                <a href="#" class="headerNavLink" id="headerNavLinkCalc">Калькулятор цен</a>
                 <a href="#" class="headerNavLink">Каталог</a>
                 <a href="#" class="headerNavLink">Контакты</a>
                 <a          class="headerNavLink" style ="color: #fff;" >|</a>
@@ -328,7 +395,7 @@
                     </svg>
                       </div>
                 </div>
-    
+                
 
                 <a class="buttonBtm">
                     <img src="images/down.png" height="92%" alt=""> 

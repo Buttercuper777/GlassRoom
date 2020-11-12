@@ -22,15 +22,14 @@
 }
 
 @font-face{
-font-family: GEBold;
-src: url(../font/Gilroy-ExtraBold.ttf);
+    font-family: GEBold;
+    src: url(../font/Gilroy-ExtraBold.ttf);
 }
 
 @font-face{
     font-family: GBold;
     src: url(../font/Gilroy-Bold.ttf);
 }
-
 
 *{
     margin: 0;
@@ -57,6 +56,7 @@ html, body{
     min-height:160px;
     padding-top: 35px;
     grid-area: navBlock;
+    transition: 0.5s ease;
     z-index: 1;
 }
 
@@ -223,6 +223,7 @@ header .headerPlaceBtn:hover{
                     "CalcBtn"
                     "CallBtn";
     align-self: center;
+    transition: 0.5s ease;
 
 }
 .leftContent .HeaderText{
@@ -308,6 +309,7 @@ header .headerPlaceBtn:hover{
     align-items: center;
     justify-items: start;
     align-self: end;
+    transition: 0.5s ease;
     min-height: 50px;
 }
 
@@ -325,6 +327,8 @@ header .headerPlaceBtn:hover{
     z-index:3;
     transform: scale(0);
     cursor: pointer;
+    display: grid;
+
 }
 
 #BackWall a{
@@ -335,6 +339,197 @@ header .headerPlaceBtn:hover{
     bottom:5%;
     transform: translateX(-50%);
     left: 73%;
+}
+
+.popup_bg{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: grid;
+}
+
+.popup{
+    width: 35%;
+    min-width: 300px;
+    height: 400px;
+    background: var(--d_color);
+    border: solid 1.3px #fff;
+    opacity: 1;
+    transform: scale(0);
+    border-radius: 20px;
+    z-index: 10;
+    justify-self: center;
+    align-self: center;
+    padding-top: 30px;
+    display: grid;
+    
+    justify-items: center;
+    grid-template-rows: 1fr 2fr 50px;
+}
+
+.PlacePop{
+    width: 35%;
+    min-width: 300px;
+    height: 55%;
+    min-height: 400px;
+    background: var(--d_color);
+    border: solid 1.3px #fff;
+    opacity: 1;
+    transform: scale(0);
+    border-radius: 25px;
+    z-index: 10;
+    justify-self: center;
+    align-self: center;
+    display: grid;
+    position: absolute;
+}
+
+.PlacePop.active{
+    width: 25%;
+    height: 70%;
+    min-height: 430px;
+}
+
+.chooseBlock{
+    width: 100%;
+    height: 100%;
+    padding-top: 10px;
+    display: grid;
+    position: absolute;
+    justify-items: center;
+    grid-template-rows: 1.5fr 10fr 1.5fr; 
+    padding: 5px;
+    padding-top: 13px;
+    transform:scale(0);
+}
+
+.chooseBlock.active{
+    transform:scale(1);
+}
+
+.aboutBlock{
+    display: grid;
+    justify-items: center;
+    grid-template-rows: 2fr 1fr 3fr 1fr;
+    align-items: start;
+    padding-top: 30px;
+    transform:scale(0);
+}
+
+.aboutBlock.active{
+    transform:scale(1);
+}
+
+.back_click{
+    cursor:pointer;
+    padding-bottom: 10px;
+}
+
+.aboutBlock a{
+    width: 100%;
+    text-align: center;
+    color:var(--pu_gr_color);
+    font-family: GBold;
+    font-size: 20px;
+    align-self: center;
+}
+
+.aboutBlock h4{
+    color: var(--pu_gr_color);
+    font-size: 15px;
+    font-family: GBold;
+}
+
+#mail_svg:hover .aboutBlock h4{
+    color:#000;
+}
+
+.aboutBlock .ico_img_about{
+    padding: 20px;
+    grid-area: "ico_about";
+    cursor: pointer;
+    transition: 0.4s;
+    
+}
+.aboutBlock .ico_img_about:hover{
+    width: 105%;
+    transition: 0.4s;   
+    padding-top: 10px;
+}
+
+.imgs_about{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "ico_about ico_about ico_about";
+    justify-items: center;
+    align-items: center;
+    width: 70%;
+
+}
+
+.aboutBlock h3{
+    font-family: GBold;
+    font-size: 20px;
+    color: var(--pu_color);  
+    height: 40px;
+}
+
+.selected{
+    font-family: GBold;
+    font-size: 18px;
+    width: 95%;
+    text-align: center;
+    max-height: 50px;
+    border-radius:15px;
+    font-weight: 100;
+    letter-spacing: 1px;;
+    display: grid;
+    align-items: center;
+    color: var(--l_color);
+    box-shadow: 0px 7px 7px #2c2738;
+}
+
+.PlaceList{
+    width: 95%;
+    border-radius: 15px;
+}
+
+.PlaceList ul{
+    padding: 10px;
+}
+
+.PlaceList ul li{
+    list-style: none;
+    padding: 6px;
+
+}
+.PlaceList ul li a{
+    color:var(--m_color);
+    font-family: GBold;
+    text-decoration: none;
+    font-size: 18px;
+    transition: 0.3s;
+    display: block;
+    place-content: 1px;
+}
+
+.CheckPlace a{
+    color:var(--pu_color);
+    font-family: GBold;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.PlaceList ul li a:hover{
+    color:var(--lm_color);
+    padding-left: 10px;
+    transition: 0.3s;
+}
+
+.popup a{
+    font-size: 23px;
+    font-family: GBold;
+    color:var(--pu_gr_color);
 }
 
 #ChooseForm{
@@ -349,6 +544,117 @@ header .headerPlaceBtn:hover{
     transform-origin: left;
     transition: 0.5s ease-in-out;
 }
+
+.mail_lb a{
+    text-align: center;
+    width: 100%;
+    color: rgb(123, 123, 123);
+    font-weight: 100; 
+    display: block;
+    font-size: 13px;
+}
+
+.popup input{
+    width: 250px;
+    height: 42px;
+    padding: 6px;
+    font-family: GBold;
+    font-weight: 100;
+    letter-spacing: 1px;
+    border: none;
+    border-radius: 13px;
+    padding-left: 15px;
+    padding-right: 10px;
+    color:rgb(108, 108, 108);
+    background: var(--lm_color);
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
+.pop_input{
+    margin-top: 6px;
+}
+
+.pop_input input:focus{
+    outline: none;
+}
+
+.pop_input input::-moz-placeholder{
+    color:rgb(140, 140, 140);}
+
+.pop_input input::-webkit-input-placeholder{
+    color:rgb(140, 140, 140);}
+
+.pop_input input::-ms-input-placeholder{
+    color:rgb(140, 140, 140);}
+
+.pop_input input:-ms-input-placeholder{
+    color:rgb(140, 140, 140);}
+
+.pop_input input::placeholder{
+    color:rgb(140, 140, 140);}
+
+
+.pop_input input[type='submit']{
+   cursor: pointer;
+   background: var(--pu_color);
+   color: #fff;
+   box-shadow: none;
+   height: 40px;
+   transition: 0.2s ease;
+}
+
+.pop_input input[type='submit']:hover{
+    background: var(--pu_gr_color);
+    transition: 0.2s ease;
+ }
+ 
+.close_svg{
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    cursor: pointer;
+    z-index: 10;
+}
+/*-------------------------------- JS -----------------------------------------*/
+
 #ChooseForm.active{
     transform: scaleX(1);  
+}
+
+.headerNavigationBlock.active{
+    transition: 0.5s ease;
+    opacity: 0.3;
+}
+
+.leftContent.active{
+    transition: 0.5s ease;
+    opacity: 0.3;
+}
+
+.buttonBtm.active{
+    transition: 0.5s ease;
+    opacity: 0.3;
+}
+
+#BackWall.active{
+    transform: scale(1);
+}
+
+#BackWall.CallPop{
+    transform: scale(1);
+    background: rgba(22, 19, 30, 0.8);
+    font-size: 0px;
+}
+
+.popup.CallPop{
+    transform: scale(1);
+    transform-origin: center;
+    transition: 0.2s ease;
+}
+
+.PlacePop.CallPop{
+    transform: scale(1);
+    transform-origin: center;
+    transition: 0.2s ease; 
 }
