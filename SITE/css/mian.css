@@ -545,6 +545,12 @@ header .headerPlaceBtn:hover{
     transition: 0.5s ease-in-out;
 }
 
+#ChooseForm a {
+    color: #fff;
+    cursor: pointer;
+    margin: 20px;
+}
+
 .mail_lb a{
     text-align: center;
     width: 100%;

@@ -19,17 +19,19 @@
     visibility: hidden;
 }
 
-
-#bath{
-    visibility: hidden;
-    
+#bath.activate{
+    visibility: visible;
 }
 
 #border_svg{
     width: 85%;
-    visibility: visible;
     position: absolute;
     justify-self: center;
+    visibility: hidden;
+  }
+
+  #border_svg.active{
+    visibility: visible;
   }
 
 .glass{
@@ -41,8 +43,32 @@
     display: grid;
 }
 
+#border_svg.active{
+    width: 85%;
+    position: absolute;
+    justify-self: center;
+    visibility: visible;
+}
 
-.cls-2, .cls-3, .cls-4, .cls-5, .cls-6, .cls-7, .cls-8, .cls-9, .cls-10, .cls-11, .cls-12, .cls-13{
+#_escal.active{
+    width: 90%;
+    transform: scale(1);
+    position: absolute;
+    visibility: visible;
+}
+
+.cls-2.active,
+.cls-3.active,
+.cls-4.active,
+.cls-5.active, 
+.cls-6.active, 
+.cls-7.active, 
+.cls-8.active, 
+.cls-9.active, 
+.cls-10.active, 
+.cls-11.active, 
+.cls-12.active, 
+.cls-13.active{
     animation: build_esc 1.1s ease-in-out 1;
     animation-fill-mode: forwards;
     opacity: 0%;
@@ -50,19 +76,19 @@
     width: 0px;
 }
 
-.cls-3{animation-delay: 0.1s;}
-.cls-4{animation-delay: 0.2s;}
-.cls-5{animation-delay: 0.3s;}
-.cls-6{animation-delay: 0.4s;}
-.cls-7{animation-delay: 0.5s;}
-.cls-8{animation-delay: 0.6s;}
-.cls-9{animation-delay: 0.7s;}
-.cls-10{animation-delay: 0.8s;} 
-.cls-11{animation-delay: 0.9s;}
-.cls-12{animation-delay: 1.0s;}
-.cls-13{animation-delay: 1.1s;}
+.cls-3.active{animation-delay: 0.1s;}
+.cls-4.active{animation-delay: 0.2s;}
+.cls-5.active{animation-delay: 0.3s;}
+.cls-6.active{animation-delay: 0.4s;}
+.cls-7.active{animation-delay: 0.5s;}
+.cls-8.active{animation-delay: 0.6s;}
+.cls-9.active{animation-delay: 0.7s;}
+.cls-10.active{animation-delay: 0.8s;} 
+.cls-11.active{animation-delay: 0.9s;}
+.cls-12.active{animation-delay: 1.0s;}
+.cls-13.active{animation-delay: 1.1s;}
 
-.cls-1 {
+.cls-1.active{
     fill: url(#logo-gradient);
     transform-origin: center;
     animation: scale_bg_esc 1s ease-out;
@@ -120,12 +146,100 @@
 
 /*------------------------------bath--------------------------------*/
 
-.bath_svg{
+#bath{
+    visibility: hidden;
+}
+.bath_svg.activate{
     min-width: 349px;    
     height: 450px;
     transform: scale(1);
     transform-origin: center;
 }
+.cls-mask.activate{
+    fill:rgb(169, 169, 169);
+    animation: steam_scale 10s ease-out infinite;
+    transform-origin: center;
+    transition: 2s;
+}
+.border_bath_bottom.activate{
+    width: 0px;
+    height: 0px;
+    
+    /*width: 222px;
+    height: 71px;*/
+    fill: #fff;
+    transform: skewX(-60deg);
+    y:374px;
+    x:772px;
+    animation: build_bath ease 1s ;
+    animation-fill-mode: forwards;
+}
+.front_wall.activate{
+    fill: url(#blue_gr_1);
+    animation: build_f_wall ease 1.8s;
+    animation-fill-mode: forwards;
+    animation-delay: 1s;
+    transform-origin: bottom;
+    transform: scaleY(0);
+    position: absolute;
+    width: 222px;
+    height: 360px;
+    y:85px;
+    stroke: #dedede;
+    stroke-width:3px;
+}
+.right_wall.activate{
+    fill: url(#blue_gr_2);
+    animation: build_r_wall ease 1.8s;
+    animation-fill-mode: forwards;
+    animation-delay: 1s;
+    transform-origin: bottom;
+    height: 0px;
+    width: 124px;
+    transform: skewY(-30deg);
+    transform-origin: top left;
+    x:222px;
+    y:213px;
+}
+.bath_top.activate{
+    fill:url(#dark_gr);
+
+    animation: build_bath_top ease-in-out 1.2s;
+    animation-fill-mode: forwards;
+    animation-delay: 2.2s;
+
+    width: 222px;
+    height: 71px;
+    transform: skewX(-60deg);
+    transform-origin: bottom right;
+    opacity: 0%;
+    x:-632px;
+    y:14px;
+}
+.line_bottom.activate{
+    width: 0px;
+    height: 20px;
+    fill: var(--l_bt_color);
+    y:425px;
+    animation: line_bottom_show 0.5s linear;
+    animation-fill-mode: forwards;
+    animation-delay: 2s;
+}
+.line_right.activate{
+    transform: skewY(-30deg);
+    transform-origin: left top;
+    width: 0px;
+    height: 20px;
+    fill: var(--m_bt_color);
+    x:223px;
+    y:555px;
+    animation: right_bottom_show 0.7s ease-out;
+    animation-fill-mode: forwards;
+    animation-delay: 2.5s;
+}
+
+
+
 .bg_svg{
     position: absolute;
     height: 475px;
@@ -144,12 +258,6 @@
     fill:url(#steam_gr);
 }
 
-.cls-mask{
-    fill:rgb(169, 169, 169);
-    animation: steam_scale 10s ease-out infinite;
-    transform-origin: center;
-    transition: 2s;
-}
 
 @keyframes steam_scale{
     0%{
@@ -173,19 +281,6 @@
 }
 
 
-.border_bath_bottom{
-    width: 0px;
-    height: 0px;
-    
-    /*width: 222px;
-    height: 71px;*/
-    fill: #fff;
-    transform: skewX(-60deg);
-    y:374px;
-    x:772px;
-    animation: build_bath ease 1s ;
-    animation-fill-mode: forwards;
-}
 
 @keyframes build_bath{
     0%{
@@ -198,20 +293,6 @@
     }
 }
 
-.front_wall{
-    fill: url(#blue_gr_1);
-    animation: build_f_wall ease 1.8s;
-    animation-fill-mode: forwards;
-    animation-delay: 1s;
-    transform-origin: bottom;
-    transform: scaleY(0);
-    position: absolute;
-    width: 222px;
-    height: 360px;
-    y:85px;
-    stroke: #dedede;
-    stroke-width:3px;
-}
 
 @keyframes build_f_wall{
     0%{
@@ -227,21 +308,7 @@
     }
 }
 
-.right_wall{
-    fill: url(#blue_gr_2);
-    animation: build_r_wall ease 1.8s;
-    animation-fill-mode: forwards;
-    animation-delay: 1s;
-    transform-origin: bottom;
-    height: 0px;
-    width: 124px;
-    transform: skewY(-30deg);
-    transform-origin: top left;
-    x:222px;
-    y:213px;
 
-
-}
 
 @keyframes build_r_wall{
     0%{
@@ -256,21 +323,7 @@
     }
 }
 
-.bath_top{
-    fill:url(#dark_gr);
 
-    animation: build_bath_top ease-in-out 1.2s;
-    animation-fill-mode: forwards;
-    animation-delay: 2.2s;
-
-    width: 222px;
-    height: 71px;
-    transform: skewX(-60deg);
-    transform-origin: bottom right;
-    opacity: 0%;
-    x:-632px;
-    y:14px;
-}
 
 @keyframes build_bath_top{
     100%{
@@ -278,15 +331,6 @@
     }
 }
 
-.line_bottom{
-    width: 0px;
-    height: 20px;
-    fill: var(--l_bt_color);
-    y:425px;
-    animation: line_bottom_show 0.5s linear;
-    animation-fill-mode: forwards;
-    animation-delay: 2s;
-}
 
 @keyframes line_bottom_show{
     0%{
@@ -297,20 +341,6 @@
         stroke:var(--l_bt_color);
     }
 }
-
-.line_right{
-    transform: skewY(-30deg);
-    transform-origin: left top;
-    width: 0px;
-    height: 20px;
-    fill: var(--m_bt_color);
-    x:223px;
-    y:555px;
-    animation: right_bottom_show 0.7s ease-out;
-    animation-fill-mode: forwards;
-    animation-delay: 2.5s;
-}
-
 
 @keyframes right_bottom_show{
     0%{
@@ -420,7 +450,7 @@
       position: absolute;
  
   }
-  .cls-bordder-14{
+  .cls-bordder-14.active{
       transform: translateY(150px);
       animation: glass_up 1.3s ease-in-out;
       animation-fill-mode: forwards;
@@ -438,7 +468,7 @@
       }
   }
 
-#Front, #Back{
+#Front.active, #Back.active{
     opacity: 0;
     animation: borders_vis 1.5s ease-in-out;
     animation-fill-mode: forwards;
@@ -455,7 +485,7 @@
     }
 }
 
-.cls-bordder-13{
+.cls-bordder-13.active{
     opacity: 0;
     animation: halls_border 1s ease-in-out forwards;
     
@@ -469,73 +499,73 @@
         opacity: 1;
     }
 }
-.cls-bordder-12{
+.cls-bordder-12.active{
     opacity: 0;
     
     animation: hall_animation 0.7s ease-in-out forwards;
     animation-delay: 2.5s;
 }
-.cls-bordder-11{
+.cls-bordder-11.active{
     opacity: 0;
     
     animation: hall_animation 0.7s ease-in-out forwards;
     animation-delay: 2.3s;
 }
-.cls-bordder-10{
+.cls-bordder-10.active{
     opacity: 0;
     
     animation: hall_animation 0.7s ease-in-out forwards;
     animation-delay: 2.1s;
 }
-.cls-bordder-9{
+.cls-bordder-9.active{
     opacity: 0;
     
     animation: hall_animation 0.7s ease-in-out forwards;
     animation-delay: 1.9s;
 }
-.cls-bordder-8{
+.cls-bordder-8.active{
     opacity: 0;
     
     animation: hall_animation 0.7s ease-in-out forwards;
     animation-delay: 1.7s;
 }
-.cls-bordder-7{
+.cls-bordder-7.active{
     opacity: 0;
     
     animation: hall_animation 0.7s ease-in-out forwards;
     animation-delay: 1.5s;
 }
-.cls-bordder-6{
+.cls-bordder-6.active{
     opacity: 0;
 
     
     animation: hall_animation 0.7s ease-in-out forwards;
     animation-delay: 1.3s;
 }
-.cls-bordder-5{
+.cls-bordder-5.active{
     opacity: 0;
 
     animation: hall_animation 0.7s ease-in-out forwards;
     animation-delay: 1.1s;
 }
-.cls-bordder-4{
+.cls-bordder-4.active{
     opacity: 0;
 
     animation: hall_animation 0.7s ease-in-out forwards;
     animation-delay: 0.9s;
 }
-.cls-bordder-3{
+.cls-bordder-3.active{
     opacity: 0;
 
     animation: hall_animation 0.7s ease-in-out forwards;
     animation-delay: 0.7s;
 }
-.cls-bordder-2{
+.cls-bordder-2.active{ 
     animation: hall_animation 0.7s ease-in-out forwards;
     animation-delay: 0.5s;
     opacity: 0;
 }
-.cls-bordder-1{
+.cls-bordder-1.active{
     animation: hall_animation 0.7s ease-in-out forwards;
     animation-delay: 0.3s;
     opacity: 0;
