@@ -1,0 +1,71 @@
+
+@media (orientation: portrait) and (max-width: 1421px)  {
+    body{
+        overflow-x: hidden;
+    }
+    .ImageCont{
+        opacity: 0;
+        transform: scale(0);
+    }
+    .ContentSpace{
+        display: grid;
+        grid-template-columns: 0px 1fr 0px;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas:
+                        ". . .",
+                        ". lConten .";
+        grid-row-gap: 0px;               
+        min-height: 0px;
+        grid-column-gap:0px;
+        grid-area: contentSpace;
+        padding-bottom: 0%;
+        z-index: 1;
+        align-self: top;
+        justify-self: center;
+    }
+    .leftContent{
+        grid-area: lContent;
+        display: grid;
+        grid-template-rows: 0.6fr 55px 55px;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+                        "text"
+                        "CalcBtn"
+                        "CallBtn";
+        transition: 0.5s ease;
+        justify-content: left;
+
+    }
+
+    .leftContent #CalcBtn, #CallBtn{
+        margin: 0px;
+    }
+    
+    .leftContent .HeaderText{   
+        display: grid;
+        justify-items: center;
+    }
+
+    .leftContent .HeaderText h1{   
+        font-size: 9vw;
+        text-align: center;
+    }
+    .leftContent .HeaderText h2{   
+        font-size: 7.3vw;
+    }
+
+    .buttonBtm{
+        opacity: 0;
+        transform: scale(0); 
+        transition: 0s;   
+    }
+
+    .button{
+        display: block;
+        margin: 0px auto;
+        min-width: 270px;
+    }
+}
+@media (max-width: 1421px){
+
+}
