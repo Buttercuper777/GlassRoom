@@ -40,6 +40,7 @@
 html, body{
     background-color: var(--d_color);
     height: 100%;
+    width: 100%;
 }
 
 
@@ -97,7 +98,8 @@ header .headerLogo{
 .headerLogo img{
     justify-self: center;
     border-radius: 12px;
-    border: solid 3px var(--dg_color)
+    border: solid 3px var(--dg_color);
+    background: var(--dg_color);
 }
 
 header .headerNav{

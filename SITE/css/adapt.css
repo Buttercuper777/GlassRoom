@@ -1,8 +1,116 @@
 
-@media (orientation: portrait) and (max-width: 1421px)  {
-    body{
-        overflow-x: hidden;
+@media (orientation: landscape), (min-width: 1421px)  {
+    .mob_header{
+        display: none;
     }
+    #phoneMobLabel{
+        font-size: 0px;
+    }
+}
+
+@media (orientation: portrait) and (max-width: 1421px)  {
+    body, html{
+        overflow-x: hidden;
+        width: 100%;
+    }
+    header{
+        background:url(../images/logo3_alph.png);
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-position-y: 11vh;
+    }
+    .headerNavigationBlock{
+        display: none;
+    }
+
+    .mob_header{
+        width: 100%;
+        display: grid;
+        height: 19vw;
+        grid-template-areas: "logo_mob list_mob";
+        grid-template-columns: 15vw 1fr;
+        grid-column-gap: 2vw;
+        padding-right: 4vw;
+        justify-items: center;
+        padding-top: 5vw;
+    }
+
+    .headerNavMob{
+        grid-area: list_mob;
+        width: 100%;
+        height: 100%;
+        display: grid;
+        align-items: center;
+        align-self: center;
+        margin-right: 0vw;
+        box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.204);
+        border-radius: 2vw;
+        justify-self: center;
+        padding-bottom: 0.2vh;
+    }
+
+    .mob_header ul{
+        margin-top:5px;
+        display: grid;
+        grid-template-columns: repeat(4, auto);
+    }
+
+    .mob_header ul li{
+        float: left;
+        list-style: none;
+        text-align: center;
+    }
+
+    .mob_header ul li a{
+        color: var(--m_color);
+        text-decoration: none;
+        font-family: GBold;
+        font-size: 3vw;
+    }
+
+    .imgNavMob{
+        background: #000;
+        width: 8vw;
+        height: 8vw;
+        margin: 0 auto;
+    }
+    .imgNavMob1{
+        background: url(../images/iconlist.png);
+        background-repeat: no-repeat;
+        background-size: 100%;
+    }
+    .imgNavMob2{
+        background: url(../images/iconlist.png);
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-position-y: 33%;
+    }
+
+    .imgNavMob3{
+        background: url(../images/iconlist.png);
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-position-y: 64%;
+    }
+
+    .imgNavMob4{
+        background: url(../images/iconlist.png);
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-position-y: 97%;
+    }
+
+    .mob_header img{
+        grid-area: logo_mob;
+        height: 15vw;
+        border-radius: 13%;
+        border: solid 2px var(--dg_color);
+        background: var(--dg_color);
+        margin-left: 2vw;
+        align-self: center;
+        box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.279);
+    }
+
     .ImageCont{
         opacity: 0;
         transform: scale(0);
@@ -13,7 +121,8 @@
         grid-template-rows: 1fr 1fr;
         grid-template-areas:
                         ". . .",
-                        ". lConten .";
+                        ". lConten .",
+                        ". tScroll .";
         grid-row-gap: 0px;               
         min-height: 0px;
         grid-column-gap:0px;
@@ -26,7 +135,8 @@
     .leftContent{
         grid-area: lContent;
         display: grid;
-        grid-template-rows: 0.6fr 55px 55px;
+        grid-template-rows: 0.6fr auto auto;
+        row-gap: 6px;
         grid-template-columns: 1fr;
         grid-template-areas: 
                         "text"
@@ -41,6 +151,43 @@
         margin: 0px;
     }
     
+
+    .leftContent .button{
+        border-radius: 60px;
+        border: solid 3px var(--dg_color);
+        text-decoration: none;
+        font-family: GBold;
+        font-size: 4.3vw;
+        color:var(--l_color);
+        width: 100%;
+        height: 6vh;
+        padding-left: 3%;
+        display:block;
+    }
+
+    .leftContent #CallBtn{
+        min-width: 100%;
+        grid-template-columns: 5fr 0fr;
+        align-items: center;
+    }
+    .leftContent #CalcBtn{
+        grid-area: CalcBtn;
+        align-items: center;
+    }
+
+    .leftContent #CallBtn img{
+    opacity: 0;
+    height: 0px;
+    }
+
+    #phoneMobLabel{
+        text-align: center;
+        font-family: Gbold;
+        font-size: 4vw;
+        padding-top: 2vw;
+        color: var(--dg_bl_color);
+    }
+
     .leftContent .HeaderText{   
         display: grid;
         justify-items: center;
@@ -52,18 +199,77 @@
     }
     .leftContent .HeaderText h2{   
         font-size: 7.3vw;
+        margin-left: -7px;
     }
 
     .buttonBtm{
-        opacity: 0;
-        transform: scale(0); 
-        transition: 0s;   
+        justify-self: center;
+        font-size: 0px;
+        display: block;
+        width: 14.3vw;
+        height: 14.3vw;
+        background: url(../images/down.png) no-repeat;
+        background-position: center;
+        border-radius: 100%;
+        background-size: 70%;
+        background-color: var(--pu_color);
+        align-self: center;
+        box-shadow: 0px 0px 10px var(--d_color);
+    }
+    .buttonBtm img{
+        width: 0px;
+        height: 0px;
+        border: 0px;
     }
 
     .button{
         display: block;
         margin: 0px auto;
         min-width: 270px;
+    }
+    .line-1{
+        z-index: 15;
+        opacity: 0.2;  
+    }
+    .line-2{
+        z-index: 10;
+        opacity: 0.5;  
+    }
+    .line-3{
+        z-index: 5;
+        opacity: 0.5; 
+    }
+
+    .wave{
+        position:absolute;
+        left: 0;
+        width: 100%;
+        height: 110%;
+        background-repeat: repeat no-repeat;
+        background-position: 0 bottom;
+        transform-origin: center bottom;
+        position: absolute;
+        bottom: 0;
+    }
+
+    .wave2{
+        animation: animate linear 70s;
+    }
+
+    .wave3{
+        animation: animate linear 81s;
+    }
+
+    @keyframes animate{
+        0%{
+            background-position-x: 10%;
+        }
+        50%{
+            background-position-x: 100%;
+        }
+        100%{
+            background-position-x: 10%;
+        }
     }
 }
 @media (max-width: 1421px){
