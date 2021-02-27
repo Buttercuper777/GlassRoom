@@ -44,6 +44,16 @@ $(document).ready(function() {
         $('.aboutBlock').addClass('active');   
     });
 
+    $("#contacts_menu_click").click(function (e) { 
+        $('.chooseBlock').addClass('active');
+        $('#BackWall, .PlacePop').addClass('CallPop'); 
+        $('.chooseBlock').addClass('active');
+        $('.PlacePop').addClass('active');    
+        $('.chooseBlock').removeClass('active');
+        $('.PlacePop').removeClass('active'); 
+        $('.aboutBlock').addClass('active');   
+    });
+    
     
     $(".back_click").click(function (e) { 
         $('.aboutBlock').removeClass('active'); 

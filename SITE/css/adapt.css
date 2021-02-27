@@ -33,6 +33,7 @@
         padding-right: 4vw;
         justify-items: center;
         padding-top: 5vw;
+        z-index: 1;
     }
 
     .headerNavMob{
@@ -59,6 +60,7 @@
         float: left;
         list-style: none;
         text-align: center;
+    
     }
 
     .mob_header ul li a{

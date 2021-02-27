@@ -625,6 +625,33 @@ header .headerPlaceBtn:hover{
     cursor: pointer;
     z-index: 10;
 }
+
+.home_button_anchor a{
+    width: 6.4vw;
+    height: 70vh;
+    display: block;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    text-align: center;
+    align-content: end;
+    display: grid;
+    font-size: 18px;
+    color:var(--l_color);
+    padding-bottom: 15px;
+    font-family: GBold;
+    border-radius: 0px;
+    text-decoration: none;
+    transition: 0.3s;
+    opacity: 0.5;
+    background: rgb(129,145,157);
+    background: linear-gradient(0deg, rgba(129,145,157,0.2) 0%, rgba(35,32,45,0) 100%);
+}
+.home_button_anchor a:hover{
+    transition: 0.3s;
+    opacity: 1;
+}
+
 /*-------------------------------- JS -----------------------------------------*/
 
 #ChooseForm.active{
