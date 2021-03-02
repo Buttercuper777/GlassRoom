@@ -51,7 +51,7 @@ $(document).ready(function() {
         $('.PlacePop').addClass('active');    
         $('.chooseBlock').removeClass('active');
         $('.PlacePop').removeClass('active'); 
-        $('.aboutBlock').addClass('active');   
+        $('.aboutBlock').addClass('active'); 
     });
     
     
@@ -59,6 +59,7 @@ $(document).ready(function() {
         $('.aboutBlock').removeClass('active'); 
         $('.chooseBlock').addClass('active');
         $('.PlacePop').addClass('active'); 
+        $('.popup_bg').css('display', 'none');
     });
 
     $(".ico_img_about").mouseenter(function (e) {
@@ -104,5 +105,39 @@ $(document).ready(function() {
     
         $('#border_svg, #Front, #Back, .cls-bordder-1, .cls-bordder-2, .cls-bordder-3, .cls-bordder-4, .cls-bordder-5, .cls-bordder-6, .cls-bordder-7, .cls-bordder-8, .cls-bordder-9, .cls-bordder-10, .cls-bordder-11, .cls-bordder-12, .cls-bordder-13, .cls-bordder-14').removeClass('active');
     });
+
+
+    $(function(){                               // Load big img. Upload from gallery
+        var wrapper = $('.list_img');
+        wrapper = wrapper.find('li:first-child img').attr('src');
+
+        if (window.innerHeight > window.innerWidth){
+            $('.list_img').find('li:first-child').css("border", "solid 0.7vw #fff");
+            $('.img_product img').attr('src', wrapper);
+        }
+        else{
+            $('.list_img').find('li:first-child').css("border", "solid 3px #fff");
+            $('.img_product img').attr('src', wrapper);     
+        }
+
+    });
+
+    $('.list_img img').click(function(e){   // gallery product place 
+
+        if (window.innerHeight > window.innerWidth){
+            $('.list_img').find('li').css("border", "solid 0.3vw #fff");
+            $(this).parent().css("border", "solid 0.7vw #fff");
+        }
+        else{
+            $('.list_img').find('li').css("border", "solid 1px #fff");
+            $(this).parent().css("border", "solid 3px #fff");    
+        }
+
+        if ($('.img_product img').attr('src') != $(this).attr('src')){
+            
+           $('.img_product img').attr('src', $(this).attr('src'));
+        }
+    });
+
 
 });

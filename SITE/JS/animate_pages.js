@@ -3,7 +3,7 @@ $(document).ready(function(){
 
     $('.home_button_anchor').css("opacity", 0)
     $(window).scroll(function(){ 
-        $('#header_anchor').css("opacity", 1- $(window).scrollTop() / 550) 
+        $('.ContentSpace').css("opacity", 1- $(window).scrollTop() / 550) 
         $('.home_button_anchor').css("opacity", 0 + $(window).scrollTop() / 550) 
     }) 
 

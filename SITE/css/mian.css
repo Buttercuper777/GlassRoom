@@ -17,6 +17,10 @@
 }
 
 @font-face{
+    font-family: GMed;
+    src: url(../font/Gilroy-Medium.ttf);
+}
+@font-face{
     font-family: GBlack;
     src: url(../font/Gilroy-Black.ttf);
 }
