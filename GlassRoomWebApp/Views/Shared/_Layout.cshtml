@@ -1,0 +1,147 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    @await Html.PartialAsync("MetatagsPartial")
+    @await Html.PartialAsync("CssPartial")
+    @await Html.PartialAsync("ScriptsPartial")
+</head>
+<body>
+    <header id="header_anchor">
+        <div id="ChooseForm">
+            <a id="border_button">border</a>
+            <a id="shower_button">shower</a>
+            <a id="more_button">more</a>
+        </div>
+        <div id="BackWall">
+            <a>Нажми, чтобы закрыть меню.</a>
+        </div>
+
+        <div class="popup_bg">
+
+            <div class="PlacePop">
+                <img src="images/close.svg" class="close_svg" width="10px">
+                <div class="chooseBlock">
+                    <div class="selected">
+                        <a>Краснодар</a>
+                    </div>
+                    <div class="PlaceList">
+                        <ul>
+                            <li><a href="">Краснодар</a></li>
+                            <li><a href="">Сочи</a></li>
+                            <li><a href="">Новороссийск</a></li>
+                            <li><a href="">Армавир</a></li>
+                            <li><a href="">Ейск</a></li>
+                            <li><a href="">Туапсе</a></li>
+                            <li><a href="">Крымск</a></li>
+                            <li><a href="">Анапа</a></li>
+                            <li><a href="">Тимашевск</a></li>
+                            <li><a href="">Геленджик</a></li>
+                        </ul>
+                    </div>
+                    <div class="CheckPlace">
+                        <a class="aboutPlace">Узнать о моем городе...</a>
+                    </div>
+                </div>
+                <div class="aboutBlock">
+                    <a>Если Ваш город входит в состав<br>Южного Федерального округа,<br>то наши двери открыты и для вас!</a>
+                    <h3>Вы можете связаться с нами:</h3>
+                    <div class="imgs_about">
+                        <img class="ico_img_about" src="images/mail_ico.svg" width="90%" id="mail_svg" onclick="myFunction(mail_copy)">
+                        <img class="ico_img_about" src="images/call_ico.svg" width="100%" id="call_svg">
+                        <img class="ico_img_about" src="images/phone_ico.svg" width="90%" id="phone_svg">
+                    </div>
+                    <h4 id="about_choosed_type">...</h4>
+                    <!--<a class="back_click" style="font-size: 18px; color:#9295DE">Назад...</a>-->
+                </div>
+            </div>
+
+            <div class="popup">
+                <img src="images/close.svg" class="close_svg" width="13px">
+
+                <center><a>Оставь номер тут, а мы<br>перезвоним!</a></center>
+
+                <div class="input">
+                    <div class="pop_input">
+                        <input type="text" placeholder="Имя:"></input>
+                    </div>
+
+                    <div class="pop_input">
+                        <input type="phone" placeholder="Телефон:"></input>
+                    </div>
+
+                    <div class="pop_input">
+                        <input type="submit"></input>
+                    </div>
+                </div>
+                <div class="mail_lb">
+                    <a>Также можно написать нам на почту:</a>
+                    <a id="mail_copy" href="mailto:steklopro23@mail.ru">steklopro23@mail.ru</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="mob_header">
+            <img src="images/logo.svg" alt="" height="70px" id="mainLogoMob" alt="">
+
+            <div class="headerNavMob">
+                <ul>
+                    <li><a href="#" class="headerNavLinkMob" id="headerNavLinkCalc"><div class="imgNavMob imgNavMob1"></div>Рассчитать</a></li>
+                    <li><a href="#catalog_anchor" class="headerNavLinkMob"><div class="imgNavMob imgNavMob2"></div>Каталог</a></li>
+                    <li><a href="#" class="headerNavLinkMob"><div class="imgNavMob imgNavMob3"></div>Галерея</a></li>
+                    <li><a href="#" class="headerNavLinkMob"><div class="imgNavMob imgNavMob4"></div>О нас</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="headerNavigationBlock">
+            <a href="#" class="headerLogo">
+                <img src="images/logo.svg" alt="" height="70px" id="mainLogo" alt="">
+                Стекло<br>Про<br>Юг
+            </a>
+
+            <div class="headerNav">
+                <a href="#" class="headerNavLink" id="main_link">Главная</a>
+                <a href="#" class="headerNavLink" id="headerNavLinkCalc">Калькулятор цен</a>
+                <a href="#catalog_anchor" class="headerNavLink">Каталог</a>
+                <a href="#" class="headerNavLink" id="contacts_menu_click" main_link>Контакты</a>
+                <a class="headerNavLink" style="color: #fff;">|</a>
+                <a class="headerNavLink" style="color: #9295DE;">+7 (918) 982-91-53</a>
+            </div>
+
+            <a class="headerPlaceBtn" href="#">
+                Краснодар
+                <img src="images/pointer.svg" width="14px" alt="">
+            </a>
+        </div>
+
+        @RenderBody()
+
+        <div class="fs_block">
+            <div class="line line-1">
+                <div class="wave wave1" style="background-image: url(images/1.png);"></div>
+            </div>
+
+            <div class="line line-2">
+                <div class="wave wave2" style="background-image: url(images/2.png);"></div>
+            </div>
+
+            <div class="line line-3">
+                <div class="wave wave3" style="background-image: url(images/3.png);"></div>
+            </div>
+        </div>
+        </div>
+    </header>
+
+    <!------------------------ CATALOG SPACE -------------------->
+
+   @await Html.PartialAsync("CatalogPartial")
+   @await Html.PartialAsync("FooterPartial")
+
+    <div class="home_button_anchor">
+        <a href="#header_anchor">Вверх</a>
+    </div>
+
+</body>
+</html>

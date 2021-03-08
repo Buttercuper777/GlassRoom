@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Админ | Стекло Про Юг</title>
+  <link href="css/mian.css" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width = 1170">
+
+  <script src="JS/JQ.js"></script>
+  <script src="JS/main_script.js"></script>
+</head>
+
+<body>
+  <header>
+    <div class="LogoBlockHeader">
+      <img src="images/LogoAdmin.png" alt="Logo" />
+      <a>Стекло<br>Про<br>Юг</a>
+
+    </div>
+
+    <div class="PanelBlockHeader">
+      <ul>
+      </ul>
+      <div class="ClockDateHeader">
+        <h1 id="ClockHeader">00:00:00</h1>
+        <h2 id="DateHeader">ДД, 0.00 0000</h2>
+      </div>
+    </div>
+    <div class="UserBlockHeader">
+      <img src="images/icons8_customer_64px.png" alt="Польз.">
+      <div class="aboutUserGeader">
+        <b>--</b><br>
+        <a>--</a>
+      </div>
+    </div>
+  </header>
+  <div class="ContentSpaceAdmin">
+    <div class="MainColAdmin">
+    </div>
+    <div class="MainContentAdmin">
+      <h2>Вход в личный кабинет</h2>
+
+      <form asp-area="" asp-controller="Account" asp-action="Login" method="post"
+        asp-route-returnUrl="@ViewBag.returnUrl">
+        <div asp-validation-summary="All"></div>
+        <div>
+          <label asp-for="UserName">Логин: </label>
+          <input asp-for="UserName" />
+          <span asp-validation-for="UserName"></span>
+        </div>
+        <div>
+          <label asp-for="Password">Пароль: </label>
+          <input asp-for="Password" />
+          <span asp-validation-for="Password"></span>
+        </div>
+        <div>
+          <label asp-for="RememberMe">Запомнить меня</label>
+          <input asp-for="RememberMe" type="checkbox"/>
+          <span asp-validation-for="RememberMe"></span>
+        </div>
+        <div>
+          <input type="submit" value="Войти" />
+        </div>
+      </form>
+
+    </div>
+
+  </div>
+</body>
+
+</html>
