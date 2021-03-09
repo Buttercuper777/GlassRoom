@@ -12,6 +12,7 @@ namespace GlassRoomWebApp.Domain
 
         public DbSet<TextField> TextFields { get; set; }
         public DbSet<ServiceItem> ServiceItems { get; set; }
+        public DbSet<CitiesList> CitiesOfList { get; set; } 
         
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

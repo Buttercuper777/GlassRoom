@@ -29,6 +29,7 @@ namespace GlassRoomWebApp
             //подключаем нужный функционал приложения в качестве сервисов
             services.AddTransient<ITextFieldsRepository, EFTextFieldsRepository>();
             services.AddTransient<IServiceItemsRepository, EFServiceItemsRepository>();
+            services.AddTransient<ICityListRepository, EFCitiesListRepository>();
             services.AddTransient<DataManager>();
 
 
@@ -63,7 +64,10 @@ namespace GlassRoomWebApp
             });
 
             //добавляем сервисы для контроллеров и представлений (MVC)
-            services.AddControllersWithViews()
+            services.AddControllersWithViews(x =>
+            {
+                x.Conventions.Add(new AdminAreaAuthorization("Admin", "AdminArea"));
+            })
                 //выставляем совместимость с asp.net core 3.0
                 .SetCompatibilityVersion(Microsoft.AspNetCore.Mvc.CompatibilityVersion.Version_3_0);
         }
@@ -85,7 +89,7 @@ namespace GlassRoomWebApp
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllerRoute("Admin", "{area:exist}/{controller=Home}/{action=Index}/{id?}"); 
+                endpoints.MapControllerRoute("admin", "{area:exists}/{controller=Home}/{action=Index}/{id?}");
                 endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
             });
         }

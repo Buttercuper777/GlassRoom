@@ -6,11 +6,13 @@ namespace GlassRoomWebApp.Domain
     {
         public ITextFieldsRepository TextFields { get; set; }
         public IServiceItemsRepository ServiceItems { get; set; }
+        public ICityListRepository CitiesList { get; set; }
 
-        public DataManager(ITextFieldsRepository textFieldsRepository, IServiceItemsRepository serviceItemsRepository)
+        public DataManager(ITextFieldsRepository textFieldsRepository, IServiceItemsRepository serviceItemsRepository, ICityListRepository cityListRepository)
         {
             TextFields = textFieldsRepository;
             ServiceItems = serviceItemsRepository;
+            CitiesList = cityListRepository;
         }
     }
 }

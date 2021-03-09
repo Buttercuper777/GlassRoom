@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GlassRoomWebApp.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20210304160015__initial")]
-    partial class _initial
+    [Migration("20210309120410__init")]
+    partial class _init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -20,6 +20,21 @@ namespace GlassRoomWebApp.Migrations
                 .HasAnnotation("ProductVersion", "3.1.11")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+            modelBuilder.Entity("GlassRoomWebApp.Domain.Entities.CitiesList", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("CityName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("CitiesOfList");
+                });
 
             modelBuilder.Entity("GlassRoomWebApp.Domain.Entities.ServiceItem", b =>
                 {
@@ -100,7 +115,7 @@ namespace GlassRoomWebApp.Migrations
                         {
                             Id = new Guid("63dc8fa6-07ae-4391-8916-e057f71239ce"),
                             CodeWord = "PageIndex",
-                            DateAdded = new DateTime(2021, 3, 4, 16, 0, 14, 291, DateTimeKind.Utc).AddTicks(3788),
+                            DateAdded = new DateTime(2021, 3, 9, 12, 4, 9, 674, DateTimeKind.Utc).AddTicks(9672),
                             Text = "Содержание заполняется администратором",
                             Title = "Главная"
                         },
@@ -108,7 +123,7 @@ namespace GlassRoomWebApp.Migrations
                         {
                             Id = new Guid("70bf165a-700a-4156-91c0-e83fce0a277f"),
                             CodeWord = "PageServices",
-                            DateAdded = new DateTime(2021, 3, 4, 16, 0, 14, 292, DateTimeKind.Utc).AddTicks(587),
+                            DateAdded = new DateTime(2021, 3, 9, 12, 4, 9, 675, DateTimeKind.Utc).AddTicks(2157),
                             Text = "Содержание заполняется администратором",
                             Title = "Наши услуги"
                         },
@@ -116,7 +131,7 @@ namespace GlassRoomWebApp.Migrations
                         {
                             Id = new Guid("4aa76a4c-c59d-409a-84c1-06e6487a137a"),
                             CodeWord = "PageContacts",
-                            DateAdded = new DateTime(2021, 3, 4, 16, 0, 14, 292, DateTimeKind.Utc).AddTicks(755),
+                            DateAdded = new DateTime(2021, 3, 9, 12, 4, 9, 675, DateTimeKind.Utc).AddTicks(2218),
                             Text = "Содержание заполняется администратором",
                             Title = "Контакты"
                         });
@@ -152,7 +167,7 @@ namespace GlassRoomWebApp.Migrations
                         new
                         {
                             Id = "44546e06-8719-4ad8-b88a-f271ae9d6eab",
-                            ConcurrencyStamp = "cd811ee9-1fc1-449f-a334-5c3d8266368c",
+                            ConcurrencyStamp = "9ad5e5ad-ad64-4d2a-a0e2-63694491ee12",
                             Name = "admin",
                             NormalizedName = "ADMIN"
                         });
@@ -251,13 +266,13 @@ namespace GlassRoomWebApp.Migrations
                         {
                             Id = "3b62472e-4f66-49fa-a20f-e7685b9565d8",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "2fdcabbd-385a-4b55-b559-0e874e123873",
+                            ConcurrencyStamp = "efc29af5-443f-4c0a-842e-b601a149d555",
                             Email = "my@email.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "MY@EMAIL.COM",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAEAACcQAAAAEEUrfCwMsoviosSp6elIybAJlUfIF54fxEAVbppCNwF9a99ihMIFYzgm8YLU+rPPcw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEP0W2Csbq38Z8atejHPNK/zFtOsuUH+2buemnIiSYhraZ12FhDNlGXJgyRx4NBDN6g==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,

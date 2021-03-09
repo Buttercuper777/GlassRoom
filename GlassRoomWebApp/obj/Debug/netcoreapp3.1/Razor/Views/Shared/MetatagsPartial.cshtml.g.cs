@@ -13,6 +13,20 @@ namespace AspNetCore
     using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
+#line 2 "D:\GlassRoom\GlassRoomWebApp\Views\_ViewImports.cshtml"
+using GlassRoomWebApp.Models;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 4 "D:\GlassRoom\GlassRoomWebApp\Views\_ViewImports.cshtml"
+using GlassRoomWebApp.Domain.Entities;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
 #line 1 "D:\GlassRoom\GlassRoomWebApp\Views\Shared\MetatagsPartial.cshtml"
 using GlassRoomWebApp.Service;
 
@@ -20,7 +34,7 @@ using GlassRoomWebApp.Service;
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"64a45baad610cbd873167657d2347b3c5099506b", @"/Views/Shared/MetatagsPartial.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"6a94a7d34d3ce7aac667ff1ebc5caf91fa616ec2", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"e22f6889b47453eb0394a759193361d141752a05", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared_MetatagsPartial : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998

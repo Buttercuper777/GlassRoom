@@ -158,3 +158,10 @@ D:\GlassRoom\GlassRoomWebApp\obj\Debug\netcoreapp3.1\GlassRoomWebApp.MvcApplicat
 D:\GlassRoom\GlassRoomWebApp\obj\Debug\netcoreapp3.1\GlassRoomWebApp.Views.pdb
 D:\GlassRoom\GlassRoomWebApp\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
 D:\GlassRoom\GlassRoomWebApp\bin\Debug\netcoreapp3.1\appsettings.staging.json
+D:\GlassRoom\GlassRoomWebApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\CitiesPartial.cshtml.g.cs
+D:\GlassRoom\GlassRoomWebApp\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs
+D:\GlassRoom\GlassRoomWebApp\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Home\Index.cshtml.g.cs
+D:\GlassRoom\GlassRoomWebApp\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\_ViewImports.cshtml.g.cs
+D:\GlassRoom\GlassRoomWebApp\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\_ViewStart.cshtml.g.cs
+D:\GlassRoom\GlassRoomWebApp\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Shared\_AdminLayout.cshtml.g.cs
+D:\GlassRoom\GlassRoomWebApp\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Shared\_CssPartialAdmin.cshtml.g.cs
