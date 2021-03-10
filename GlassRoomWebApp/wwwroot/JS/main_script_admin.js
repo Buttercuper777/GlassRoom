@@ -70,7 +70,7 @@ function ready()
     });
 }
 
-$(document).ready(function(){ 
+$(document).ready(function () { 
     $(function() {
         ChangeClockVal();
         ready();

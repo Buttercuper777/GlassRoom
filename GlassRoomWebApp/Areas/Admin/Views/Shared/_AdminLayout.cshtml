@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width = 1170">
 
-    <script src="~/js/jquery.min.js"></script>
+    <script src="~/JS/JQ.js"></script>
     <script src="~/js/main_script_admin.js"></script>
 </head>
 <body>
@@ -59,8 +59,9 @@
                 <li class="not_available"><a>Галерея</a></li>
                 <li class="not_available"><a>О нас</a></li>
             </ul>
-
-            <input id="LogOutButton" type="submit" value="Выйти">
+            <form asp-area="" asp-controller="Account" asp-action="Logout" method="post">
+                <input id="LogOutButton" type="submit" value="Выйти">
+            </form>
         </div>
 
         <div class="MainContentAdmin">

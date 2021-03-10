@@ -34,7 +34,7 @@ using GlassRoomWebApp.Domain.Entities;
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"4d502abcd1ea5264266f1b29d72b9d7ddf6889a5", @"/Views/Shared/CatalogPartial.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"e22f6889b47453eb0394a759193361d141752a05", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"8c35f98f2b808f52e4c402181d3550850a05c629", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared_CatalogPartial : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998

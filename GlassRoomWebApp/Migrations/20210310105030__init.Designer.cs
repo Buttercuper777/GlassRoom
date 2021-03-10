@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GlassRoomWebApp.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20210309120410__init")]
+    [Migration("20210310105030__init")]
     partial class _init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -115,7 +115,7 @@ namespace GlassRoomWebApp.Migrations
                         {
                             Id = new Guid("63dc8fa6-07ae-4391-8916-e057f71239ce"),
                             CodeWord = "PageIndex",
-                            DateAdded = new DateTime(2021, 3, 9, 12, 4, 9, 674, DateTimeKind.Utc).AddTicks(9672),
+                            DateAdded = new DateTime(2021, 3, 10, 10, 50, 30, 305, DateTimeKind.Utc).AddTicks(7664),
                             Text = "Содержание заполняется администратором",
                             Title = "Главная"
                         },
@@ -123,7 +123,7 @@ namespace GlassRoomWebApp.Migrations
                         {
                             Id = new Guid("70bf165a-700a-4156-91c0-e83fce0a277f"),
                             CodeWord = "PageServices",
-                            DateAdded = new DateTime(2021, 3, 9, 12, 4, 9, 675, DateTimeKind.Utc).AddTicks(2157),
+                            DateAdded = new DateTime(2021, 3, 10, 10, 50, 30, 306, DateTimeKind.Utc).AddTicks(1365),
                             Text = "Содержание заполняется администратором",
                             Title = "Наши услуги"
                         },
@@ -131,7 +131,7 @@ namespace GlassRoomWebApp.Migrations
                         {
                             Id = new Guid("4aa76a4c-c59d-409a-84c1-06e6487a137a"),
                             CodeWord = "PageContacts",
-                            DateAdded = new DateTime(2021, 3, 9, 12, 4, 9, 675, DateTimeKind.Utc).AddTicks(2218),
+                            DateAdded = new DateTime(2021, 3, 10, 10, 50, 30, 306, DateTimeKind.Utc).AddTicks(1453),
                             Text = "Содержание заполняется администратором",
                             Title = "Контакты"
                         });
@@ -167,7 +167,7 @@ namespace GlassRoomWebApp.Migrations
                         new
                         {
                             Id = "44546e06-8719-4ad8-b88a-f271ae9d6eab",
-                            ConcurrencyStamp = "9ad5e5ad-ad64-4d2a-a0e2-63694491ee12",
+                            ConcurrencyStamp = "7e6b58d6-f17f-45aa-a2c7-fb5db63e2f7d",
                             Name = "admin",
                             NormalizedName = "ADMIN"
                         });
@@ -266,13 +266,13 @@ namespace GlassRoomWebApp.Migrations
                         {
                             Id = "3b62472e-4f66-49fa-a20f-e7685b9565d8",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "efc29af5-443f-4c0a-842e-b601a149d555",
+                            ConcurrencyStamp = "c35f57b0-929f-4734-91d9-0525daf9737b",
                             Email = "my@email.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "MY@EMAIL.COM",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAEAACcQAAAAEP0W2Csbq38Z8atejHPNK/zFtOsuUH+2buemnIiSYhraZ12FhDNlGXJgyRx4NBDN6g==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEPOM9oERnQcDRJByrWzTEohejAo8NLMCKzx+JFUFjbFBiVrMkOwFcH43+4Ps/jGJ6Q==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
