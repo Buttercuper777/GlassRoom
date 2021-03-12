@@ -1,12 +1,12 @@
-﻿<div class="ContentSpace">
+﻿@model TextField
+
+
+<div class="ContentSpace">
     <div class="leftContent">
         <div class="HeaderText">
-            <h1>СТЕКЛО ПРО ЮГ :</h1>
-            <h2>
-                ОСТЕКЛЕНИЕ ЛЮБОЙ<br>
-                СЛОЖНОСТИ ПО<br>
-                ЛУЧШЕЙ ЦЕНЕ!
-            </h2>
+            <h1>@Model.Title</h1>
+            <h2>@Model.Text</h2>
+
         </div>
 
         <a href="#" class="button" id="CalcBtn">

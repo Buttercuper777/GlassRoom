@@ -1,4 +1,11 @@
-﻿<!DOCTYPE html>
+﻿@model TextField
+
+@{
+    ViewBag.Title = Model.MetaTitle;
+    ViewBag.Description = Model.MetaDescription;
+    ViewBag.Keywords = Model.MetaKeywords;
+}
+<!DOCTYPE html>
 <html>
 <head>
     @await Html.PartialAsync("MetatagsPartial")
@@ -125,8 +132,8 @@
 
     <!------------------------ CATALOG SPACE -------------------->
 
-   @await Html.PartialAsync("CatalogPartial")
-   @await Html.PartialAsync("FooterPartial")
+    @await Html.PartialAsync("CatalogPartial")
+    @await Html.PartialAsync("FooterPartial")
 
     <div class="home_button_anchor">
         <a href="#header_anchor">Вверх</a>

@@ -1,0 +1,22 @@
+﻿<div class="MainColAdmin">
+    <h1>Страницы сайта</h1>
+
+    <ul>
+        <li class="available"><a asp-area="Admin" asp-controller="TextFields" asp-action="Edit" asp-route-codeWord="PageIndex">Главная</a></li>
+        <li class="available"><a asp-area="Admin" asp-controller="ServicesList" asp-action="List">Услуги</a></li>
+        <li class="available"><a href="">Города</a></li>
+    </ul>
+
+    <h1>Дополнительно</h1>
+
+    <ul>
+        <li class="not_available"><a>Заказы</a></li>
+        <li class="not_available"><a>Калькулятор</a></li>
+        <li class="not_available"><a>Контакты</a></li>
+        <li class="not_available"><a>Галерея</a></li>
+        <li class="not_available"><a>О нас</a></li>
+    </ul>
+    <form asp-area="" asp-controller="Account" asp-action="Logout" method="post">
+        <input id="LogOutButton" type="submit" value="Выйти">
+    </form>
+</div>

@@ -378,7 +378,27 @@ transition: 0.3s;
     font-family: GBold;
     margin-bottom: 10px;
 }
-.MainContentAdmin b{
+
+.MainContentAdmin input[type="password"] {
+    min-width: 320px;
+    font-size: 16px;
+    padding: 5px 9px;
+    outline: none;
+    margin-left: 20px;
+    font-family: GBold;
+    margin-bottom: 10px;
+}
+
+.MainContentAdmin .loginLabelClass{
+    margin-left: 20px;
+    float: left;
+    width: 100%;
+}
+.MainContentAdmin .loginChBoxClass{
+    margin-left: 20px;
+}
+
+.MainContentAdmin b {
     color: rgb(223, 58, 58);
     font-family: GMed;
 }
