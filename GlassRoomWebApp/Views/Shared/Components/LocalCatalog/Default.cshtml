@@ -1,0 +1,24 @@
+﻿@model IQueryable<ServiceItem>
+<section id="catalog_anchor">
+    <div class="catalog_body">
+        <h1>Каталог услуг:</h1>
+        @if (Model?.Any() == true)
+        {
+            <ul class="catalog_grid">
+                @foreach (ServiceItem entity in Model)
+                {
+                    <li>
+                        <div class="catalog_grid_el_text">
+                            <a asp-area="" asp-controller="Services" asp-action="Index" asp-route-id="@entity.Id" style="text-decoration: none">
+                                <h2>@entity.Title</h2>
+                                <b>@entity.Subtitle</b>
+                            </a>
+                        </div>
+
+                        <img src="~/images/@entity.TitleImagePath">
+                    </li>
+                }
+            </ul>
+        }
+    </div>
+</section>

@@ -21,20 +21,27 @@ using GlassRoomWebApp.Models;
 #nullable disable
 #nullable restore
 #line 3 "D:\GlassRoom\GlassRoomWebApp\Views\_ViewImports.cshtml"
-using GlassRoomWebApp.Service;
+using GlassRoomWebApp.Models.ViewComponents;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 4 "D:\GlassRoom\GlassRoomWebApp\Views\_ViewImports.cshtml"
+using GlassRoomWebApp.Service;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 5 "D:\GlassRoom\GlassRoomWebApp\Views\_ViewImports.cshtml"
 using GlassRoomWebApp.Domain.Entities;
 
 #line default
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"b8d2e23495e504839c21eaa5076cfe0dc964c47e", @"/Views/Shared/CitiesPartial.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"8c35f98f2b808f52e4c402181d3550850a05c629", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"2973ce7072490036c84e0eb25e11e581debdf236", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared_CitiesPartial : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998

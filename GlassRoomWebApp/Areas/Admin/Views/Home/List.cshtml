@@ -1,0 +1,36 @@
+﻿@model IQueryable<ServiceItem>
+
+
+<h2>Услуги (редактирование):</h2>
+
+<div class="globalEditSpace">
+    <form asp-area="Admin" asp-controller="ServiceItems" asp-action="Edit" asp-route-id="" method="post">
+        <input type="submit" value="Добавить" />
+    </form>
+    <input type="submit" id="selectAll" value="Выделить все" />
+    <input type="submit" value="Удалить" />
+</div>
+
+<ul>
+    @if (Model.Any())
+    {
+            @foreach (ServiceItem entity in Model)
+            {
+                <li>
+                    <input type="checkbox"><a asp-area="" asp-controller="Services" asp-action="Index" asp-route-id="@entity.Id" target="_blank">@($"{entity.Title}")</a>
+
+                    <a asp-area="Admin" asp-controller="ServiceItems" asp-action="Edit" asp-route-id="@entity.Id">
+                    <input type="submit" value="🖊" />
+                    </a>
+
+
+                    <form style="display: inline-block;" id="@entity.Id" asp-area="Admin" asp-controller="ServiceItems" asp-action="Delete" method="post">
+                        <input type="hidden" name="id" value="@entity.Id">
+                        <input type="submit" name="delButton" value="🗑" onclick="document.getElementById('form-@entity.Id')" />
+                    </form>
+
+                </li>
+
+            }
+    }
+</ul>

@@ -15,53 +15,64 @@
             <input type="hidden" asp-for="TitleImagePath" />
 
             <div asp-validation-summary="All"></div>
-            <div class="div-box">
-                <label asp-for="Title"></label>
-                <input asp-for="Title" />
+
+
+            <div>
+                <h3><label asp-for="Title"></label></h3>
+                <input asp-for="Title" value="@(Model.Title)">
                 <span asp-validation-for="Title"></span>
             </div>
-            <div class="div-box">
-                <label asp-for="Subtitle"></label>
-                <input asp-for="Subtitle" />
+
+            <div>
+                <h3><label asp-for="Subtitle"></label></h3>
+                <input asp-for="Subtitle" value="@(Model.Subtitle)" placeholder="Купить в Краснодаре">
                 <span asp-validation-for="Subtitle"></span>
             </div>
-            <div class="div-box">
-                <label asp-for="Text"></label>
-                <textarea asp-for="Text"></textarea>
+
+
+
+            <div>
+                <b>*Используй &lt;br/&gt; чтобы задать переносы строки!<br />Пример:<br />Lorem ipsum tempus: nulla tempus, &lt;br/&gt;<br/>enim adipiscing vitae...</b>
+                <h3><label asp-for="Text"></label></h3>
+                <textarea asp-for="Text" cols="78" rows="15">@(Model.Text)</textarea>
                 <span asp-validation-for="Text"></span>
             </div>
-            <div class="div-box">
-                <label asp-for="TitleImagePath"></label>
-                <input type="file" name="titleImageFile" id="titleImageFile" />
+
+            <div class="inputFileBlock">
+                <input type="file" name="titleImageFile" class="inputFile" id="titleImageFile" />
+                <label for="titleImageFile"><span>Добавить изображение</span></label><br><br/><br />
                 <div>
-                    <img class="img-block" src="~/images/@Model.TitleImagePath" />
+                    <img class="img-block" src="~/images/@Model.TitleImagePath" width="200px"/>
                 </div>
             </div>
-            <div class="div-box">
-                <label asp-for="MetaTitle"></label>
-                <input asp-for="MetaTitle" />
+
+            <div>
+                <h3><label asp-for="MetaTitle"></label></h3>
+                <input asp-for="MetaTitle" value="@(Model.MetaTitle)">
                 <span asp-validation-for="MetaTitle"></span>
             </div>
-            <div class="div-box">
-                <label asp-for="MetaDescription"></label>
-                <input asp-for="MetaDescription" />
+
+            <div>
+                <h3><label asp-for="MetaDescription"></label></h3>
+                <textarea asp-for="MetaDescription" cols="70" rows="8" placeholder="Description">@(Model.MetaDescription)</textarea>
                 <span asp-validation-for="MetaDescription"></span>
             </div>
-            <div class="div-box">
-                <label asp-for="MetaKeywords"></label>
-                <input asp-for="MetaKeywords" />
+
+            <div>
+                <h3><label asp-for="MetaKeywords"></label></h3>
+                <textarea asp-for="MetaKeywords" cols="70" rows="8" placeholder="Keywords">@(Model.MetaKeywords)</textarea>
                 <span asp-validation-for="MetaKeywords"></span>
             </div>
-            <input type="submit" value="Сохранить" />
+            <br><input type="submit" value="Сохранить">
         </form>
     </div>
 </div>
 
 
 
-<script>
+<!--<script>
     window.onload = function() {
         var newCKEdit = CKEDITOR.replace('@Html.IdFor(x=>x.Text)');
         newCKEdit.updateElement();
     }
-</script>
+</script>-->

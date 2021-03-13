@@ -6,18 +6,15 @@
 
   <ItemGroup>
     <Content Remove="appsettings.production.json" />
-    <Content Remove="Areas\Admin\Views\Home2\SIndex.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Models\ViewComponents\" />
     <Folder Include="wwwroot\images\" />
     <Folder Include="wwwroot\font\" />
   </ItemGroup>
 
   <ItemGroup>
     <None Include="appsettings.production.json" />
-    <None Include="Areas\Admin\Views\Home2\SIndex.cshtml" />
     <None Include="Areas\Admin\Views\Home\Index.cshtml" />
     <None Include="Areas\Admin\Views\ServiceItems\Edit.cshtml" />
     <None Include="Areas\Admin\Views\Shared\_AdminLayout.cshtml" />

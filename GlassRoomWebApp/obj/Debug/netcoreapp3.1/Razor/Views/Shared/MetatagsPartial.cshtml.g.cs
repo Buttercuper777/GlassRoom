@@ -20,7 +20,14 @@ using GlassRoomWebApp.Models;
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "D:\GlassRoom\GlassRoomWebApp\Views\_ViewImports.cshtml"
+#line 3 "D:\GlassRoom\GlassRoomWebApp\Views\_ViewImports.cshtml"
+using GlassRoomWebApp.Models.ViewComponents;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 5 "D:\GlassRoom\GlassRoomWebApp\Views\_ViewImports.cshtml"
 using GlassRoomWebApp.Domain.Entities;
 
 #line default
@@ -34,7 +41,7 @@ using GlassRoomWebApp.Service;
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"60547fbaa1c8f24390088b2b2d5c6790600c1939", @"/Views/Shared/MetatagsPartial.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"8c35f98f2b808f52e4c402181d3550850a05c629", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"2973ce7072490036c84e0eb25e11e581debdf236", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared_MetatagsPartial : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998

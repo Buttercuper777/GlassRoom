@@ -27,9 +27,9 @@
                 </div>
 
                 <div>
-                    
+                    <b>*Используй &lt;br/&gt; чтобы задать переносы строки!<br />Пример:<br />Lorem ipsum tempus: nulla tempus, &lt;br/&gt;<br />enim adipiscing vitae...</b>
                     <h3><label asp-for="Text"></label></h3>
-                    <textarea asp-for="Text" cols="70" rows="8" placeholder="ОСТЕКЛЕНИЕ ЛЮБОЙ СЛОЖНОСТИ ПО ЛУЧШЕЙ ЦЕНЕ!"></textarea>
+                    <textarea asp-for="Text" cols="70" rows="8" placeholder="ОСТЕКЛЕНИЕ ЛЮБОЙ СЛОЖНОСТИ ПО ЛУЧШЕЙ ЦЕНЕ!">@(Model.Text)</textarea>
                     <span asp-validation-for="Text"></span>
       
                 </div>

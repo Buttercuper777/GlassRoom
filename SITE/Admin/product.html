@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Главная | Стекло Про Юг</title>
+        <link href="css/mian.css" rel="stylesheet">
+        <link href="css/catalog.css" rel="stylesheet">
+        <link href="css/animate.css" rel="stylesheet">
+        <link href="css/adapt.css" rel="stylesheet">
+        <link href="css/product.css" rel="stylesheet">
+        <meta charset="utf-8">
+        <meta name = "viewport" content = "width = device-width">
+
+        <script src="JS/JQ.js"></script>
+        <script src="JS/jquery.maskedinput.js"></script>
+        <script src="JS/main_script.js"></script>
+        <script src="JS/animate_pages.js"></script>
+	</head>
+	<body>   
+        <header id="header_anchor">
+            <div id="ChooseForm">
+              <a id = "border_button">border</a>
+              <a id = "shower_button">shower</a>
+              <a id = "more_button">more</a>
+            </div>
+            <div id="BackWall">
+              <a>Нажми, чтобы закрыть меню.</a>
+            </div>
+
+            <div class="popup_bg">
+
+              <div class="PlacePop">
+                <img src="images/close.svg" class="close_svg" width="10px">
+                <div class="chooseBlock">
+                <div class="selected">
+                  <a>Краснодар</a>
+                </div>
+                <div class="PlaceList">
+                  <ul>
+                    <li><a href="">Краснодар</a></li>
+                    <li><a href="">Сочи</a></li>
+                    <li><a href="">Новороссийск</a></li>
+                    <li><a href="">Армавир</a></li>
+                    <li><a href="">Ейск</a></li>
+                    <li><a href="">Туапсе</a></li>
+                    <li><a href="">Крымск</a></li>
+                    <li><a href="">Анапа</a></li>
+                    <li><a href="">Тимашевск</a></li>
+                    <li><a href="">Геленджик</a></li>
+                  </ul>
+                </div>
+                <div class="CheckPlace">
+                  <a class="aboutPlace">Узнать о моем городе...</a>
+                </div>
+                </div>
+                <div class="aboutBlock">
+                  <a>Если Ваш город входит в состав<br>Южного Федерального округа,<br>то наши двери открыты и для вас!</a>
+                  <h3>Вы можете связаться с нами:</h3>
+                    <div class="imgs_about">
+                      <img class ="ico_img_about" src="images/mail_ico.svg" width="90%"  id = "mail_svg"  onclick="myFunction(mail_copy)">
+                      <img class ="ico_img_about" src="images/call_ico.svg" width="100%" id = "call_svg">
+                      <img class ="ico_img_about" src="images/phone_ico.svg"width="90%"  id = "phone_svg">
+                    </div>
+                    <h4 id="about_choosed_type">...</h4>
+                    <!--<a class="back_click" style="font-size: 18px; color:#9295DE">Назад...</a>-->
+                  </div>
+              </div>
+
+              <div class="popup">
+                <img src="images/close.svg" class="close_svg" width="13px">
+
+                <center><a>Оставь номер тут, а мы<br>перезвоним!</a></center>
+
+                <div class="input">
+                  <div class="pop_input">
+                    <input type="text" placeholder="Имя:"></input>
+                  </div>
+  
+                  <div class="pop_input">
+                    <input type="phone" placeholder="Телефон:"></input>
+                  </div>
+
+                  <div class="pop_input">
+                    <input type="submit"></input>
+                  </div>
+                </div>
+                <div class="mail_lb">
+                  <a>Также можно написать нам на почту:</a>
+                  <a id="mail_copy" href="mailto:steklopro23@mail.ru">steklopro23@mail.ru</a>
+                </div>
+              </div>
+
+            </div>
+            
+            <div class="mob_header">
+                <img src="images/logo.svg" alt="" height="70px" id = "mainLogoMob" alt=""> 
+
+                <div class="headerNavMob">
+                  <ul>
+                    <li><a href="#" class="headerNavLinkMob" id="contacts_menu_click"><div class="imgNavMob imgNavMob1"></div>Рассчитать</a></li>
+                    <li><a href="#catalog_anchor" class="headerNavLinkMob"><div class="imgNavMob imgNavMob2"></div>Каталог</a></li>
+                    <li><a href="#" class="headerNavLinkMob"><div class="imgNavMob imgNavMob3"></div>Галерея</a></li>
+                    <li><a href="#" class="headerNavLinkMob"><div class="imgNavMob imgNavMob4"></div>О нас</a></li>
+                  </ul>
+                </div>
+
+            </div>
+
+            <div class="headerNavigationBlock">
+                <a href="#" class="headerLogo">
+                    <img src="images/logo.svg" alt="" height="70px" id = "mainLogo" alt=""> 
+                    Стекло<br>Про<br>Юг
+                </a>
+
+                <div class="headerNav">
+                <a href="#" class="headerNavLink">Главная</a>
+                <a href="#" class="headerNavLink" id="headerNavLinkCalc">Калькулятор цен</a>
+                <a href="#catalog_anchor" class="headerNavLink" id="main_link">Каталог</a>
+                <a href="#" class="headerNavLink" id="contacts_menu_click">Контакты</a>
+                <a          class="headerNavLink" style ="color: #fff;" >|</a>
+                <a          class="headerNavLink" style ="color: #9295DE;">+7 (918) 982-91-53</a>
+                </div>
+
+                <a class="headerPlaceBtn" href="#">
+                    Краснодар
+                    <img src="images/pointer.svg" width="14px" alt="">
+                </a>
+            </div>
+
+<!------------------------------------Product space------------------------------------>
+
+        <div class="product_space">
+
+          <div class="list_img">
+            <ul>
+              <li><img src="images/Catalog/Стеклянные-перегородки-в-Краснодаре.jpg"></li>
+              <li><img src="images/Catalog/Трансформируемые-акустические-перегородки-в-Краснодаре.jpg"></li>
+              <li><img src="images/Catalog/Стеклянные-лестницы-в-Краснодаре.jpg"></li>
+            </ul>
+          </div>
+
+          <div class="img_product">
+            <img src="" alt="Ошибка">
+          </div>
+
+      <div class="about_product">
+          <div class="prod_name">
+            <h1>Стеклянные перегородки:</h1>
+            <a href="#">Вернуться назад</a>
+          </div>
+  
+            <div class="product_description">
+              <p></p>
+            
+              <div class="sub_product_description">
+                <input type="submit" id="CallBtn" value="Заказать звонок">
+                <input type="submit" id="contacts_menu_click" value="Связаться самостоятельно">
+              </div>
+
+            </div>
+
+        </div>
+      </div>
+
+      <section id="catalog_anchor">
+        <div class="catalog_body">
+          <h1>Другие наши услуги:</h1>
+          <ul class= "catalog_grid">
+            <li>
+              <div class="catalog_grid_el_text">
+                <a><h2>Стеклянные лестницы</h2>
+                  <b>Купить в Краснодаре</b></a>
+              </div>
+                <img src="images/Catalog/Стеклянные-лестницы-в-Краснодаре.jpg">  
+            </li>
+
+            <li>
+              <div class="catalog_grid_el_text">
+                <a><h2>Стеклянные перегородки</h2>
+                  <b>Купить в Краснодаре</b></a>
+              </div>
+                <img src="images/Catalog/Стеклянные-перегородки-в-Краснодаре.jpg">  
+            </li>
+
+            <li>
+              <div class="catalog_grid_el_text">
+                <a><h2>Стеклянные полки</h2>
+                  <b>Купить в Краснодаре</b></a>
+              </div>
+                <img src="images/Catalog/Стеклянные-полки-и-тросовые-системы-в-Краснодаре.jpg">  
+            </li>
+
+            <li>
+              <div class="catalog_grid_el_text">
+                <a><h2>Трансформируемые акустические перегородки</h2>
+                  <b>Купить в Краснодаре</b></a>
+              </div>
+                <img src="images/Catalog/Трансформируемые-акустические-перегородки-в-Краснодаре.jpg">  
+            </li>
+          </ul>
+          
+          <input type="submit" value="Смотреть ещё">
+        </div>
+      </section>
+
+
+
+        </header>
+          
+
+        <footer>
+          <div class="footer_addres">
+            <img src="images/home_address_64px.png">
+            <a>г. Краснодар</a>
+            <p>Ул.Красная, Д.145/1, Оф.10</p>
+          </div>
+      
+          <div class="footer_content">
+            <h3>Мы в сойиальных сетях:</h3>
+            <ul class="soc_net_ITEMS_footer">
+              <li class="soc_net_icon_footer"><a href="https://www.instagram.com/steklovkrasnodare/" target="_blank"><img src="images/social_icons/instagram.png"></a></li>
+              <li class="soc_net_icon_footer"><a><img src="images/social_icons/wa.png"></a></li>
+              <li class="soc_net_icon_footer"><a><img src="images/social_icons/email.png"></a></li>
+              <li class="soc_net_icon_footer"><a><img src="images/social_icons/phone.png"></a></li>
+            </ul>
+
+            <ul class="menu_ITEMS_footer">
+              <li class="menu_item_footer"><a href="#">Главная</a></li>
+              <li class="menu_item_footer"><a href="#">Рассчитать</a></li>
+              <li class="menu_item_footer"><a href="#">Каталог</a></li>
+              <li class="menu_item_footer"><a href="#">Галерея</a></li>
+              <li class="menu_item_footer"><a href="#">О нас</a></li>
+            </ul>
+          </div>
+          
+          <b>©2021 Все права защищены - ООО «СТЕКЛО В КРАСНОДАРЕ»</b>
+        </footer>
+
+        <div class="home_button_anchor">
+          <a href="#header_anchor">Вверх</a>
+        </div>
+
+        </body>
+</html>

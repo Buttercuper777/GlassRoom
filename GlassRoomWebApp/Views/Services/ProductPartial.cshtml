@@ -1,0 +1,44 @@
+﻿@model ServiceItem
+@{
+    ViewBag.Title = Model.MetaTitle;
+    ViewBag.Description = Model.MetaDescription;
+    ViewBag.Keywords = Model.MetaKeywords;
+}
+
+
+<link href="~/css/product.css" rel="stylesheet" asp-append-version="true" />
+
+<div class="product_space">
+
+    <div class="list_img">
+        <ul>
+            <li><img src="~/images/@Model.TitleImagePath"></li>
+           <!-- <li><img src="~/images/@Model.TitleImagePath"></li>
+            <li><img src="~/images/@Model.TitleImagePath"></li> -->
+        </ul>
+    </div>
+
+    <div class="img_product">
+        <img src="" alt="Ошибка">
+    </div>
+
+    <div class="about_product">
+        <div class="prod_name">
+            <h1>@Model.Title:</h1>
+            <a href="#">@Model.Subtitle</a>
+        </div>
+
+        <div class="product_description">
+            <p>
+                @Html.Raw(Model.Text)
+            </p>
+
+            <div class="sub_product_description">
+                <input type="submit" id="CallBtn" value="Заказать звонок">
+                <input type="submit" id="contacts_menu_click" value="Связаться самостоятельно">
+            </div>
+
+        </div>
+
+    </div>
+</div>

@@ -107,30 +107,30 @@ header{
     transition: 0.3s;
 }
 
-.OrderHeaderButton{                                         /*Order icon*/
-    background:url(../images/AdminHeaderIcons.png);
+.OrderHeaderButton { /*Order icon*/
+    background: url(../images/admin_images/AdminHeaderIcons.png);
     background-size: 100%;
     background-position-x: 50%;
     background-position-y: 100%;
     opacity: 0.5;
 }
 
-.PrintHeaderButton{                                        /*Print icon*/
-    background:url(../images/AdminHeaderIcons.png);
+.PrintHeaderButton { /*Print icon*/
+    background: url(../images/admin_images/AdminHeaderIcons.png);
     background-size: 100%;
     background-position-x: 50%;
     background-position-y: 0%;
 }
 
-.TrnsltHeaderButton{                                        /*Trnslt icon*/
-    background:url(../images/AdminHeaderIcons.png);
+.TrnsltHeaderButton { /*Trnslt icon*/
+    background: url(../images/admin_images/AdminHeaderIcons.png);
     background-size: 100%;
     background-position-x: 50%;
     background-position-y: 34%;
 }
 
-.NoteHeaderButton{                                        /*Note icon*/
-    background:url(../images/AdminHeaderIcons.png);
+.NoteHeaderButton { /*Note icon*/
+    background: url(../images/admin_images/AdminHeaderIcons.png);
     background-size: 100%;
     background-position-x: 50%;
     background-position-y: 67%;
@@ -514,7 +514,7 @@ transition: 0.3s;
     outline: none;
     background: var(--bl_color);
     font-family: GBold;
-    font-size:16;
+    font-size:16px;
     color: #fff;
     float: left;   
     cursor: pointer;

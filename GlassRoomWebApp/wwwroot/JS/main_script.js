@@ -8,7 +8,22 @@ jQuery(function($){
     $temp.val($(element).text()).select();
     document.execCommand("copy");
     $temp.remove();
-  }
+}
+
+function HeaderNavFunc() {
+
+    var urlStr = window.location.href;
+
+    if (urlStr.indexOf('Services') != -1) {
+        $("#main_link").removeAttr("id");
+        $(".headerNav a:contains('Каталог')").attr("id", "main_link");
+    }
+
+    else {
+        $("#main_link").removeAttr("id");
+        $(".headerNav a:contains('Главная')").attr("id", "main_link");
+    }
+}
 
 
 $(document).ready(function() {
@@ -142,5 +157,6 @@ $(document).ready(function() {
         }
     });
 
+    HeaderNavFunc();
 
 });

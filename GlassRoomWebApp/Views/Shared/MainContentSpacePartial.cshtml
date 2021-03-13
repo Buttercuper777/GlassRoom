@@ -1,11 +1,15 @@
 ﻿@model TextField
-
+@{
+    ViewBag.Title = Model.MetaTitle;
+    ViewBag.Description = Model.MetaDescription;
+    ViewBag.Keywords = Model.MetaKeywords;
+}
 
 <div class="ContentSpace">
     <div class="leftContent">
         <div class="HeaderText">
             <h1>@Model.Title</h1>
-            <h2>@Model.Text</h2>
+            <h2>@Html.Raw(Model.Text)</h2>
 
         </div>
 
@@ -14,7 +18,7 @@
         </a>
         <a href="#" class="button" id="CallBtn">
             Заказать звонок
-            <img src="images/phone.png" width="25px" alt="">
+            <img src="~/images/phone.png" width="25px" alt="">
         </a>
         <a id="phoneMobLabel">+7 (918) 982-91-53</a>
     </div>
@@ -294,7 +298,7 @@
 
 
     <a class="buttonBtm" href="#catalog_anchor">
-        <img src="images/down.png" height="92%" alt="">
+        <img src="~/images/down.png" height="92%" alt="">
         Листай вниз!
     </a>
 </div>

@@ -21,20 +21,27 @@ using GlassRoomWebApp.Models;
 #nullable disable
 #nullable restore
 #line 3 "D:\GlassRoom\GlassRoomWebApp\Views\_ViewImports.cshtml"
-using GlassRoomWebApp.Service;
+using GlassRoomWebApp.Models.ViewComponents;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 4 "D:\GlassRoom\GlassRoomWebApp\Views\_ViewImports.cshtml"
+using GlassRoomWebApp.Service;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 5 "D:\GlassRoom\GlassRoomWebApp\Views\_ViewImports.cshtml"
 using GlassRoomWebApp.Domain.Entities;
 
 #line default
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"ec2c47cc692fbb560aba79e417162135f2fb219c", @"/Views/Shared/Admin/HeaderAdmin.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"8c35f98f2b808f52e4c402181d3550850a05c629", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"2973ce7072490036c84e0eb25e11e581debdf236", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared_Admin_HeaderAdmin : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("src", new global::Microsoft.AspNetCore.Html.HtmlString("~/images/admin_images/LogoAdmin.png"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -66,7 +73,7 @@ using GlassRoomWebApp.Domain.Entities;
         public async override global::System.Threading.Tasks.Task ExecuteAsync()
         {
             WriteLiteral("<header>\r\n    <div class=\"LogoBlockHeader\">\r\n        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "ec2c47cc692fbb560aba79e417162135f2fb219c4773", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "ec2c47cc692fbb560aba79e417162135f2fb219c4954", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -90,7 +97,7 @@ using GlassRoomWebApp.Domain.Entities;
             BeginWriteAttribute("href", " href=\"", 529, "\"", 536, 0);
             EndWriteAttribute();
             WriteLiteral("></a></li>\r\n        </ul>\r\n\r\n        <div class=\"ClockDateHeader\">\r\n            <h1 id=\"ClockHeader\">00:00:00</h1>\r\n            <h2 id=\"DateHeader\">ДД, 0.00 0000</h2>\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"UserBlockHeader\">\r\n        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "ec2c47cc692fbb560aba79e417162135f2fb219c7001", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "ec2c47cc692fbb560aba79e417162135f2fb219c7182", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();

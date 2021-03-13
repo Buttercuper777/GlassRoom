@@ -13,9 +13,9 @@ namespace GlassRoomWebApp.Areas.Admin.Controllers
             this.dataManager = dataManager;
         }
 
-        public IActionResult List()
+        public ActionResult Index()
         {
-            return View(dataManager.ServiceItems.GetServiceItems());
+            return View();
         }
     }
 }
