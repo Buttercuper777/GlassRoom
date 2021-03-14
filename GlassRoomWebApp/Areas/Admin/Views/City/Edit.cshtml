@@ -1,0 +1,25 @@
+﻿@model CitiesList
+@{
+    string strTitle = "Редактировать запись";
+    ViewBag.Title = strTitle;
+}
+
+<div>
+    <h2>@strTitle:</h2>
+    <div>
+        <form asp-area="Admin" asp-controller="City" asp-action="Edit" method="post" enctype="multipart/form-data">
+
+            <div class="EditSpace">
+                <div asp-validation-summary="All"></div>
+
+                <div>
+                    <h3><label asp-for="CityName"></label></h3>
+                    <input asp-for="CityName" value="@(Model.CityName)">
+                    <span asp-validation-for="CityName"></span>
+                </div>
+
+                <input type="submit" value="Сохранить">
+            </div>
+        </form>
+    </div>
+</div>

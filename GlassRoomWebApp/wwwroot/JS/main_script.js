@@ -30,27 +30,34 @@ $(document).ready(function() {
    
     $('#border_svg, #Front, #Back, .cls-bordder-1, .cls-bordder-2, .cls-bordder-3, .cls-bordder-4, .cls-bordder-5, .cls-bordder-6, .cls-bordder-7, .cls-bordder-8, .cls-bordder-9, .cls-bordder-10, .cls-bordder-11, .cls-bordder-12, .cls-bordder-13, .cls-bordder-14').addClass('active');
     
-    $("#CalcBtn, #headerNavLinkCalc").click(function (e) { 
+    /*$("#CalcBtn, #headerNavLinkCalc").click(function (e) { 
         $('.headerNavigationBlock, #ChooseForm, .leftContent, .buttonBtm, #BackWall').addClass('active');
+        $('body').css("overflow-y","hidden");
+    });*/
+    $("#CalcBtn, #headerNavLinkCalc").click(function (e) {
+        alert('Функция пока недоступна');
     });
 
     $("#BackWall, .close_svg").click(function (e) { 
         $('.headerNavigationBlock, #ChooseForm, .leftContent, .buttonBtm, #BackWall').removeClass('active')
         $('#BackWall, .popup, .PlacePop').removeClass('CallPop');
         $('.chooseBlock').removeClass('active');
-        $('.aboutBlock').removeClass('active');      
+        $('.aboutBlock').removeClass('active');     
+        $('body').css("overflow-y", "auto");
     });
 
     $("#CallBtn, #call_svg").click(function (e) { 
         $('#BackWall, .popup').addClass('CallPop'); 
         $('.aboutBlock').removeClass('active');     
         $('.popup_bg').css("height", '100vh');
+        $('body').css("overflow-y", "hidden");
     });
 
     $(".headerPlaceBtn").click(function (e) { 
         $('#BackWall, .PlacePop').addClass('CallPop'); 
         $('.chooseBlock').addClass('active');
         $('.PlacePop').addClass('active');       
+        $('body').css("overflow-y", "hidden");
     });
 
     $(".aboutPlace").click(function (e) { 
@@ -58,6 +65,7 @@ $(document).ready(function() {
         $('.chooseBlock').removeClass('active');
         $('.PlacePop').removeClass('active'); 
         $('.aboutBlock').addClass('active');   
+        $('body').css("overflow-y", "hidden");
     });
 
     $("#contacts_menu_click").click(function (e) { 
@@ -69,7 +77,21 @@ $(document).ready(function() {
         $('.PlacePop').removeClass('active'); 
         $('.aboutBlock').addClass('active'); 
         $('.popup_bg').css("height", '100vh');
+        $('body').css("overflow-y", "hidden");
     });
+
+    $("#ProdOpenContacts").click(function (e) {
+        $('.chooseBlock').addClass('active');
+        $('#BackWall, .PlacePop').addClass('CallPop');
+        $('.chooseBlock').addClass('active');
+        $('.PlacePop').addClass('active');
+        $('.chooseBlock').removeClass('active');
+        $('.PlacePop').removeClass('active');
+        $('.aboutBlock').addClass('active');
+        $('.popup_bg').css("height", '100vh');
+        $('body').css("overflow-y", "hidden");
+    });
+    
     
     
     $(".back_click").click(function (e) { 
@@ -78,6 +100,7 @@ $(document).ready(function() {
         $('.PlacePop').addClass('active'); 
         $('.popup_bg').css('display', 'none');
         $('.popup_bg').css("height", '0vh');
+        $('body').css("overflow-y", "auto");
     });
 
     $(".ico_img_about").mouseenter(function (e) {

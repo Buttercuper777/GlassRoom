@@ -112,7 +112,6 @@ header{
     background-size: 100%;
     background-position-x: 50%;
     background-position-y: 100%;
-    opacity: 0.5;
 }
 
 .PrintHeaderButton { /*Print icon*/
@@ -138,7 +137,7 @@ header{
 }
 
 .OrderHeaderButton:hover::after{
-    content: 'Создать заказ(Недоступно)';
+    content: 'Заказы звонков';
     font-size: 15px;
     position: absolute;
     top:130%;

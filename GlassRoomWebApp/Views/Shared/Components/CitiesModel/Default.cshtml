@@ -1,0 +1,10 @@
+﻿@model IQueryable<CitiesList>
+@if (Model?.Any() == true)
+{
+    <ul>
+        @foreach (CitiesList entity in Model)
+        {
+            <li><a href="~/Home/index">@(entity.CityName)</a></li>
+        }
+    </ul>
+}

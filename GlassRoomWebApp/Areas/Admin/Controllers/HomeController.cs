@@ -22,5 +22,9 @@ namespace GlassRoomWebApp.Areas.Admin.Controllers
         {
             return View(dataManager.ServiceItems.GetServiceItems());
         }
+        public IActionResult CitiesList()
+        {
+            return View(dataManager.CitiesOfList.GetCity());
+        }
     }
 }

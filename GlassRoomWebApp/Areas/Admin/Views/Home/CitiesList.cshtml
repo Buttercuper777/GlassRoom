@@ -1,0 +1,35 @@
+﻿@model IQueryable<CitiesList>
+
+<h2>Города (редактирование):</h2>
+
+<div class="globalEditSpace">
+    <form asp-area="Admin" asp-controller="City" asp-action="Edit" asp-route-id="" method="post">
+        <input type="submit" value="Добавить" />
+    </form>
+    <input type="submit" id="selectAll" value="Выделить все" />
+    <input type="submit" value="Удалить" />
+</div>
+
+<ul>
+    @if (Model.Any())
+    {
+        @foreach (CitiesList entity in Model)
+        {
+            <li>
+                <input type="checkbox"><a>@($"{entity.CityName}")</a>
+
+                <a asp-area="Admin" asp-controller="City" asp-action="Edit" asp-route-id="@entity.Id">
+                    <input type="submit" value="🖊" />
+                </a>
+
+
+                <form style="display: inline-block;" id="@entity.Id" asp-area="Admin" asp-controller="City" asp-action="Delete" method="post">
+                    <input type="hidden" name="id" value="@entity.Id">
+                    <input type="submit" name="delButton" value="🗑" onclick="document.getElementById('form-@entity.Id')" />
+                </form>
+
+            </li>
+
+        }
+    }
+</ul>

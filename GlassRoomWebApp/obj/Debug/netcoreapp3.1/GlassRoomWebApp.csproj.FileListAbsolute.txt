@@ -172,3 +172,6 @@ D:\GlassRoom\GlassRoomWebApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Componen
 D:\GlassRoom\GlassRoomWebApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\CatalogPartial.cshtml.g.cs
 D:\GlassRoom\GlassRoomWebApp\obj\Debug\netcoreapp3.1\Razor\Views\Services\ProductPartial.cshtml.g.cs
 D:\GlassRoom\GlassRoomWebApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
+D:\GlassRoom\GlassRoomWebApp\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Home\CitiesList.cshtml.g.cs
+D:\GlassRoom\GlassRoomWebApp\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\City\Edit.cshtml.g.cs
+D:\GlassRoom\GlassRoomWebApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\CitiesModel\Default.cshtml.g.cs
