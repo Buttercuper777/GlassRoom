@@ -1,6 +1,7 @@
-jQuery(function($){
-    $("input[type='phone']").mask("+7 (999) 999-99-99");
- });
+function validatePhone(phone) {
+    let regex = /^(\+7|7|8)?[\s\-]?\(?[489][0-9]{2}\)?[\s\-]?[0-9]{3}[\s\-]?[0-9]{2}[\s\-]?[0-9]{2}$/;
+    return regex.test(phone);
+}
 
   function myFunction(element) {
     var $temp = $("<input>");
@@ -22,6 +23,21 @@ function HeaderNavFunc() {
     else {
         $("#main_link").removeAttr("id");
         $(".headerNav a:contains('Главная')").attr("id", "main_link");
+    }
+}
+
+var validPhone;
+var validName;
+
+function CheckInput() {
+    if (validName && validPhone == 1) {
+        $("#SendUserButton").removeAttr("disabled");
+        $('#SendUserButton').attr('value', 'Отправить')
+
+    }
+    else {
+        $("#SendUserButton").prop('disabled', true);
+        $('#SendUserButton').attr('value', 'Проверте данные')
     }
 }
 
@@ -146,6 +162,40 @@ $(document).ready(function() {
     
         $('#border_svg, #Front, #Back, .cls-bordder-1, .cls-bordder-2, .cls-bordder-3, .cls-bordder-4, .cls-bordder-5, .cls-bordder-6, .cls-bordder-7, .cls-bordder-8, .cls-bordder-9, .cls-bordder-10, .cls-bordder-11, .cls-bordder-12, .cls-bordder-13, .cls-bordder-14').removeClass('active');
     });
+
+
+    $('#InputNameVal').on('keyup', function () {
+        var $this = $(this),
+            val = $this.val();
+
+        if (val.length >= 1) {
+            validName = 1;
+            CheckInput();
+        } else {
+            validName = 0;
+            CheckInput();
+        }
+    });
+
+    $('#InputPhoneNumberVal').on('keyup', function () {
+        let phone = document.getElementById("InputPhoneNumberVal").value;
+        if (!validatePhone(phone)) {
+            validPhone = 0;
+            CheckInput();
+        } else {
+            validPhone = 1;
+            CheckInput();
+        }
+    });
+
+    $('.input h1').css("display", "none");
+
+    $('#SendUserButton').click(function (e) {
+        $('.pop_input').css("display", "none");
+        $('.input h1').css("display", "block");
+        $('.popup a').text = "Спасибо!";
+    });
+
 
 
     $(function(){                               // Load big img. Upload from gallery

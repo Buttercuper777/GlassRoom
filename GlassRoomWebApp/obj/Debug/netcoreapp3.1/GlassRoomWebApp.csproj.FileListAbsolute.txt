@@ -176,4 +176,4 @@ D:\GlassRoom\GlassRoomWebApp\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Hom
 D:\GlassRoom\GlassRoomWebApp\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\City\Edit.cshtml.g.cs
 D:\GlassRoom\GlassRoomWebApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\CitiesModel\Default.cshtml.g.cs
 D:\GlassRoom\GlassRoomWebApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\CallPopUpShared.cshtml.g.cs
-D:\GlassRoom\GlassRoomWebApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\MUserPhone\AddNum.cshtml.g.cs
+D:\GlassRoom\GlassRoomWebApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\MUserPhone\Default.cshtml.g.cs

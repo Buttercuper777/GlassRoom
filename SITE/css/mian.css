@@ -588,6 +588,11 @@ header .headerPlaceBtn:hover{
     margin-top: 6px;
 }
 
+.input h1{
+    color: #fff;
+    font-family: GBold;
+}
+
 .pop_input input:focus{
     outline: none;
 }

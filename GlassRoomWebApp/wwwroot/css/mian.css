@@ -435,7 +435,7 @@ header .headerPlaceBtn:hover{
 .aboutBlock a{
     width: 100%;
     text-align: center;
-    color:var(--pu_gr_color);
+    color:var(--lm_color);
     font-family: GBold;
     font-size: 20px;
     align-self: center;
@@ -536,7 +536,7 @@ header .headerPlaceBtn:hover{
 .popup a{
     font-size: 23px;
     font-family: GBold;
-    color:var(--pu_gr_color);
+    color:var(--lm_color);
 }
 
 #ChooseForm{
@@ -586,6 +586,11 @@ header .headerPlaceBtn:hover{
 
 .pop_input{
     margin-top: 6px;
+}
+
+.input h1 {
+    color: #fff;
+    font-family: GBold;
 }
 
 .pop_input input:focus{

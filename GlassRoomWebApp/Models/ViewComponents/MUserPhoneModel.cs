@@ -7,14 +7,18 @@ using System;
 
 namespace GlassRoomWebApp.Models
 {
-    public class MUserPhone : UserPhone
+    public class MUserPhone : ViewComponent
     {
         private readonly DataManager dataManager;
-
 
         public MUserPhone(DataManager dataManager)
         {
             this.dataManager = dataManager;
+        }
+
+        public IViewComponentResult Invoke(UserPhone model)
+        {
+            return View("Default", model);
         }
     }
 
