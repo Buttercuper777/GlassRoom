@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace GlassRoomWebApp.Domain.Entities
 {
@@ -12,5 +13,6 @@ namespace GlassRoomWebApp.Domain.Entities
 
         [Display(Name = "Cодержание страницы")]
         public override string Text { get; set; } = "Содержание заполняется администратором";
+
     }
 }

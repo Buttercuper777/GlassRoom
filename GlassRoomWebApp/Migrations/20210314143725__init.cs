@@ -98,6 +98,19 @@ namespace GlassRoomWebApp.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "UserPhones",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(nullable: false),
+                    Name = table.Column<string>(nullable: false),
+                    PhoneNum = table.Column<string>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_UserPhones", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "AspNetRoleClaims",
                 columns: table => new
                 {
@@ -206,21 +219,21 @@ namespace GlassRoomWebApp.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { "44546e06-8719-4ad8-b88a-f271ae9d6eab", "057fd94d-c7b2-4914-a2bd-503cd58323a8", "admin", "ADMIN" });
+                values: new object[] { "44546e06-8719-4ad8-b88a-f271ae9d6eab", "d927c877-263c-4446-a784-2d387370de58", "admin", "ADMIN" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "3b62472e-4f66-49fa-a20f-e7685b9565d8", 0, "372c1f9e-e368-44a4-b9f3-3717bc808f21", "my@email.com", true, false, null, "MY@EMAIL.COM", "ADMIN", "AQAAAAEAACcQAAAAEEzISGcFww2hLfupRfo5B7WT8BS4WcthO9SvnkqGPi/LWIiQBkLNbWacVPpjZ3MXVw==", null, false, "", false, "admin" });
+                values: new object[] { "3b62472e-4f66-49fa-a20f-e7685b9565d8", 0, "8f68d7d3-7442-41f2-aef2-b33249904245", "my@email.com", true, false, null, "MY@EMAIL.COM", "ADMIN", "AQAAAAEAACcQAAAAEH3K64yYxLnhr9MXCC0cv57KOWNNoTAW1tB3GuyTfYyWWQuwuptehf3tKV4ze14sxg==", null, false, "", false, "admin" });
 
             migrationBuilder.InsertData(
                 table: "TextFields",
                 columns: new[] { "Id", "CodeWord", "DateAdded", "MetaDescription", "MetaKeywords", "MetaTitle", "Subtitle", "Text", "Title", "TitleImagePath" },
                 values: new object[,]
                 {
-                    { new Guid("63dc8fa6-07ae-4391-8916-e057f71239ce"), "PageIndex", new DateTime(2021, 3, 12, 12, 22, 9, 94, DateTimeKind.Utc).AddTicks(6469), null, null, null, null, "Содержание заполняется администратором", "Главная", null },
-                    { new Guid("70bf165a-700a-4156-91c0-e83fce0a277f"), "PageServices", new DateTime(2021, 3, 12, 12, 22, 9, 94, DateTimeKind.Utc).AddTicks(8975), null, null, null, null, "Содержание заполняется администратором", "Наши услуги", null },
-                    { new Guid("4aa76a4c-c59d-409a-84c1-06e6487a137a"), "PageContacts", new DateTime(2021, 3, 12, 12, 22, 9, 94, DateTimeKind.Utc).AddTicks(9036), null, null, null, null, "Содержание заполняется администратором", "Контакты", null }
+                    { new Guid("63dc8fa6-07ae-4391-8916-e057f71239ce"), "PageIndex", new DateTime(2021, 3, 14, 14, 37, 25, 42, DateTimeKind.Utc).AddTicks(3657), null, null, null, null, "Содержание заполняется администратором", "Главная", null },
+                    { new Guid("70bf165a-700a-4156-91c0-e83fce0a277f"), "PageServices", new DateTime(2021, 3, 14, 14, 37, 25, 42, DateTimeKind.Utc).AddTicks(6030), null, null, null, null, "Содержание заполняется администратором", "Наши услуги", null },
+                    { new Guid("4aa76a4c-c59d-409a-84c1-06e6487a137a"), "PageContacts", new DateTime(2021, 3, 14, 14, 37, 25, 42, DateTimeKind.Utc).AddTicks(6090), null, null, null, null, "Содержание заполняется администратором", "Контакты", null }
                 });
 
             migrationBuilder.InsertData(
@@ -293,6 +306,9 @@ namespace GlassRoomWebApp.Migrations
 
             migrationBuilder.DropTable(
                 name: "TextFields");
+
+            migrationBuilder.DropTable(
+                name: "UserPhones");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");

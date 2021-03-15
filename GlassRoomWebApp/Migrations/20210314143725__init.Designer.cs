@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GlassRoomWebApp.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20210312122209__init")]
+    [Migration("20210314143725__init")]
     partial class _init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -115,7 +115,7 @@ namespace GlassRoomWebApp.Migrations
                         {
                             Id = new Guid("63dc8fa6-07ae-4391-8916-e057f71239ce"),
                             CodeWord = "PageIndex",
-                            DateAdded = new DateTime(2021, 3, 12, 12, 22, 9, 94, DateTimeKind.Utc).AddTicks(6469),
+                            DateAdded = new DateTime(2021, 3, 14, 14, 37, 25, 42, DateTimeKind.Utc).AddTicks(3657),
                             Text = "Содержание заполняется администратором",
                             Title = "Главная"
                         },
@@ -123,7 +123,7 @@ namespace GlassRoomWebApp.Migrations
                         {
                             Id = new Guid("70bf165a-700a-4156-91c0-e83fce0a277f"),
                             CodeWord = "PageServices",
-                            DateAdded = new DateTime(2021, 3, 12, 12, 22, 9, 94, DateTimeKind.Utc).AddTicks(8975),
+                            DateAdded = new DateTime(2021, 3, 14, 14, 37, 25, 42, DateTimeKind.Utc).AddTicks(6030),
                             Text = "Содержание заполняется администратором",
                             Title = "Наши услуги"
                         },
@@ -131,10 +131,29 @@ namespace GlassRoomWebApp.Migrations
                         {
                             Id = new Guid("4aa76a4c-c59d-409a-84c1-06e6487a137a"),
                             CodeWord = "PageContacts",
-                            DateAdded = new DateTime(2021, 3, 12, 12, 22, 9, 94, DateTimeKind.Utc).AddTicks(9036),
+                            DateAdded = new DateTime(2021, 3, 14, 14, 37, 25, 42, DateTimeKind.Utc).AddTicks(6090),
                             Text = "Содержание заполняется администратором",
                             Title = "Контакты"
                         });
+                });
+
+            modelBuilder.Entity("GlassRoomWebApp.Domain.Entities.UserPhone", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhoneNum")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("UserPhones");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -167,7 +186,7 @@ namespace GlassRoomWebApp.Migrations
                         new
                         {
                             Id = "44546e06-8719-4ad8-b88a-f271ae9d6eab",
-                            ConcurrencyStamp = "057fd94d-c7b2-4914-a2bd-503cd58323a8",
+                            ConcurrencyStamp = "d927c877-263c-4446-a784-2d387370de58",
                             Name = "admin",
                             NormalizedName = "ADMIN"
                         });
@@ -266,13 +285,13 @@ namespace GlassRoomWebApp.Migrations
                         {
                             Id = "3b62472e-4f66-49fa-a20f-e7685b9565d8",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "372c1f9e-e368-44a4-b9f3-3717bc808f21",
+                            ConcurrencyStamp = "8f68d7d3-7442-41f2-aef2-b33249904245",
                             Email = "my@email.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "MY@EMAIL.COM",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAEAACcQAAAAEEzISGcFww2hLfupRfo5B7WT8BS4WcthO9SvnkqGPi/LWIiQBkLNbWacVPpjZ3MXVw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEH3K64yYxLnhr9MXCC0cv57KOWNNoTAW1tB3GuyTfYyWWQuwuptehf3tKV4ze14sxg==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,

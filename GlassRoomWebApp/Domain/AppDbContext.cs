@@ -13,6 +13,7 @@ namespace GlassRoomWebApp.Domain
         public DbSet<TextField> TextFields { get; set; }
         public DbSet<ServiceItem> ServiceItems { get; set; }
         public DbSet<CitiesList> CitiesOfList { get; set; } 
+        public DbSet<UserPhone> UserPhones { get; set; }
         
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -33,7 +34,7 @@ namespace GlassRoomWebApp.Domain
                 Email = "my@email.com",
                 NormalizedEmail = "MY@EMAIL.COM",
                 EmailConfirmed = true,
-                PasswordHash = new PasswordHasher<IdentityUser>().HashPassword(null, "superpassword"),
+                PasswordHash = new PasswordHasher<IdentityUser>().HashPassword(null, "steklo1324pro5768ug"),
                 SecurityStamp = string.Empty
             });
 
