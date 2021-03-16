@@ -255,12 +255,19 @@
         bottom: 0;
     }
 
-    .wave2{
+    .wave1 {
         animation: animate linear 70s;
+        background-image:url(../images/1.png)
     }
 
-    .wave3{
+    .wave2 {
+        animation: animate linear 70s;
+        background-image: url(../images/2.png)
+    }
+
+    .wave3 {
         animation: animate linear 81s;
+        background-image: url(../images/3.png)
     }
 
     @keyframes animate{

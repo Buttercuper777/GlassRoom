@@ -70,6 +70,8 @@ function ready()
     });
 }
 
+
+
 $(document).ready(function () { 
     $(function() {
         ChangeClockVal();
@@ -96,6 +98,11 @@ $(document).ready(function () {
             $(this).prop('value', 'Снять выделение');
             $("input[type=checkbox]").prop('checked', true);  
         }
+    });
+
+    $('#UsPhoneCopy').on('click', function() {
+        alert('sdcsdcds');
+        this.css('background', '#0ca926');
     });
 
 });

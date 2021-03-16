@@ -18,6 +18,7 @@ function HeaderNavFunc() {
     if (urlStr.indexOf('Services') != -1) {
         $("#main_link").removeAttr("id");
         $(".headerNav a:contains('Каталог')").attr("id", "main_link");
+        $(".fs_block").css('display','none');
     }
 
     else {

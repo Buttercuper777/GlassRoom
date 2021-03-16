@@ -438,7 +438,7 @@ transition: 0.3s;
 
 .MainContentAdmin ul{ /* <<----------------------------------*/
     margin-top:20px;
-
+    width: 100%;
     margin-bottom: 20px;
 }
 

@@ -2,17 +2,21 @@
 @{
     var count = @Model.Count();
     var DateVal = @DateTime.Today.Date;
+    int CheckToday = 0;
+    
 }
 
 
 <script>
-    function myFunction(str) {
+    function myFunction(str, obj) {
         const el = document.createElement('textarea');
         el.value = str;
         document.body.appendChild(el);
         el.select();
         document.execCommand('copy');
         document.body.removeChild(el);
+        $('.UsPhoneCopy').css('background', 'rgb(248, 99, 99)');
+        $(obj).css('background', '#0ca926');
     }
 </script>
 
@@ -25,6 +29,7 @@
     {
         @if (@entity.DateUPAdded.Date == DateVal)
         {
+            CheckToday = CheckToday + 1;
             <li>
                 <a style="font-size: 18px;">
                     @entity.DateUPAdded.Hour:@entity.DateUPAdded.Minute<br/>
@@ -32,12 +37,16 @@
                 </a>
                 <a class="UserDate">@entity.Name<br />@entity.PhoneNum</a>
 
-                <input type="submit" value="&#10003;" />
-                <input type="submit" name="delButton" value="&#128196;" onclick="myFunction(@entity.PhoneNum)"/>
+                <input type="submit" value="&#10003;" style="background: #a3b6c5;"/>
+                <input type="submit" name="delButton" value="&#128196;" class="UsPhoneCopy" onclick="myFunction(@entity.PhoneNum, this) "/>
             </li>
         }
     }
 </ul>
+       @if(CheckToday == 0)
+       {
+           <h1>Сегодня заказы на звонки не поступали :(</h1>
+       }
 }
 
 <h2>Ранее:</h2>
@@ -56,8 +65,8 @@
                 </a>
                 <a class="UserDate">@entity.Name<br />@entity.PhoneNum</a>
 
-                <input type="submit" value="&#10003;" />
-                <input type="submit" name="delButton" value="&#128196;" />
+                <input type="submit" value="&#10003;" style="background: #a3b6c5;"/>
+                <input type="submit" name="delButton" value="&#128196;" class="UsPhoneCopy" onclick="myFunction(@entity.PhoneNum, this)" />
             </li>
         }
     }
