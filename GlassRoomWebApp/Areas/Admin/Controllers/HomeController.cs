@@ -26,5 +26,9 @@ namespace GlassRoomWebApp.Areas.Admin.Controllers
         {
             return View(dataManager.CitiesOfList.GetCity());
         }
+        public IActionResult OrdersCalls()
+        {
+            return View(dataManager.UserPhones.GetUserPhones());
+        }
     }
 }

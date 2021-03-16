@@ -436,8 +436,10 @@ transition: 0.3s;
 }
 
 
-.MainContentAdmin ul{
+.MainContentAdmin ul{ /* <<----------------------------------*/
     margin-top:20px;
+
+    margin-bottom: 20px;
 }
 
 .MainContentAdmin ul li{
@@ -450,6 +452,11 @@ transition: 0.3s;
     padding: 0px 15px;
     transition: 0.3s;
     align-items: center;
+}
+
+.UserDate{          /* <<----------------------------------*/
+    margin-left: 90px;
+    font-size: 18px;
 }
 
 .MainContentAdmin ul li:hover{

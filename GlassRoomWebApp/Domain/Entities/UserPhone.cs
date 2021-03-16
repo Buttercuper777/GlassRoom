@@ -5,6 +5,11 @@ namespace GlassRoomWebApp.Domain.Entities
 {
     public class UserPhone
     {
+        public UserPhone() => DateUPAdded = DateTime.Now;
+
+        [DataType(DataType.Time)]
+        public DateTime DateUPAdded { get; set; }
+
         [Required]
         public Guid Id { get; set; }
 

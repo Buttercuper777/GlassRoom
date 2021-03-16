@@ -1,0 +1,67 @@
+﻿@model IEnumerable<UserPhone>
+@{
+    var count = @Model.Count();
+    var DateVal = @DateTime.Today.Date;
+}
+
+
+<script>
+    function myFunction(str) {
+        const el = document.createElement('textarea');
+        el.value = str;
+        document.body.appendChild(el);
+        el.select();
+        document.execCommand('copy');
+        document.body.removeChild(el);
+    }
+</script>
+
+<h2>Сегодня (@DateVal.ToString("dd.MM.yyyy")) :</h2>
+
+@if (Model.Any())
+{
+<ul>
+    @foreach (UserPhone entity in Model.Reverse())
+    {
+        @if (@entity.DateUPAdded.Date == DateVal)
+        {
+            <li>
+                <a style="font-size: 18px;">
+                    @entity.DateUPAdded.Hour:@entity.DateUPAdded.Minute<br/>
+                    <i style="font-size: 14px;"> @entity.DateUPAdded.Date.ToString("dd.MM.yyyy")</i>
+                </a>
+                <a class="UserDate">@entity.Name<br />@entity.PhoneNum</a>
+
+                <input type="submit" value="&#10003;" />
+                <input type="submit" name="delButton" value="&#128196;" onclick="myFunction(@entity.PhoneNum)"/>
+            </li>
+        }
+    }
+</ul>
+}
+
+<h2>Ранее:</h2>
+
+@if (Model.Any())
+{
+<ul>
+    @foreach (UserPhone entity in Model.Reverse())
+    {
+        @if (@entity.DateUPAdded.Date != DateVal)
+        {
+            <li>
+                <a style="font-size: 18px;">
+                    @entity.DateUPAdded.Hour:@entity.DateUPAdded.Minute<br />
+                    <i style="font-size: 14px;"> @entity.DateUPAdded.Date.ToString("dd.MM.yyyy")</i>
+                </a>
+                <a class="UserDate">@entity.Name<br />@entity.PhoneNum</a>
+
+                <input type="submit" value="&#10003;" />
+                <input type="submit" name="delButton" value="&#128196;" />
+            </li>
+        }
+    }
+</ul>
+}
+
+

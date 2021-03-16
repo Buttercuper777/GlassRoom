@@ -113,7 +113,7 @@ namespace GlassRoomWebApp.Migrations
                         {
                             Id = new Guid("63dc8fa6-07ae-4391-8916-e057f71239ce"),
                             CodeWord = "PageIndex",
-                            DateAdded = new DateTime(2021, 3, 14, 14, 37, 25, 42, DateTimeKind.Utc).AddTicks(3657),
+                            DateAdded = new DateTime(2021, 3, 15, 22, 4, 47, 382, DateTimeKind.Utc).AddTicks(2750),
                             Text = "Содержание заполняется администратором",
                             Title = "Главная"
                         },
@@ -121,7 +121,7 @@ namespace GlassRoomWebApp.Migrations
                         {
                             Id = new Guid("70bf165a-700a-4156-91c0-e83fce0a277f"),
                             CodeWord = "PageServices",
-                            DateAdded = new DateTime(2021, 3, 14, 14, 37, 25, 42, DateTimeKind.Utc).AddTicks(6030),
+                            DateAdded = new DateTime(2021, 3, 15, 22, 4, 47, 382, DateTimeKind.Utc).AddTicks(5089),
                             Text = "Содержание заполняется администратором",
                             Title = "Наши услуги"
                         },
@@ -129,7 +129,7 @@ namespace GlassRoomWebApp.Migrations
                         {
                             Id = new Guid("4aa76a4c-c59d-409a-84c1-06e6487a137a"),
                             CodeWord = "PageContacts",
-                            DateAdded = new DateTime(2021, 3, 14, 14, 37, 25, 42, DateTimeKind.Utc).AddTicks(6090),
+                            DateAdded = new DateTime(2021, 3, 15, 22, 4, 47, 382, DateTimeKind.Utc).AddTicks(5143),
                             Text = "Содержание заполняется администратором",
                             Title = "Контакты"
                         });
@@ -140,6 +140,9 @@ namespace GlassRoomWebApp.Migrations
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("DateUPAdded")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -184,7 +187,7 @@ namespace GlassRoomWebApp.Migrations
                         new
                         {
                             Id = "44546e06-8719-4ad8-b88a-f271ae9d6eab",
-                            ConcurrencyStamp = "d927c877-263c-4446-a784-2d387370de58",
+                            ConcurrencyStamp = "14aed440-7bda-496b-90f0-e5d6d221b7ab",
                             Name = "admin",
                             NormalizedName = "ADMIN"
                         });
@@ -283,13 +286,13 @@ namespace GlassRoomWebApp.Migrations
                         {
                             Id = "3b62472e-4f66-49fa-a20f-e7685b9565d8",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "8f68d7d3-7442-41f2-aef2-b33249904245",
+                            ConcurrencyStamp = "b4e963df-a8a9-4fa5-9c9c-a062f722bf3f",
                             Email = "my@email.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "MY@EMAIL.COM",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAEAACcQAAAAEH3K64yYxLnhr9MXCC0cv57KOWNNoTAW1tB3GuyTfYyWWQuwuptehf3tKV4ze14sxg==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEE93EdtgW7H98qADBVPhsrG+9SMbZodOGwSF4k5KDUSDTS3CLyIz5cNduVLdQX4m2g==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,

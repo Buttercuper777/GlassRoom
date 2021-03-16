@@ -177,3 +177,4 @@ D:\GlassRoom\GlassRoomWebApp\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Cit
 D:\GlassRoom\GlassRoomWebApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\CitiesModel\Default.cshtml.g.cs
 D:\GlassRoom\GlassRoomWebApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\CallPopUpShared.cshtml.g.cs
 D:\GlassRoom\GlassRoomWebApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\MUserPhone\Default.cshtml.g.cs
+D:\GlassRoom\GlassRoomWebApp\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Home\OrdersCalls.cshtml.g.cs

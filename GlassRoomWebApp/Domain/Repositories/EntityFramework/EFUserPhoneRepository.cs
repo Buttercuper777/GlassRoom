@@ -14,6 +14,11 @@ namespace GlassRoomWebApp.Domain.Repositories.EntityFramework
             this.context = context;
         }
 
+        public IQueryable<UserPhone> GetUPDate()
+        {
+            return context.UserPhones;
+        }
+
         public IQueryable<UserPhone> GetUserPhones()
         {
             return context.UserPhones;

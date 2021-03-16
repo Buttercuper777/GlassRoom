@@ -6,6 +6,7 @@ namespace GlassRoomWebApp.Domain.Repositories.Abstract
 {
     public interface IUserPhoneRepository
     {
+        IQueryable<UserPhone> GetUPDate();
         IQueryable<UserPhone> GetUserPhones();
         UserPhone GetUserPhoneById(Guid id);
         void SaveUserPhone(UserPhone entity);
