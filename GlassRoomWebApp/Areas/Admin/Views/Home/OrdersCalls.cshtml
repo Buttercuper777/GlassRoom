@@ -3,7 +3,7 @@
     var count = @Model.Count();
     var DateVal = @DateTime.Today.Date;
     int CheckToday = 0;
-    
+
 }
 
 
@@ -24,53 +24,55 @@
 
 @if (Model.Any())
 {
-<ul>
-    @foreach (UserPhone entity in Model.Reverse())
-    {
-        @if (@entity.DateUPAdded.Date == DateVal)
+    <ul>
+        @foreach (UserPhone entity in Model.Reverse())
         {
-            CheckToday = CheckToday + 1;
-            <li>
-                <a style="font-size: 18px;">
-                    @entity.DateUPAdded.Hour:@entity.DateUPAdded.Minute<br/>
-                    <i style="font-size: 14px;"> @entity.DateUPAdded.Date.ToString("dd.MM.yyyy")</i>
-                </a>
-                <a class="UserDate">@entity.Name<br />@entity.PhoneNum</a>
+            @if (@entity.DateUPAdded.Date == DateVal)
+            {
+                CheckToday = CheckToday + 1;
+                <li>
+                    <a style="font-size: 18px;">
+                        @entity.DateUPAdded.Hour:@entity.DateUPAdded.Minute<br />
+                        <i style="font-size: 14px;"> @entity.DateUPAdded.Date.ToString("dd.MM.yyyy")</i>
+                    </a>
+                    <a class="UserDate">@entity.Name<br />@entity.PhoneNum</a>
 
-                <input type="submit" value="&#10003;" style="background: #a3b6c5;"/>
-                <input type="submit" name="delButton" value="&#128196;" class="UsPhoneCopy" onclick="myFunction(@entity.PhoneNum, this) "/>
-            </li>
+                    <input type="submit" value="&#10003;" style="background: #a3b6c5;" />
+                    <input type="submit" name="delButton" value="&#128196;" class="UsPhoneCopy" onclick="myFunction(@entity.PhoneNum, this) " />
+                </li>
+            }
         }
-    }
-</ul>
-       @if(CheckToday == 0)
-       {
-           <h1>Сегодня заказы на звонки не поступали :(</h1>
-       }
+    </ul>
+
+}
+
+@if (CheckToday == 0)
+{
+    <h1>Сегодня заказы на звонки не поступали :(</h1>
 }
 
 <h2>Ранее:</h2>
 
 @if (Model.Any())
 {
-<ul>
-    @foreach (UserPhone entity in Model.Reverse())
-    {
-        @if (@entity.DateUPAdded.Date != DateVal)
+    <ul>
+        @foreach (UserPhone entity in Model.Reverse())
         {
-            <li>
-                <a style="font-size: 18px;">
-                    @entity.DateUPAdded.Hour:@entity.DateUPAdded.Minute<br />
-                    <i style="font-size: 14px;"> @entity.DateUPAdded.Date.ToString("dd.MM.yyyy")</i>
-                </a>
-                <a class="UserDate">@entity.Name<br />@entity.PhoneNum</a>
+            @if (@entity.DateUPAdded.Date != DateVal)
+            {
+                <li>
+                    <a style="font-size: 18px;">
+                        @entity.DateUPAdded.Hour:@entity.DateUPAdded.Minute<br />
+                        <i style="font-size: 14px;"> @entity.DateUPAdded.Date.ToString("dd.MM.yyyy")</i>
+                    </a>
+                    <a class="UserDate">@entity.Name<br />@entity.PhoneNum</a>
 
-                <input type="submit" value="&#10003;" style="background: #a3b6c5;"/>
-                <input type="submit" name="delButton" value="&#128196;" class="UsPhoneCopy" onclick="myFunction(@entity.PhoneNum, this)" />
-            </li>
+                    <input type="submit" value="&#10003;" style="background: #a3b6c5;" />
+                    <input type="submit" name="delButton" value="&#128196;" class="UsPhoneCopy" onclick="myFunction(@entity.PhoneNum, this)" />
+                </li>
+            }
         }
-    }
-</ul>
+    </ul>
 }
 
 

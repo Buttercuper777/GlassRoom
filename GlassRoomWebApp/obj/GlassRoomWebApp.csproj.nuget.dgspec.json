@@ -10,11 +10,11 @@
         "projectUniqueName": "D:\\GlassRoom\\GlassRoomWebApp\\GlassRoomWebApp.csproj",
         "projectName": "GlassRoomWebApp",
         "projectPath": "D:\\GlassRoom\\GlassRoomWebApp\\GlassRoomWebApp.csproj",
-        "packagesPath": "C:\\Users\\webma\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\black\\.nuget\\packages\\",
         "outputPath": "D:\\GlassRoom\\GlassRoomWebApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\webma\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\black\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
