@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using GlassRoomWebApp.Domain;
+using System;
+using GlassRoomWebApp.Service;
 
 namespace GlassRoomWebApp.Areas.Admin.Controllers
 {
@@ -16,6 +18,13 @@ namespace GlassRoomWebApp.Areas.Admin.Controllers
         public ActionResult Index()
         {
             return View();
+        }
+
+        [HttpPost]
+        public IActionResult Check(Guid id)
+        {
+            dataManager.UserPhones.CheckUserPhone(id);
+            return RedirectToAction(nameof(HomeController.OrdersCalls), nameof(HomeController).CutController());
         }
     }
 }

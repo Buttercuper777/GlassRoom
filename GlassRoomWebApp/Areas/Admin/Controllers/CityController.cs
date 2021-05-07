@@ -32,7 +32,7 @@ namespace GlassRoomWebApp.Areas.Admin.Controllers
             if (ModelState.IsValid)
             {
                 dataManager.CitiesOfList.SaveCity(model);
-                return RedirectToAction(nameof(HomeController.Index), nameof(HomeController).CutController());
+                return RedirectToAction(nameof(HomeController.CitiesList), nameof(HomeController).CutController());
             }
             return View(model);
         }
@@ -41,7 +41,7 @@ namespace GlassRoomWebApp.Areas.Admin.Controllers
         public IActionResult Delete(Guid id)
         {
             dataManager.CitiesOfList.DeleteCity(id);
-            return RedirectToAction(nameof(HomeController.Index), nameof(HomeController).CutController());
+            return RedirectToAction(nameof(HomeController.CitiesList), nameof(HomeController).CutController());
         }
     }
 }

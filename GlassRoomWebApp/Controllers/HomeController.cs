@@ -17,5 +17,24 @@ namespace GlassRoomWebApp.Controllers
             return View(dataManager.TextFields.GetTextFieldByCodeWord("PageIndex"));
         }
 
+
+        [HttpPost]
+        public int GetFitSize()
+        {
+            return dataManager.Fittings.GetFitSize();
+        }
+
+        [HttpPost]
+        public int GetGlSize()
+        {
+            return dataManager.Glasses.GetGlSize();
+        }
+
+        [HttpPost]
+        public float GetGlassPrice(string type, int th)
+        {
+            return dataManager.Glasses.GetPriceByTypeTh(type, th);
+        }
+
     }
 }

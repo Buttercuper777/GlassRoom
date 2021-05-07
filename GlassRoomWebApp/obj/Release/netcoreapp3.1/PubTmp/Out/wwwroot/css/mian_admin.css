@@ -1,0 +1,562 @@
+:root{
+
+    --d_color: #23202D;
+    --m_color: #81919D;
+    --l_color: #e9edee;
+    --lm_color: #dee1e2;
+    --dg_color: #8B847E;
+    --bl_color: #2D7AB7;
+    --pu_color: #9295DE;
+
+    --dg_bl_color: #B0BCD9;
+    --dg_pu_color: #78728C;
+
+    --gd_gr_color: #9f7e61;
+    --pu_gr_color: #7255D0;
+}
+
+@font-face{
+    font-family: GMed;
+    src: url(../font/Gilroy-Medium.ttf);
+}
+@font-face{
+    font-family: GBlack;
+    src: url(../font/Gilroy-Black.ttf);
+}
+
+@font-face{
+    font-family: GEBold;
+    src: url(../font/Gilroy-ExtraBold.ttf);
+}
+
+@font-face{
+    font-family: GBold;
+    src: url(../font/Gilroy-Bold.ttf);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    background-color: var(--lm_color);
+    height: 100%;
+    width: 100%;
+    min-width: 1170px;
+    overflow-y: hidden;
+}
+
+header{
+    width: 100%;
+    min-height: 65px;
+    height: 8vh;
+    background: var(--pu_gr_color);
+    display: grid;
+    grid-template-columns: 2fr 5fr 1.5fr;
+}
+.LogoBlockHeader{
+    align-self: center;
+    padding-left: 10px;
+}
+
+.LogoBlockHeader img{
+    height: 60px;
+    float: left;
+    min-height: 55px;
+}
+.LogoBlockHeader a{
+    float: left;
+    margin-left:0.4vw;
+    font-family: GBlack;
+    color: var(--l_color);
+    font-size: 16px;
+}
+
+.PanelBlockHeader{
+    align-self: center;
+    padding-left: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+.PanelBlockHeader li{
+    display: list-item;
+    float: left;
+    margin-left: 30px;
+    list-style: none;
+    display: block;
+    min-height: 35px;
+    min-width: 35px;
+    border-radius: 1vh;
+    cursor: pointer;
+    transition: 0.3s;
+    position: relative;
+}
+
+.PanelBlockHeader li a{
+    display: block;
+    width: 100%;
+    height: 200%;
+    background: #000;
+}
+
+.PanelBlockHeader li:hover{
+    border: solid 2px var(--l_color);
+    transition: 0.3s;
+}
+
+.OrderHeaderButton { /*Order icon*/
+    background: url(../images/admin_images/AdminHeaderIcons.png);
+    background-size: 100%;
+    background-position-x: 50%;
+    background-position-y: 100%;
+}
+
+.PrintHeaderButton { /*Print icon*/
+    background: url(../images/admin_images/AdminHeaderIcons.png);
+    background-size: 100%;
+    background-position-x: 50%;
+    background-position-y: 0%;
+}
+
+.TrnsltHeaderButton { /*Trnslt icon*/
+    background: url(../images/admin_images/AdminHeaderIcons.png);
+    background-size: 100%;
+    background-position-x: 50%;
+    background-position-y: 34%;
+}
+
+.NoteHeaderButton { /*Note icon*/
+    background: url(../images/admin_images/AdminHeaderIcons.png);
+    background-size: 100%;
+    background-position-x: 50%;
+    background-position-y: 67%;
+    opacity: 0.5;
+}
+
+.OrderHeaderButton:hover::after{
+    content: 'Заказы звонков';
+    font-size: 15px;
+    position: absolute;
+    top:130%;
+    background: var(--d_color);
+    padding: 7px;
+    font-family: GBold;
+    color: #fff;
+    border-radius: 1vh;
+    border: solid 2px #fff;
+    box-shadow: 0px 0px 2px rgb(54, 54, 54);
+}
+
+
+.PrintHeaderButton:hover::after{
+    content: 'Печать страницы';
+    font-size: 15px;
+    position: absolute;
+    top:130%;
+    background: var(--d_color);
+    padding: 7px;
+    font-family: GBold;
+    color: #fff;
+    border-radius: 1vh;
+    border: solid 2px #fff;
+    box-shadow: 0px 0px 2px rgb(54, 54, 54);
+}
+
+@media print {
+    .PrintHeaderButton::after{
+        display: none;
+    }
+    .ContentSpaceAdmin{
+        max-height: 100vh;
+    }
+}
+
+.TrnsltHeaderButton:hover::after{
+    content: 'Открыть переводчик';
+    font-size: 15px;
+    position: absolute;
+    top:130%;
+    background: var(--d_color);
+    padding: 7px;
+    font-family: GBold;
+    color: #fff;
+    border-radius: 1vh;
+    border: solid 2px #fff;
+    box-shadow: 0px 0px 2px rgb(54, 54, 54);
+}
+
+.NoteHeaderButton:hover::after{
+    content: 'Добавить заметку(Недоступно)';
+    font-size: 15px;
+    position: absolute;
+    top:130%;
+    background: var(--d_color);
+    padding: 7px;
+    font-family: GBold;
+    color: #fff;
+    border-radius: 1vh;
+    border: solid 2px #fff;
+    box-shadow: 0px 0px 2px rgb(54, 54, 54);
+}
+
+.ClockDateHeader{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    justify-items: end;
+    align-items: center;
+    padding-right: 20px;
+}
+
+.ClockDateHeader h1, h2{
+    font-family: Gbold;
+}
+
+.ClockDateHeader h1{
+    font-size: 24px;
+    color: #fff;
+}
+.ClockDateHeader h2{
+    font-size: 17px; 
+    color:#e4e4e4;
+}
+
+.UserBlockHeader{
+    display: grid;
+    grid-template-columns: 60px 1fr 0.3fr;
+    align-items: center;
+    padding-left: 20px;
+}
+
+.UserBlockHeader img{
+    float: left;
+    max-height: 55px;
+    padding: 4px;
+    border-radius: 100%;
+    border: solid 2px #fff;
+}
+
+.UserBlockHeader a, b{
+margin-left: 10px;
+}
+
+.UserBlockHeader b{
+    font-family: GBold;
+    color: #fff;
+}
+
+.UserBlockHeader a{
+    font-family: GMed;
+    color: #e4e4e4;
+}
+
+.ContentSpaceAdmin{
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    min-height: 600px;
+    height: 95%;
+}
+.MainColAdmin{
+    background: var(--d_color);
+    position: relative;
+}
+.MainColAdmin h1{
+    color: var(--l_color);
+    width: 100%;
+    padding: 13px 0px;
+    padding-left: 15px;
+    font-family: GMed;
+    font-size: 19px;
+    background: #1c1923;
+}
+.MainColAdmin ul{
+    height: auto;
+    display: block;
+    width: 100%;
+}
+
+.available a::before{
+    content:'✅'; 
+    margin-right: 3px;
+}
+
+.not_available a::before{
+    content:'⛔️'; 
+    margin-right: 3px;
+}
+
+.MainColAdmin ul li{
+width: 100%;
+height: auto;
+border-bottom: solid 1px #1c1923;
+padding-left: 10px;
+list-style: none;
+transition: 0.3s;
+}
+.MainColAdmin ul li:hover{
+    background: var(--bl_color);
+    transition: 0.3s;
+}
+.MainColAdmin ul li a{
+    display: block;
+    width: 100%;
+    color: var(--lm_color);
+    padding: 13px 0px;
+    text-decoration: none;
+    font-family: GMed;
+    cursor: pointer;
+}
+
+#LogOutButton{
+    position: absolute;
+    bottom: 50px;
+    width: 90%;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    padding: 13px 0px;
+    cursor: pointer;
+    background: var(--bl_color);
+    color: #fff;
+    border: solid 2px #fff;
+    outline-style: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-family: GBold;
+    transition:0.3s;
+}
+
+#LogOutButton:hover{
+    transition:0.3s;
+    background: #348bd3;
+}
+
+.MainContentAdmin{
+    margin: 30px;
+    margin-bottom: 0px;
+    height: auto;
+    display: block;
+    background: var(--l_color);
+    box-shadow: 0px 0px 5px #dedede;
+    border-radius: 1vw;
+    padding:30px;
+    max-height: 87vh;
+    overflow-y: auto;
+    padding-bottom: 100px;
+}
+
+.MainContentAdmin h1{
+    text-align: center;
+    color: #808080;
+    font-size: 20px;
+    font-family: GBold;
+    align-self: center;
+}
+
+
+.MainContentAdmin h2, h3{
+    color: rgb(65, 65, 65);
+    font-family: GBold;
+}
+.globalEditSpace{
+    width: 100%;
+    display: block;
+    min-height: 60px;
+}
+
+.MainContentAdmin h3{
+    padding:10px;
+}
+.MainContentAdmin input[type="text"]{
+    min-width: 320px;
+    font-size: 16px;
+    padding: 5px 9px;
+    outline: none;
+    margin-left: 20px;
+    font-family: GBold;
+    margin-bottom: 10px;
+}
+
+.MainContentAdmin input[type="password"] {
+    min-width: 320px;
+    font-size: 16px;
+    padding: 5px 9px;
+    outline: none;
+    margin-left: 20px;
+    font-family: GBold;
+    margin-bottom: 10px;
+}
+
+.MainContentAdmin .loginLabelClass{
+    margin-left: 20px;
+    float: left;
+    width: 100%;
+}
+.MainContentAdmin .loginChBoxClass{
+    margin-left: 20px;
+}
+
+.MainContentAdmin b {
+    color: rgb(223, 58, 58);
+    font-family: GMed;
+}
+.MainContentAdmin div{
+    max-width: 800px;
+    margin-left:10px;
+    margin-bottom: 10px;
+}
+
+.MainContentAdmin textarea{
+    margin-left: 20px;
+    font-family: GMed;
+    padding: 10px;
+}
+
+.MainContentAdmin input[type="submit"]{
+    float: left;
+    margin: 20px;
+    font-family: GBold;
+    font-size: 16px;
+    padding: 10px 20px;
+    cursor: pointer;
+    outline: none;
+    border: solid 1px var(--d_color);
+    background: var(--bl_color);
+    color: #fff;
+    transition:0.3s;
+    border-radius: 4px;
+    border: none;
+    
+}
+.MainContentAdmin input[type="submit"]:hover{
+    transition:0.3s;
+    background: #348bd3;
+}
+.MainContentAdmin ul li input[type='submit']{
+    width: 40px;
+    height: 40px;
+    margin:0;
+    padding:0px;
+    align-self: center;
+    font-size: 20px;
+    position: relative;
+}
+
+.MainContentAdmin ul li input[name='delButton']{
+    background: rgb(248, 99, 99);
+}
+.MainContentAdmin ul li input[name='delButton']:hover{
+    background: rgb(255, 48, 48);
+}
+
+.MainContentAdmin ul li input[type="checkbox"]{
+    cursor: pointer;
+}
+
+
+.MainContentAdmin ul {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.UserDate {
+    margin-left: 90px;
+    font-size: 18px;
+}
+
+.MainContentAdmin ul li{
+    margin-bottom: 2px;
+    background: var(--lm_color);
+    list-style: none;
+    display: grid;
+    grid-template-columns: 20px 1fr 42px 42px;
+    grid-column-gap: 10px;
+    padding: 0px 15px;
+    transition: 0.3s;
+    align-items: center;
+}
+
+.MainContentAdmin ul li:hover{
+    background: #c6c9ca;
+    transition: 0.3s;
+}
+
+.MainContentAdmin ul li a{
+    padding-top:20px;
+    padding-bottom:20px;
+    display: block;
+    font-family: GBold;
+    text-decoration: none;
+    color:rgb(54, 54, 54);
+}
+.MainContentAdmin label, input{
+    font-family: GBold;
+    color: rgb(65, 65, 65);
+}
+.globalEditSpace input[type="submit"]{
+    margin: 5px;
+    margin-top: 20px;
+}
+.inputFileBlock{
+    /* display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-row-gap: 15px; */
+    margin-top: 15px;
+    width: 100%;
+    display: block;
+    min-height:50px;
+}
+.inputFileBlock input[type="file"]{
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow:hidden;
+    position: absolute;
+    z-index: -1;
+}
+.inputFileBlock .inputFile + label{
+    outline: none;
+    background: var(--bl_color);
+    font-family: GBold;
+    font-size:16px;
+    color: #fff;
+    float: left;   
+    cursor: pointer;
+    padding: 10px 5px;
+    width: 195px;
+    margin-left: 20px;
+    transition:0.3s;
+    text-align: center;
+    overflow: hidden;
+    border: solid 1px var(--d_color);
+    border-radius: 3px;
+}
+.inputFileBlock .inputFile + label:hover{
+    transition:0.3s;
+    background: #348bd3;
+}
+
+/*@media (min-width: 575.98px){
+    header{
+      padding: 0 calc(50% - 270px);
+    }
+  }
+  
+  @media (min-width: 767.98px){
+    header {
+      padding: 0 calc(50% - 360px);
+    }
+  }
+  
+  @media (min-width: 991.98px) {
+    header{
+      padding: 0 calc(50% - 480px);
+    }
+  }
+  
+  @media (min-width: 1199.98px){
+    header{
+        padding: 0 calc(50% - 490px);
+    }*/
+  

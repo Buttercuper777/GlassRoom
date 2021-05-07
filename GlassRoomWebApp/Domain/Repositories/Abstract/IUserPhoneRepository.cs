@@ -11,5 +11,6 @@ namespace GlassRoomWebApp.Domain.Repositories.Abstract
         UserPhone GetUserPhoneById(Guid id);
         void SaveUserPhone(UserPhone entity);
         void DeleteUserPhone(Guid id);
+        void CheckUserPhone(Guid id);
     }
 }

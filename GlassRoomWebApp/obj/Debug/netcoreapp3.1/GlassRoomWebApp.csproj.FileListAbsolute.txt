@@ -1,5 +1,4 @@
 D:\GlassRoom\GlassRoomWebApp\bin\Debug\netcoreapp3.1\appsettings.json
-D:\GlassRoom\GlassRoomWebApp\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
 D:\GlassRoom\GlassRoomWebApp\bin\Debug\netcoreapp3.1\GlassRoomWebApp.exe
 D:\GlassRoom\GlassRoomWebApp\bin\Debug\netcoreapp3.1\GlassRoomWebApp.deps.json
 D:\GlassRoom\GlassRoomWebApp\bin\Debug\netcoreapp3.1\GlassRoomWebApp.runtimeconfig.json
@@ -178,3 +177,6 @@ D:\GlassRoom\GlassRoomWebApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Componen
 D:\GlassRoom\GlassRoomWebApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\CallPopUpShared.cshtml.g.cs
 D:\GlassRoom\GlassRoomWebApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\MUserPhone\Default.cshtml.g.cs
 D:\GlassRoom\GlassRoomWebApp\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Home\OrdersCalls.cshtml.g.cs
+D:\GlassRoom\GlassRoomWebApp\obj\Debug\netcoreapp3.1\scopedcss\bundle\GlassRoomWebApp.styles.css
+D:\GlassRoom\GlassRoomWebApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\CalculatorPartial.cshtml.g.cs
+D:\GlassRoom\GlassRoomWebApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\CalculatorModel\Default.cshtml.g.cs

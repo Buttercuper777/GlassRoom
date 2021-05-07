@@ -19,7 +19,7 @@ namespace GlassRoomWebApp.Domain.Repositories.EntityFramework
             return context.TextFields;
         }
 
-        public TextField GetTextFieldById(Guid id)
+        public TextField GetTextFieldById(Guid id) 
         {
             return context.TextFields.FirstOrDefault(x => x.Id == id);
         }

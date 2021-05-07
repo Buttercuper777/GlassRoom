@@ -3,7 +3,9 @@
     var count = @Model.Count();
     var DateVal = @DateTime.Today.Date;
     int CheckToday = 0;
+    string Minute;
 
+    string color;
 }
 
 
@@ -30,16 +32,30 @@
             @if (@entity.DateUPAdded.Date == DateVal)
             {
                 CheckToday = CheckToday + 1;
-                <li>
-                    <a style="font-size: 18px;">
-                        @entity.DateUPAdded.Hour:@entity.DateUPAdded.Minute<br />
-                        <i style="font-size: 14px;"> @entity.DateUPAdded.Date.ToString("dd.MM.yyyy")</i>
-                    </a>
-                    <a class="UserDate">@entity.Name<br />@entity.PhoneNum</a>
+        <li>
+            <a style="font-size: 18px;">
+                @if (@entity.DateUPAdded.Minute < 10)
+                    Minute = "0" + (@entity.DateUPAdded.Minute).ToString();
+                else
+                    Minute = (@entity.DateUPAdded.Minute).ToString();
 
-                    <input type="submit" value="&#10003;" style="background: #a3b6c5;" />
-                    <input type="submit" name="delButton" value="&#128196;" class="UsPhoneCopy" onclick="myFunction(@entity.PhoneNum, this) " />
-                </li>
+                @entity.DateUPAdded.Hour:@Minute<br />
+                <i style="font-size: 14px;"> @entity.DateUPAdded.Date.ToString("dd.MM.yyyy")</i>
+            </a>
+            <a class="UserDate">@entity.Name<br />@entity.PhoneNum</a>
+
+            @if(@entity.Checked == true)
+                color = "#0ca926";
+            else
+                color = "#a3b6c5";
+
+            <form style="display: inline-block;" id="@entity.Id" asp-area="Admin" asp-controller="OrdersCalls" asp-action="Check" method="post">
+                <input type="hidden" name="id" value="@entity.Id">
+                <input type="submit" value="&#10003;" style="background: @color"; onclick="document.getElementById('form-@entity.Id')" />
+            </form>
+
+            <input type="submit" name="delButton" value="&#128196;" class="UsPhoneCopy" onclick="myFunction(@entity.PhoneNum, this) " />
+        </li>
             }
         }
     </ul>
@@ -60,16 +76,31 @@
         {
             @if (@entity.DateUPAdded.Date != DateVal)
             {
-                <li>
-                    <a style="font-size: 18px;">
-                        @entity.DateUPAdded.Hour:@entity.DateUPAdded.Minute<br />
-                        <i style="font-size: 14px;"> @entity.DateUPAdded.Date.ToString("dd.MM.yyyy")</i>
-                    </a>
-                    <a class="UserDate">@entity.Name<br />@entity.PhoneNum</a>
+        <li>
+            <a style="font-size: 18px;">
 
-                    <input type="submit" value="&#10003;" style="background: #a3b6c5;" />
-                    <input type="submit" name="delButton" value="&#128196;" class="UsPhoneCopy" onclick="myFunction(@entity.PhoneNum, this)" />
-                </li>
+                @if (@entity.DateUPAdded.Minute < 10)
+                    Minute = "0" + (@entity.DateUPAdded.Minute).ToString();
+                else
+                    Minute = (@entity.DateUPAdded.Minute).ToString();
+
+                @entity.DateUPAdded.Hour:@Minute<br />
+                <i style="font-size: 14px;"> @entity.DateUPAdded.Date.ToString("dd.MM.yyyy")</i>
+            </a>
+            <a class="UserDate">@entity.Name<br />@entity.PhoneNum</a>
+
+            @if (@entity.Checked == true)
+                color = "#0ca926";
+            else
+                color = "#a3b6c5";
+
+            <form style="display: inline-block;" id="@entity.Id" asp-area="Admin" asp-controller="OrdersCalls" asp-action="Check" method="post">
+                <input type="hidden" name="id" value="@entity.Id">
+                <input type="submit" value="&#10003;" style="background: @color" ; onclick="document.getElementById('form-@entity.Id')" />
+            </form>
+
+            <input type="submit" name="delButton" value="&#128196;" class="UsPhoneCopy" onclick="myFunction(@entity.PhoneNum, this)" />
+        </li>
             }
         }
     </ul>

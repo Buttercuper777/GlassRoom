@@ -39,7 +39,7 @@ namespace GlassRoomWebApp.Areas.Admin.Controllers
                     }
                 }
                 dataManager.ServiceItems.SaveServiceItem(model);
-                return RedirectToAction(nameof(HomeController.Index), nameof(HomeController).CutController());
+                return RedirectToAction(nameof(HomeController.List), nameof(HomeController).CutController());
             }
             return View(model);
         }
@@ -48,7 +48,7 @@ namespace GlassRoomWebApp.Areas.Admin.Controllers
         public IActionResult Delete(Guid id)
         {
             dataManager.ServiceItems.DeleteServiceItem(id);
-            return RedirectToAction(nameof(HomeController.Index), nameof(HomeController).CutController());
+            return RedirectToAction(nameof(HomeController.List), nameof(HomeController).CutController());
         }
     }
 }

@@ -29,5 +29,12 @@ namespace GlassRoomWebApp.Controllers
             dataManager.UserPhones.SaveUserPhone(model);
             return NoContent() ;
         }
+
+        public IActionResult Check(UserPhone model)
+        {
+            dataManager.UserPhones.CheckUserPhone(model.Id);
+            return NoContent();
+        }
+
     }
 }

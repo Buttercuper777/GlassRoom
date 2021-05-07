@@ -21,7 +21,7 @@ function validatePhone(phone){
     }
     else{
         $("#SendUserButton").prop('disabled', true);   
-        $('#SendUserButton').attr('value','Проверте данные')
+        $('#SendUserButton').attr('value','Проверьте данные')
       }
   }
 
@@ -29,16 +29,46 @@ function validatePhone(phone){
 $(document).ready(function() {
    
     $('#border_svg, #Front, #Back, .cls-bordder-1, .cls-bordder-2, .cls-bordder-3, .cls-bordder-4, .cls-bordder-5, .cls-bordder-6, .cls-bordder-7, .cls-bordder-8, .cls-bordder-9, .cls-bordder-10, .cls-bordder-11, .cls-bordder-12, .cls-bordder-13, .cls-bordder-14').addClass('active');
-    
+    //$('#forCalcShow').hide(100);
+    $('#forCalcShow').fadeToggle();
+
     $("#CalcBtn, #headerNavLinkCalc").click(function (e) { 
         $('.headerNavigationBlock, #ChooseForm, .leftContent, .buttonBtm, #BackWall').addClass('active');
+        $('body').css("overflow-y", "hidden");
+
+        //$("#shower_button").click(function (e) {    //activate shower
+            $('#_escal').removeClass('active');
+            $('.cls-1, .cls-2, .cls-3, .cls-4, .cls-5, .cls-6, .cls-7, .cls-8, .cls-9, .cls-10, .cls-11, .cls-12, .cls-13').removeClass('active');
+
+            $('#bath, .bath_svg, .cls-mask, .border_bath_bottom, .front_wall, .right_wall, .bath_top, .line_bottom, .line_right').addClass('activate');
+
+            $('#border_svg, #Front, #Back, .cls-bordder-1, .cls-bordder-2, .cls-bordder-3, .cls-bordder-4, .cls-bordder-5, .cls-bordder-6, .cls-bordder-7, .cls-bordder-8, .cls-bordder-9, .cls-bordder-10, .cls-bordder-11, .cls-bordder-12, .cls-bordder-13, .cls-bordder-14').removeClass('active');
+        //});
+
+        $('#forCalcShow').delay(400).fadeTo(1000, 1);
     });
 
-    $("#BackWall, .close_svg").click(function (e) { 
+    /*$("#CalcBtn, #headerNavLinkCalc").click(function (e) {
+        alert('Функция пока недоступна');
+    });*/
+
+
+    $("#BackWall, .close_svg, #calcCloseBtn").click(function (e) { 
+        $('#forCalcShow').fadeTo(100, 0);
         $('.headerNavigationBlock, #ChooseForm, .leftContent, .buttonBtm, #BackWall').removeClass('active')
         $('#BackWall, .popup, .PlacePop').removeClass('CallPop');
         $('.chooseBlock').removeClass('active');
-        $('.aboutBlock').removeClass('active');      
+        $('.aboutBlock').removeClass('active');     
+        $('body').css("overflow-y", "auto");
+
+        //$("#border_button").click(function (e) {    //activate border
+            $('#border_svg, #Front, #Back, .cls-bordder-1, .cls-bordder-2, .cls-bordder-3, .cls-bordder-4, .cls-bordder-5, .cls-bordder-6, .cls-bordder-7, .cls-bordder-8, .cls-bordder-9, .cls-bordder-10, .cls-bordder-11, .cls-bordder-12, .cls-bordder-13, .cls-bordder-14').addClass('active');
+
+            $('#_escal').removeClass('active');
+            $('.cls-1, .cls-2, .cls-3, .cls-4, .cls-5, .cls-6, .cls-7, .cls-8, .cls-9, .cls-10, .cls-11, .cls-12, .cls-13').removeClass('active');
+
+            $('#bath, .bath_svg, .cls-mask, .border_bath_bottom, .front_wall, .right_wall, .bath_top, .line_bottom, .line_right').removeClass('activate');
+        //});
     });
 
     $("#CallBtn, #call_svg").click(function (e) { 
@@ -125,7 +155,7 @@ $(document).ready(function() {
     });
 
 //----------------------------------------------------------------------------------------
-
+//-------------------------------------Call Orders----------------------------------------//
     $('#InputNameVal').on('keyup',function(){
         var $this = $(this),
             val = $this.val();
@@ -149,6 +179,36 @@ $(document).ready(function() {
             CheckInput();
           }
       });
+//---------------------------------------------------------------------------------------------
+//-------------------------------------Product orders----------------------------------------//
+
+      $('.InputNameCheck').on('keyup',function(){
+        var $this = $(this),
+            val = $this.val();
+        
+        if(val.length >= 1){
+            validName = 1;
+            CheckInput();
+        }else {
+            validName = 0;
+            CheckInput();
+        }
+      });
+
+      $('.InputMobileCheck').on('keyup',function(){
+        var $this = $(this);
+        let phone = $this.val();
+
+        if (!validatePhone(phone)){
+            validPhone = 0;
+            CheckInput();
+          }else{
+            validPhone = 1;
+            CheckInput();
+          }
+      });
+
+//---------------------------------------------------------------------------------------------
 
       $('.input h1').css("display","none"); 
 

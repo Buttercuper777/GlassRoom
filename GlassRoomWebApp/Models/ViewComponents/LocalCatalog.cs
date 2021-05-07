@@ -17,5 +17,6 @@ namespace GlassRoomWebApp.Models.ViewComponents
         {
             return Task.FromResult((IViewComponentResult)View("Default", dataManager.ServiceItems.GetServiceItems()));
         }
+
     }
 }

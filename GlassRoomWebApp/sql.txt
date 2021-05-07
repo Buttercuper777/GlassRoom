@@ -1,0 +1,23 @@
+CREATE TABLE Fittings
+(
+id INT IDENTITY(1,1),
+TypeFit NVARCHAR(50),
+PriceFit INT NOT NULL
+)
+
+/****** Script for SelectTopNRows command from SSMS  ******/
+ALTER TABLE Fittings
+Add CONSTRAINT PK_Fittitgs_Id PRIMARY KEY CLUSTERED (id)
+GO
+
+
+CREATE TABLE Glasses
+(
+id INT IDENTITY(1,1),
+TypeGl NVARCHAR(50) NOT NULL,
+ThGl INT NOT NULL,
+PriceGl FLOAT NOT NULL
+)
+
+INSERT INTO [Glasses](TypeGl, ThGl, PriceGl) values
+('Стандарт', 8, 500)

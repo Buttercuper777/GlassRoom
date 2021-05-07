@@ -1,0 +1,146 @@
+﻿@model IQueryable<FitCalc>
+@*@model CalculatorModel*@
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+
+        function CreateFitTable(size) {
+            for (var i = 0; i < size; i++) {
+                $('#FittingsSelector #singleSelect0').first().clone(true).appendTo($('#FittingsSelector'));
+                $('#FittingsSelector .__select__label').first().clone(true).appendTo($('#FittingsSelector')).html(i + 1);
+            } 
+        }
+
+
+@*
+        $('#FittingsSelector #singleSelect0').first().clone(true).appendTo($('#FittingsSelector'));
+        $('#FittingsSelector .__select__label').first().clone(true).appendTo($('#FittingsSelector')).html('one');
+
+
+        $('#FittingsSelector #singleSelect0').first().clone(true).appendTo($('#FittingsSelector'));
+        $('#FittingsSelector .__select__label').first().clone(true).appendTo($('#FittingsSelector')).html('Two');*@
+
+
+        $.ajax({
+            type: "POST",
+            url: "@Url.Action("GetFitSize")",
+            @*data: {i: 1},*@
+            dataType: "text",
+            success: function (msg) {
+                SizeFitCol = msg;
+                console.log(SizeFitCol);
+                CreateFitTable(msg);
+            },
+            error: function (req, status, error) {
+                console.log('Error (get size fittings col)');
+                SizeFitCol = 0;
+            }
+        });
+
+        $.ajax({
+            type: "POST",
+            url: "@Url.Action("GetGlSize")",
+            @*data: {i: 1},*@
+            dataType: "text",
+            success: function (msg) {
+                SizeGlassesCol = msg;
+                console.log(SizeGlassesCol);
+            },
+            error: function (req, status, error) {
+                console.log('Error (get size glasses col)');
+                SizeGlassesCol = 0;
+            }
+        });
+
+
+        //alert(SizeFitCol);
+
+        @*console.log(SizeFitCol);
+        for (var i = 0; i < SizeFitCol; i++) {
+            $('selectCl.#singleSelect1').clone(true).appendTo($('.selectCl.__select__content'));
+            $('.selectCl.__select__label').clone(true).appendTo($('.selectCl.__select__content'));
+            alert($('.selectCl').Children().val());
+        }*@
+
+
+    });
+</script>
+<form>
+ 
+    <div id="forCalcShow">
+        <p id="calcCloseBtn">×</p>
+        <h3>Рассчитать стоимость заказа</h3>
+        <div class="CalcBody">
+            <input type="button" value="Душевая перегородка" class="BtnCalc" id="LockedForChoose">
+            <input type="button" value="П-образная душевая" class="BtnCalc">
+            <input type="button" value="Угловая душевая" class="BtnCalc">
+
+            <div class="glSize">
+                <b>Ширина, (мм)</b>
+                <input type="number" required class="onlyNums">
+            </div>
+
+            <div class="glSize">
+                <b>Длина, (мм)</b>
+                <input type="number" required>
+            </div>
+
+            <div class="glSize">
+                <b>Высота, (мм)</b>
+                <input type="number" required>
+            </div>
+
+            <div class="selectCl">
+                <b>1.1 Тип стекла</b>
+                <div class="__select" data-state="" id="1_select">
+                    <div class="__select__title" data-default="Option 0">Стандарт</div>
+                    <div class="__select__content">
+                        <input id="singleSelect0" class="__select__input" type="radio" name="singleSelect" />
+                        <label for="singleSelect0" class="__select__label">-</label>
+                        <input id="singleSelect0" class="__select__input" type="radio" name="singleSelect" />
+                        <label for="singleSelect0" class="__select__label">Стандарт</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="selectCl">
+                <b>1.2 Толщина стекла</b>
+                <div class="__select" data-state="1">
+                    <div class="__select__title" data-default="Option 0">8</div>
+                    <div class="__select__content">
+                        <input id="singleSelect0" class="__select__input" type="radio" name="singleSelect" />
+                        <label for="singleSelect0" class="__select__label">-</label>
+                        <input id="singleSelect0" class="__select__input" type="radio" name="singleSelect" />
+                        <label for="singleSelect0" class="__select__label">8</label>
+                    </div>
+                </div>
+            </div>
+
+
+                <div class="selectCl">
+                    <b>1.3 Тип фурнитуры</b>
+                    <div class="__select" data-state="2">
+                        <div class="__select__title" data-default="Option 0">Стандарт</div>
+                        <div class="__select__content" id="FittingsSelector">
+
+                            <input id="singleSelect0" class="__select__input" type="radio" name="singleSelect" />
+                            <label for="singleSelect0" class="__select__label">-</label>
+
+                        </div>
+                    </div>
+                </div>
+          
+
+            <p class="CalcResVal">Итого: </p>
+
+        </div>
+        <div class="CalcBodyOrderForms">
+            <input type="text" placeholder="Имя:" class="InputNameCheck"></input>
+            <input type="phone" placeholder="Телефон:" class="InputMobileCheck"></input>
+            <input type="submit" id="SendUserOrder" value="Заказать" disabled></input>
+        </div>
+    </div>
+</form>

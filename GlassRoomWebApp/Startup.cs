@@ -31,6 +31,8 @@ namespace GlassRoomWebApp
             services.AddTransient<IServiceItemsRepository, EFServiceItemsRepository>();
             services.AddTransient<ICityListRepository, EFCitiesListRepository>();
             services.AddTransient<IUserPhoneRepository, EFUserPhoneRepository>();
+            services.AddTransient<IFitCalcRepository, EFFittingsRepository>();
+            services.AddTransient<IGlassesRepository, EFGlassesRepository>();
             services.AddTransient<DataManager>();
 
 

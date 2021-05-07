@@ -1,0 +1,263 @@
+section {
+    padding: 0 15px;
+    min-height: 1000px;
+    margin-bottom: 80px;
+  }
+footer {
+    padding: 0 30px;
+    height: 350px;
+    background: #272D3B;
+    border-top: solid 7px #2D2E45;
+    text-align: center;
+    color: var(--l_color);
+    font-family: GBold;
+    background: url(../images/logo3_alph.png);
+}
+footer h3{
+    margin-top: 20px;
+}
+
+.soc_net_ITEMS_footer{
+    display: grid;
+    grid-template-columns: repeat(4, 75px);
+    grid-row-gap: 10px;
+    justify-items: center;
+    justify-content: center;
+    padding-top: 15px;
+    
+}
+
+.menu_ITEMS_footer{
+    display: block;
+    margin: 30px auto;
+}
+
+.menu_item_footer{
+    font-size: 15px;
+    list-style: none;
+    display: inline-block;
+    margin-left: 18px;
+    padding-bottom: 7px;
+}
+.menu_item_footer::before{
+    content: "\2022";
+    color: var(--bl_color);
+    font-weight: bold;
+    display: inline-block; 
+    width: 1em;
+    margin-left: -1em;
+}
+.menu_item_footer a{
+    color: var(--bl_color);
+}
+
+footer {
+    position: relative;
+}
+
+footer b{
+    color:var(--m_color);
+    position: absolute;
+    bottom: 15px;
+    transform: translateX(-47%);
+}
+
+.soc_net_icon_footer:hover{
+    cursor: pointer;
+    transition:0.4s;
+    background: var(--bl_color);
+}
+
+.soc_net_icon_footer{
+width: 55px;
+height: 55px;
+overflow:hidden;
+border: solid 2px rgba(255, 255, 255, 0.231);
+border-radius: 10px;
+transition:0.4s;
+list-style: none;
+}
+
+.soc_net_icon_footer img{
+width: 90%;
+margin: 0 auto;
+margin-top: 50%;
+transform: translateY(-50%);
+}
+
+.footer_addres {
+display: block;
+max-width: 250px;
+position: absolute;
+top: 10vh;
+max-height: 64px;
+}
+
+.footer_addres img{
+float: left;  
+height: 100%;
+position: static;
+}
+
+
+.footer_addres a{
+font-size:2.6vh;
+float: left;
+}
+
+.footer_addres p{
+font-size:2.1vh;
+text-align: left;
+color: var(--m_color);
+}
+
+/*------------- footer End ---------------*/
+
+.catalog_body{
+color: #fff;
+padding: 10px 0;
+}
+.catalog_body h1{
+padding-bottom: 25px;
+color:#dedede;
+font-family: GBold;
+width: 100%;
+}
+.catalog_grid{
+display: grid;
+grid-template-columns: 1fr 1fr 1fr 1fr;
+grid-column-gap: 30px;
+grid-row-gap: 15px;
+}
+.catalog_grid li{
+color: #dedede;  
+float: left;  
+list-style: none;
+border-radius: 25px;
+height: 280px;
+border: solid 2px #fff;
+background: #fff;
+overflow: hidden;
+position: relative;
+cursor: pointer;
+}
+
+.catalog_grid li :hover ~ img{
+height: 115%;
+filter: blur(2px);
+transition: 0.3s;
+}     
+
+.catalog_grid_el_text{
+z-index: 15;
+position:absolute;
+border-radius: 25px;
+height: 280px;
+width: 100%;
+background: rgb(35,32,45);
+background: linear-gradient(0deg, rgba(35,32,45,1) 10%, rgba(35,32,45,0.5) 45%);
+}
+
+.catalog_grid_el_text a{
+position: absolute;
+bottom: 20px;
+left:10px;
+font-family: GBold;
+color: #fff;
+}
+
+.catalog_grid_el_text h2{
+font-size: 1.45vw;
+}
+.catalog_grid_el_text b{
+font-size: 1vw;
+color:#dedede;
+}
+
+.catalog_grid li img{
+height: 100%;
+position: relative;
+margin-top: 50%;
+transform: translateY(-47%);
+z-index: 10;
+transition: 0.3s;
+}
+
+@media (max-width: 575.98px){
+.catalog_grid{
+    grid-template-columns: 1fr 1fr;
+}  
+.catalog_grid li{
+    height: 180px;
+}
+.catalog_grid .catalog_grid_el_text{
+    height: 180px;
+}
+
+.catalog_grid .catalog_grid_el_text h2{
+    font-size: 5vw;
+}
+
+.catalog_grid .catalog_grid_el_text b{
+    font-size: 2.5vw;
+}
+}
+
+
+@media (min-width: 575.98px){
+section {
+    padding: 0 calc(50vw - 270px);
+}
+.catalog_grid{
+    grid-template-columns: 1fr 1fr;
+}
+}
+
+@media (min-width: 767.98px){
+section {
+    padding: 0 calc(50vw - 360px);
+}
+.catalog_grid{
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.menu_ITEMS_footer{
+    width: 30%;
+}
+
+}
+
+@media (max-width: 991.98px){
+    .footer_addres{
+    position: relative;
+    top:0px;
+    width: 100vw;
+    height: 6vh;
+    margin: 10px 0;
+    }
+
+    .footer_addres img{
+    display: none;
+    }
+    
+    .footer_addres a,p{
+    float: left;
+    text-align: center;
+    
+    }
+}
+
+@media (min-width: 991.98px) {
+section {
+    padding: 0 calc(50vw - 480px);
+}
+.catalog_grid{
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+}
+
+@media (min-width: 1199.98px){
+section, footer{
+    padding: 0 calc(50vw - 590px);
+}
+
+}

@@ -43,5 +43,16 @@ namespace GlassRoomWebApp.Domain.Repositories.EntityFramework
             context.UserPhones.Remove(new UserPhone() { Id = id });
             context.SaveChanges();
         }
+
+        public void CheckUserPhone(Guid id)
+        {
+           UserPhone Ch = GetUserPhoneById(id);
+            if (Ch.Checked == true)
+                Ch.Checked = false;
+            else
+                Ch.Checked = true;
+
+            context.SaveChanges();
+        }
     }
 }

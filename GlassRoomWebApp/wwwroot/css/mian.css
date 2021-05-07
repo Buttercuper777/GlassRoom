@@ -435,7 +435,7 @@ header .headerPlaceBtn:hover{
 .aboutBlock a{
     width: 100%;
     text-align: center;
-    color:var(--lm_color);
+    color:var(--pu_gr_color);
     font-family: GBold;
     font-size: 20px;
     align-self: center;
@@ -536,13 +536,12 @@ header .headerPlaceBtn:hover{
 .popup a{
     font-size: 23px;
     font-family: GBold;
-    color:var(--lm_color);
+    color:var(--pu_gr_color);
 }
 
 #ChooseForm{
-    min-width: 400px;
     width: 50%;
-    height: 100%;
+    height: 100vh;
     position: absolute;
     background: #16131e;
     opacity: 0.8;
@@ -550,6 +549,18 @@ header .headerPlaceBtn:hover{
     transform: scaleX(0);
     transform-origin: left;
     transition: 0.5s ease-in-out;
+    display: block;
+
+}
+
+@media (max-width: 1479.98px){
+    #ChooseForm{
+        width: 100%;
+        opacity: 1;
+        z-index: 100;
+        position: absolute;
+        padding: 0 calc(25% - 400px);
+    }
 }
 
 #ChooseForm a {
@@ -588,7 +599,7 @@ header .headerPlaceBtn:hover{
     margin-top: 6px;
 }
 
-.input h1 {
+.input h1{
     color: #fff;
     font-family: GBold;
 }

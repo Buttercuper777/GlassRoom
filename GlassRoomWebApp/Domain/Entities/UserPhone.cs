@@ -10,6 +10,8 @@ namespace GlassRoomWebApp.Domain.Entities
         [DataType(DataType.Time)]
         public DateTime DateUPAdded { get; set; }
 
+        public Boolean Checked { get;  set;}
+
         [Required]
         public Guid Id { get; set; }
 

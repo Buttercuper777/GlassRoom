@@ -6,6 +6,7 @@
         <link href="css/catalog.css" rel="stylesheet">
         <link href="css/animate.css" rel="stylesheet">
         <link href="css/adapt.css" rel="stylesheet">
+        <link href="css/Calc.css" rel="stylesheet">
         <meta charset="utf-8">
         <meta name = "viewport" content = "width = device-width">
 
@@ -13,14 +14,92 @@
         <script src="JS/jquery.maskedinput.js"></script>
         <script src="JS/main_script.js"></script>
         <script src="JS/animate_pages.js"></script>
+        <script src="JS/Calc.js"></script>
+
 	</head>
 	<body>   
         <header id="header_anchor">
             <div id="ChooseForm">
-              <a id = "border_button">border</a>
-              <a id = "shower_button">shower</a>
-              <a id = "more_button">more</a>
+              <form>
+              <div id="forCalcShow">
+              <p id="calcCloseBtn">×</p>
+              <h3>Рассчитать стоимость заказа</h3>
+                <div class="CalcBody">
+                  <input type="button" value="Душевая перегородка" class="BtnCalc active">
+                  <input type="button" value="П-образная душевая" class="BtnCalc">
+                  <input type="button" value="Угловая душевая" class="BtnCalc">
+
+                  <div class="glSize">
+                    <b>Ширина, (мм)</b>
+                    <input type="number" required class="onlyNums">
+                  </div>
+
+                  <div class="glSize">
+                    <b>Длина, (мм)</b>
+                    <input type="number" required class="">
+                  </div>
+
+                  <div class="glSize">
+                    <b>Высота, (мм)</b>
+                    <input type="number" required  class="">
+                  </div>
+
+                  <div class = "selectCl">
+                    <b>1.1 Тип стекла</b>
+                    <div class="__select" data-state="" id="1_select">
+                      <div class="__select__title" data-default="Option 0">Стандарт</div>
+                      <div class="__select__content">
+                        <input id="singleSelect0" class="__select__input" type="radio" name="singleSelect" />
+                        <label for="singleSelect0" class="__select__label">-</label>
+                        <input id="singleSelect0" class="__select__input" type="radio" name="singleSelect" />
+                        <label for="singleSelect0" class="__select__label">Стандарт</label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class = "selectCl"> 
+                    <b>1.2 Толщина стекла</b>
+                    <div class="__select" data-state="1">
+                      <div class="__select__title" data-default="Option 0">8</div>
+                      <div class="__select__content">
+                        <input id="singleSelect0" class="__select__input" type="radio" name="singleSelect" />
+                        <label for="singleSelect0" class="__select__label">-</label>
+                        <input id="singleSelect0" class="__select__input" type="radio" name="singleSelect" />
+                        <label for="singleSelect0" class="__select__label">8</label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class = "selectCl">
+                    <b>1.3 Тип фурнитуры</b>
+                    <div class="__select" data-state="2" >
+                      <div class="__select__title" data-default="Option 0">Стандарт</div>
+                      <div class="__select__content">
+                        <input id="singleSelect0" class="__select__input" type="radio" name="singleSelect" />
+                        <label for="singleSelect0" class="__select__label">-</label>
+                        <input id="singleSelect1" class="__select__input" type="radio" name="singleSelect" />
+                        <label for="singleSelect1" class="__select__label">Эконом</label>
+                        <input id="singleSelect3" class="__select__input" type="radio" name="singleSelect" />
+                        <label for="singleSelect3" class="__select__label">Стандарт</label>
+                        <input id="singleSelect0" class="__select__input" type="radio" name="singleSelect" />
+                        <label for="singleSelect0" class="__select__label">Премиум</label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <p class="CalcResVal">Итого: </p>
+
+                </div>
+                <div class="CalcBodyOrderForms">
+                    <input type="text" placeholder="Имя:" class="InputNameCheck"></input>
+                    <input type="phone" placeholder="Телефон:" class="InputMobileCheck"></input>
+                    <input type="submit" id="SendUserButton" value="Заказать" disabled></input>
+                </div>
+              </div>
+              </form>
+
             </div>
+
             <div id="BackWall">
               <a>Нажми, чтобы закрыть меню.</a>
             </div>
@@ -131,7 +210,7 @@
             <div class = "ContentSpace"> 
                 <div class="leftContent">
                     <div class = "HeaderText">
-                        <h1>СТЕКЛО ПРО ЮГ :</h1>
+                        <h1>СТЕКЛО ПРО ЮГ</h1>
                         <h2>ОСТЕКЛЕНИЕ ЛЮБОЙ<br>
                         СЛОЖНОСТИ ПО<br>
                         ЛУЧШЕЙ ЦЕНЕ!</h2>
@@ -567,4 +646,5 @@
         </div>
 
         </body>
+
 </html>

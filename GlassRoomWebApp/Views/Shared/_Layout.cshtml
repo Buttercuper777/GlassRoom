@@ -8,9 +8,7 @@
 <body>
     <header id="header_anchor">
         <div id="ChooseForm">
-            <a id="border_button">border</a>
-            <a id="shower_button">shower</a>
-            <a id="more_button">more</a>
+            @await Html.PartialAsync("CalculatorPartial")
         </div>
         <div id="BackWall">
             <a>Нажми, чтобы закрыть меню.</a>
@@ -45,7 +43,7 @@
             </div>
 
             <div class="popup">
-                @await Html.PartialAsync("CallPopUpShared");
+                @await Html.PartialAsync("CallPopUpShared")
             </div>
 
         </div>
@@ -87,21 +85,21 @@
 
         @RenderBody()
 
-    <div class="fs_block">
-        <div class="line line-1">
-            <div class="wave wave1"></div>
+        <div class="fs_block">
+            <div class="line line-1">
+                <div class="wave wave1"></div>
+            </div>
+
+            <div class="line line-2">
+                <div class="wave wave2"></div>
+            </div>
+
+            <div class="line line-3">
+                <div class="wave wave3"></div>
+            </div>
         </div>
 
-        <div class="line line-2">
-            <div class="wave wave2"></div>
-        </div>
 
-        <div class="line line-3">
-            <div class="wave wave3"></div>
-        </div>
-    </div>
-   
-   
     </header>
 
     <!------------------------ CATALOG SPACE -------------------->

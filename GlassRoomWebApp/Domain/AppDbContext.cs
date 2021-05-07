@@ -14,10 +14,13 @@ namespace GlassRoomWebApp.Domain
         public DbSet<ServiceItem> ServiceItems { get; set; }
         public DbSet<CitiesList> CitiesOfList { get; set; } 
         public DbSet<UserPhone> UserPhones { get; set; }
+        public DbSet<FitCalc> Fittings { get; set; }
+        public DbSet<GlassCalc> Glasses { get; set; }
         
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+            
 
             modelBuilder.Entity<IdentityRole>().HasData(new IdentityRole
             {
@@ -37,6 +40,7 @@ namespace GlassRoomWebApp.Domain
                 PasswordHash = new PasswordHasher<IdentityUser>().HashPassword(null, "steklo1324pro5768ug"),
                 SecurityStamp = string.Empty
             });
+
 
             modelBuilder.Entity<IdentityUserRole<string>>().HasData(new IdentityUserRole<string>
             {
