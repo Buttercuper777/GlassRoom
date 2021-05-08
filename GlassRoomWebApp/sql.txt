@@ -21,3 +21,16 @@ PriceGl FLOAT NOT NULL
 
 INSERT INTO [Glasses](TypeGl, ThGl, PriceGl) values
 ('Стандарт', 8, 500)
+
+--------------------------------------------------------------------------------
+Insert into Glasses (TypeGl,ThGl, PriceGl) values
+('Стандарт', 8, 650)
+
+CREATE TABLE Glasses
+(
+id INT IDENTITY(1,1),
+TypeGl NVARCHAR(50) NOT NULL,
+ThGl INT NOT NULL,
+PriceGl FLOAT NOT NULL
+)
+

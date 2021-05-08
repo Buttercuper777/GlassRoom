@@ -42,6 +42,32 @@ namespace GlassRoomWebApp.Domain.Repositories.EntityFramework
             return context.Fittings.ToList().Last().id;
         }
 
+        public List<string> getJsonList()
+        {
+            List<string> TypeList = new List<string>();
+            if (GetFitSize() >= 1)
+            {
+                string uType = GetFitCalcById(1).TypeFit;
+                TypeList.Add(uType);
+
+                for (int i = 1; i <= GetFitSize(); i++)
+                {
+                    if (GetFitCalcById(i).TypeFit != uType)
+                    {
+                        uType = GetFitCalcById(i).TypeFit;
+                        TypeList.Add(uType);
+                    }
+                }
+
+                return TypeList;
+            }
+            else
+            {
+                TypeList.Add("Empty");
+                return TypeList;
+            }
+        }
+
         public IQueryable<FitCalc> GetUPDate()
         {
             throw new NotImplementedException();

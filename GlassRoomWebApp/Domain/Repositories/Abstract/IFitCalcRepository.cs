@@ -15,6 +15,7 @@ namespace GlassRoomWebApp.Domain.Repositories.Abstract
         void SaveFitting(int id);
         void DeleteFitting(int id);
         int GetFitSize();
+        List<string> getJsonList();
 
     }
 }

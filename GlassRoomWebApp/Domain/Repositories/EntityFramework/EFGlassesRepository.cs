@@ -26,6 +26,54 @@ namespace GlassRoomWebApp.Domain.Repositories.EntityFramework
             return context.Glasses;
         }
 
+        public List<int> getGlassesTh()
+        {
+            List<int> ThList = new List<int>();
+            int size = GetGlSize();
+            if (size >= 1)
+            {
+                for (int i = 0; i < size; i++)
+                {
+                    if (ThList.Contains(GetGlById(i + 1).ThGl) == false)
+                        ThList.Add(GetGlById(i + 1).ThGl);
+                }
+
+                return ThList;
+            }
+            else
+            {
+                ThList.Add(-1);
+                return ThList;
+            }
+        }
+
+        public List<string> getGlassesTypes()
+        {
+            int size = GetGlSize();
+            List<string> TyList = new List<string>();
+            if (size >= 1)
+            {
+                for (int i = 0; i < size; i++)
+                {
+                    if (TyList.Contains(GetGlById(i + 1).TypeGl) == false)
+                        TyList.Add(GetGlById(i + 1).TypeGl);
+                }
+
+                return TyList;
+            }
+            else
+            {
+                TyList.Add("Empty");
+                return TyList;
+            }
+        }
+
+
+        public GlassCalc GetGlById(int Id)
+        {
+            return context.Glasses.FirstOrDefault(x => x.id == Id);
+        }
+
         public int GetGlSize()
         {
             return context.Glasses.ToList().Last().id;

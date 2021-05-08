@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using GlassRoomWebApp.Domain.Entities;
 
@@ -11,5 +12,8 @@ namespace GlassRoomWebApp.Domain.Repositories.Abstract
         void SaveGlass(int Id);
         void DeleteGlass(int Id);
         int GetGlSize();
+        GlassCalc GetGlById(int Id);
+        List<int> getGlassesTh();
+        List<string> getGlassesTypes();
     }
 }

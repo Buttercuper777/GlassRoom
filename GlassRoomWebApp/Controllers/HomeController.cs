@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using GlassRoomWebApp.Domain;
+using System.Collections.Generic;
 
 namespace GlassRoomWebApp.Controllers
 {
@@ -34,6 +35,33 @@ namespace GlassRoomWebApp.Controllers
         public float GetGlassPrice(string type, int th)
         {
             return dataManager.Glasses.GetPriceByTypeTh(type, th);
+        }
+
+        public ActionResult GetFittingsTypes()
+        {
+            List<string> list = dataManager.Fittings.getJsonList();
+            return Json(new
+            {
+                list
+            }); 
+        }
+
+        public ActionResult GetGlassesThs()
+        {
+            List<int> list = dataManager.Glasses.getGlassesTh();
+            return Json(new
+            {
+                list
+            });
+        }
+
+        public ActionResult GetGlassesTypes()
+        {
+            List<string> list = dataManager.Glasses.getGlassesTypes();
+            return Json(new
+            {
+                list
+            });
         }
 
     }

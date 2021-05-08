@@ -7,63 +7,70 @@
     $(document).ready(function () {
 
 
-        function CreateFitTable(size) {
-            for (var i = 0; i < size; i++) {
-                $('#FittingsSelector #singleSelect0').first().clone(true).appendTo($('#FittingsSelector'));
-                $('#FittingsSelector .__select__label').first().clone(true).appendTo($('#FittingsSelector')).html(i + 1);
-            } 
+        function AddFittingToTab(FitType) {     // Add Fittings
+            $('#FittingsSelector #singleSelect0').first().clone(true).appendTo($('#FittingsSelector'));
+            $('#FittingsSelector .__select__label').first().clone(true).appendTo($('#FittingsSelector')).html(FitType);
+        }
+
+        function AddGlThToTab(ThGl) {           // Add Glass th
+            $('#GlThSelector #singleSelect0').first().clone(true).appendTo($('#GlThSelector'));
+            $('#GlThSelector .__select__label').first().clone(true).appendTo($('#GlThSelector')).html(ThGl);
+        }
+
+        function AddGlTypeToTab(Type) {         // Add Glass type
+            $('#TypeGlSelector #singleSelect0').first().clone(true).appendTo($('#TypeGlSelector'));
+            $('#TypeGlSelector .__select__label').first().clone(true).appendTo($('#TypeGlSelector')).html(Type);
         }
 
 
-@*
-        $('#FittingsSelector #singleSelect0').first().clone(true).appendTo($('#FittingsSelector'));
-        $('#FittingsSelector .__select__label').first().clone(true).appendTo($('#FittingsSelector')).html('one');
 
-
-        $('#FittingsSelector #singleSelect0').first().clone(true).appendTo($('#FittingsSelector'));
-        $('#FittingsSelector .__select__label').first().clone(true).appendTo($('#FittingsSelector')).html('Two');*@
-
-
-        $.ajax({
-            type: "POST",
-            url: "@Url.Action("GetFitSize")",
+        $.ajax({                                    // Get Fittings
+            type: "GET",
+            url: "@Url.Action("GetFittingsTypes")",
             @*data: {i: 1},*@
-            dataType: "text",
-            success: function (msg) {
-                SizeFitCol = msg;
-                console.log(SizeFitCol);
-                CreateFitTable(msg);
+            dataType: "json",
+            success: function (result) {
+                var list = result.list;
+                $.each(list, function (index, value) {
+                    AddFittingToTab(value);
+                });
             },
-            error: function (req, status, error) {
-                console.log('Error (get size fittings col)');
-                SizeFitCol = 0;
+            error: function (e) {
+                console.log("Error:Unable to load data from server (Fittings)");
             }
         });
 
-        $.ajax({
-            type: "POST",
-            url: "@Url.Action("GetGlSize")",
+        $.ajax({                                    // Get glass thickness
+            type: "GET",
+            url: "@Url.Action("GetGlassesThs")",
             @*data: {i: 1},*@
-            dataType: "text",
-            success: function (msg) {
-                SizeGlassesCol = msg;
-                console.log(SizeGlassesCol);
+            dataType: "json",
+            success: function (result) {
+                var list = result.list;
+                $.each(list, function (index, value) {
+                    AddGlThToTab(value);
+                });
             },
-            error: function (req, status, error) {
-                console.log('Error (get size glasses col)');
-                SizeGlassesCol = 0;
+            error: function (e) {
+                console.log("Error:Unable to load data from server (Glasses Th)");
             }
         });
 
-
-        //alert(SizeFitCol);
-
-        @*console.log(SizeFitCol);
-        for (var i = 0; i < SizeFitCol; i++) {
-            $('selectCl.#singleSelect1').clone(true).appendTo($('.selectCl.__select__content'));
-            $('.selectCl.__select__label').clone(true).appendTo($('.selectCl.__select__content'));
-            alert($('.selectCl').Children().val());
-        }*@
+        $.ajax({                                     // Get Glass types
+            type: "GET",
+            url: "@Url.Action("GetGlassesTypes")",
+            @*data: {i: 1},*@
+            dataType: "json",
+            success: function (result) {
+                var list = result.list;
+                $.each(list, function (index, value) {
+                    AddGlTypeToTab(value);
+                });
+            },
+            error: function (e) {
+                console.log("Error:Unable to load data from server (Glasses Types)");
+            }
+        });
 
 
     });
@@ -97,11 +104,11 @@
                 <b>1.1 Тип стекла</b>
                 <div class="__select" data-state="" id="1_select">
                     <div class="__select__title" data-default="Option 0">Стандарт</div>
-                    <div class="__select__content">
+                    <div class="__select__content" id="TypeGlSelector">
+
                         <input id="singleSelect0" class="__select__input" type="radio" name="singleSelect" />
                         <label for="singleSelect0" class="__select__label">-</label>
-                        <input id="singleSelect0" class="__select__input" type="radio" name="singleSelect" />
-                        <label for="singleSelect0" class="__select__label">Стандарт</label>
+ 
                     </div>
                 </div>
             </div>
@@ -110,11 +117,12 @@
                 <b>1.2 Толщина стекла</b>
                 <div class="__select" data-state="1">
                     <div class="__select__title" data-default="Option 0">8</div>
-                    <div class="__select__content">
+                    <div class="__select__content" id="GlThSelector">
+
                         <input id="singleSelect0" class="__select__input" type="radio" name="singleSelect" />
                         <label for="singleSelect0" class="__select__label">-</label>
-                        <input id="singleSelect0" class="__select__input" type="radio" name="singleSelect" />
-                        <label for="singleSelect0" class="__select__label">8</label>
+
+
                     </div>
                 </div>
             </div>
