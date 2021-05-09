@@ -4,6 +4,17 @@
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script type="text/javascript">
 
+    function urlLit(w, v) {
+        var tr = 'a b v g d e ["zh","j"] z i y k l m n o p r s t u f h c ch sh ["shh","shch"] ~ y ~ e yu ya ~ ["jo","e"]'.split(' ');
+        var ww = ''; w = w.toLowerCase();
+        for (i = 0; i < w.length; ++i) {
+            cc = w.charCodeAt(i); ch = (cc >= 1072 ? tr[cc - 1072] : w[i]);
+            if (ch.length < 3) ww += ch; else ww += eval(ch)[v];
+        }
+        return (ww.replace(/[^a-zA-Z0-9\-]/g, '-').replace(/[-]{2,}/gim, '-').replace(/^\-+/g, '').replace(/\-+$/g, ''));
+    }
+
+
     $(document).ready(function () {
 
 
@@ -13,12 +24,12 @@
         }
 
         function AddGlThToTab(ThGl) {           // Add Glass th
-            $('#GlThSelector #singleSelect0').first().clone(true).appendTo($('#GlThSelector'));
+            $('#GlThSelector #singleSelect0').first().clone(true).appendTo($('#GlThSelector')).attr('id', 'Th' + ThGl);
             $('#GlThSelector .__select__label').first().clone(true).appendTo($('#GlThSelector')).html(ThGl);
         }
 
         function AddGlTypeToTab(Type) {         // Add Glass type
-            $('#TypeGlSelector #singleSelect0').first().clone(true).appendTo($('#TypeGlSelector'));
+            $('#TypeGlSelector #singleSelect0').first().clone(true).appendTo($('#TypeGlSelector')).attr('id', 'Ty' + urlLit(Type, 0));
             $('#TypeGlSelector .__select__label').first().clone(true).appendTo($('#TypeGlSelector')).html(Type);
         }
 
@@ -72,8 +83,63 @@
             }
         });
 
+        $('#TypeGlSelector .__select__label').click(function () {       // Click on type look for th
+            var selectedType = $(this).html();
+            $('#GlThSelector .__select__label').each(function (i, elem) {
+                var LTh = ($(elem).html());
+                $.ajax({
+                    type: "POST",
+                    url: "@Url.Action("GetGlassPrice")",
+                    data: { type: selectedType, th: LTh },
+                    dataType: "text",
+                    success: function (result) {
+                        if (result == -1) {
+                            var idVal = '#Th' + LTh;
+                            $(idVal).attr('disabled', true);
+                        }
+                        else {
+                            var idVal = '#Th' + LTh;
+                            $(idVal).attr('disabled', false);
+                        }
 
-    });
+                    },
+                    error: function (e) {
+                        console.log("Error:Unable to load data from server (Glasses Th)");
+                    }
+                    });
+                });
+        });
+
+        $('#GlThSelector .__select__label').click(function(){
+            var SelectedTh = ($(this).html());
+            $('#TypeGlSelector .__select__label').each(function (i, elem) {
+                var LType = ($(elem).html());
+                $.ajax({
+                    type: "POST",
+                    url: "@Url.Action("GetGlassPrice")",
+                    data: { type: LType, th: SelectedTh },
+                    dataType: "text",
+                    success: function (result) {
+                        if (result == -1) {
+                            var idVal = '#Ty' + urlLit(LType,0);
+                            $(idVal).attr('disabled', true);
+                        }
+                        else {
+                            var idVal = '#Ty' + urlLit(LType, 0);
+                            $(idVal).attr('disabled', false);
+                        }
+
+                    },
+                    error: function (e) {
+                        console.log("Error:Unable to load data from server (Glass types)");
+                    }
+                });
+            });
+        });
+
+        });
+
+
 </script>
 <form>
  
@@ -103,7 +169,7 @@
             <div class="selectCl">
                 <b>1.1 Тип стекла</b>
                 <div class="__select" data-state="" id="1_select">
-                    <div class="__select__title" data-default="Option 0">Стандарт</div>
+                    <div class="__select__title" data-default="Option 0">Выбрать</div>
                     <div class="__select__content" id="TypeGlSelector">
 
                         <input id="singleSelect0" class="__select__input" type="radio" name="singleSelect" />
@@ -116,12 +182,11 @@
             <div class="selectCl">
                 <b>1.2 Толщина стекла</b>
                 <div class="__select" data-state="1">
-                    <div class="__select__title" data-default="Option 0">8</div>
+                    <div class="__select__title" data-default="Option 0">Выбрать</div>
                     <div class="__select__content" id="GlThSelector">
 
                         <input id="singleSelect0" class="__select__input" type="radio" name="singleSelect" />
-                        <label for="singleSelect0" class="__select__label">-</label>
-
+                        <label for="singleSelect0" class="__select__label">0</label>
 
                     </div>
                 </div>

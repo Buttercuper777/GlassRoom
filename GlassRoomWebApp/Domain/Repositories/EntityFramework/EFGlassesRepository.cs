@@ -81,7 +81,14 @@ namespace GlassRoomWebApp.Domain.Repositories.EntityFramework
 
         public float GetPriceByTypeTh(string type, int th)
         {
-            return context.Glasses.FirstOrDefault(x => x.TypeGl == type && x.ThGl == th).PriceGl;
+            try
+            {
+                return context.Glasses.FirstOrDefault(x => x.TypeGl == type && x.ThGl == th).PriceGl;
+            }
+            catch
+            {
+                return -1;
+            }
         }
 
         public void SaveGlass(int Id)
