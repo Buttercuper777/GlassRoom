@@ -1,4 +1,19 @@
+
 $(document).ready(function () {
+
+    var shHeight;
+    var shWidth;
+    var shLength;
+    var typeIndex = 1;
+
+    var fitPrice = 0;
+    var GlPrice = 0;
+
+    function mCalculate(w, h, l, index, fit, gl) {      // main calc function 
+
+        var result = ((((w * l) * index) + (h * l)) * gl) + fit;
+        return result;
+    }
 
     $('.__select__title').click(function () {
        $('.__select').attr('data-state', '');
@@ -17,6 +32,8 @@ $(document).ready(function () {
         $(this).parent('.__select__content').parent('.__select').attr('data-state', '');
     });
 
+
+
     $('.BtnCalc').click(function(){
         $('.BtnCalc').removeClass('active');
         $(this).addClass('active');
@@ -28,16 +45,39 @@ $(document).ready(function () {
     $('.onlyNums').css('opacity', '0.5');
 
     $('.BtnCalc').click(function (e) {
+        if ($(this).attr('data-state') == 'lSh') {
+            typeIndex = 1;
+        }
+        if ($(this).attr('data-state') == 'uSh') {
+            typeIndex = 2;
+        }
+        if ($(this).attr('data-state') == 'wall') {
+            typeIndex = 1;
+        }
+
+
         if ($('.BtnCalc.active').attr('id') == 'LockedForChoose') {
             $('.onlyNums').val('0');
             $('.onlyNums').css('opacity', '0.5');
             $('.onlyNums').attr('readonly', true);
+            shWidth = $('#widthInput').val();
         }
         else {
-            $('.onlyNums').val('');
+            $('.onlyNums').val(shWidth);
             $('.onlyNums').attr('readonly', false);
             $('.onlyNums').css('opacity', '1');
         }
+        $('.CalcResVal').html(mCalculate(shWidth, shHeight, shLength, typeIndex, 0, GlPrice));
+    });
+
+    $('.glSize input').keyup(function () {
+        shWidth = $('#widthInput').val();
+        shLength = $('#lengthInput').val();
+        shHeight = $('#heightInput').val();
+
+        //$('.CalcResVal').html($('.CalcResVal').html() + ' ' + (((shWidth * shLength) * typeIndex) + (shHeight * shLength)) * 1 );
+        $('.CalcResVal').html(mCalculate(shWidth, shHeight, shLength, typeIndex, 0, GlPrice));
+        //alert($(this).val());
     });
 
     // // Toggle menu
