@@ -1,19 +1,34 @@
 
+var shHeight;
+var shWidth;
+var shLength;
+var typeIndex = 1;
+
+var fitPrice = 0;
+var GlPrice = 0;
+
+function setGlPrice(price) {
+    GlPrice = price;        //Set Glass price
+    //alert(GlPrice);
+}
+
+function setFitPrice(price) {
+    fitPrice = price;       //Set fit price
+    //alert(fitPrice);
+}
+
+function mCalculate(w, h, l, index, fit, gl) {      // main calc function 
+    var lrWalls = ((w * h) / 1000000) * index;
+    var frontWall = ((l * h) / 1000000);
+    var result = (frontWall * gl) + (lrWalls * gl) + parseFloat(fit);
+    return result + ' \&#8381;';
+}
+
+function outCalc(gPr, fPr) {
+    $('.CalcResVal').html(mCalculate(shWidth, shHeight, shLength, typeIndex, fPr, gPr));
+}
+
 $(document).ready(function () {
-
-    var shHeight;
-    var shWidth;
-    var shLength;
-    var typeIndex = 1;
-
-    var fitPrice = 0;
-    var GlPrice = 0;
-
-    function mCalculate(w, h, l, index, fit, gl) {      // main calc function 
-
-        var result = ((((w * l) * index) + (h * l)) * gl) + fit;
-        return result;
-    }
 
     $('.__select__title').click(function () {
        $('.__select').attr('data-state', '');
@@ -31,7 +46,6 @@ $(document).ready(function () {
         $(this).parent('.__select__content').parent('.__select').children('.__select__title').html($(this).text());
         $(this).parent('.__select__content').parent('.__select').attr('data-state', '');
     });
-
 
 
     $('.BtnCalc').click(function(){
@@ -67,18 +81,33 @@ $(document).ready(function () {
             $('.onlyNums').attr('readonly', false);
             $('.onlyNums').css('opacity', '1');
         }
-        $('.CalcResVal').html(mCalculate(shWidth, shHeight, shLength, typeIndex, 0, GlPrice));
+        $('.CalcResVal').html(mCalculate(shWidth, shHeight, shLength, typeIndex, fitPrice, GlPrice));
     });
 
     $('.glSize input').keyup(function () {
         shWidth = $('#widthInput').val();
         shLength = $('#lengthInput').val();
         shHeight = $('#heightInput').val();
-
+        
         //$('.CalcResVal').html($('.CalcResVal').html() + ' ' + (((shWidth * shLength) * typeIndex) + (shHeight * shLength)) * 1 );
-        $('.CalcResVal').html(mCalculate(shWidth, shHeight, shLength, typeIndex, 0, GlPrice));
+        $('.CalcResVal').html(mCalculate(shWidth, shHeight, shLength, typeIndex, fitPrice, GlPrice));
         //alert($(this).val());
     });
+
+/*    $('#TypeGlSelector .__select__label').click(function () {
+        $('.CalcResVal').html(mCalculate(shWidth, shHeight, shLength, typeIndex, fitPrice, GlPrice));
+        //alert(GlPrice);
+    });
+
+    $('#GlThSelector .__select__label').click(function () {
+        $('.CalcResVal').html(mCalculate(shWidth, shHeight, shLength, typeIndex, fitPrice, GlPrice)); 
+        alert(GlPrice);
+    });
+
+    $('#FittingsSelector .__select__label').click(function () {
+        $('.CalcResVal').html(mCalculate(shWidth, shHeight, shLength, typeIndex, fitPrice, GlPrice)); 
+    });
+ */
 
     // // Toggle menu
     // selectSingle_title.addEventListener('click', () => {

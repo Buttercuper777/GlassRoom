@@ -1,7 +1,7 @@
 ﻿@model IQueryable<FitCalc>
 @*@model CalculatorModel*@
 
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="~/JS/JQ.js"></script>
 <script src="~/JS/Calc.js"></script>
 <script type="text/javascript">
 
@@ -15,6 +15,11 @@
         return (ww.replace(/[^a-zA-Z0-9\-]/g, '-').replace(/[-]{2,}/gim, '-').replace(/^\-+/g, '').replace(/\-+$/g, ''));
     }
 
+    var selectedType;
+    var selectedTh;
+    var selectedThPrice;
+    var selectedTypePrice;
+    var glPrSave;
 
     $(document).ready(function () {
 
@@ -36,7 +41,7 @@
 
 
 
-        $.ajax({                                    // Get Fittings
+        $.ajax({                                    // Get Fittings (add to list)
             type: "GET",
             url: "@Url.Action("GetFittingsTypes")",
             @*data: {i: 1},*@
@@ -52,7 +57,7 @@
             }
         });
 
-        $.ajax({                                    // Get glass thickness
+        $.ajax({                                    // Get glass thickness (add to list)
             type: "GET",
             url: "@Url.Action("GetGlassesThs")",
             @*data: {i: 1},*@
@@ -68,7 +73,7 @@
             }
         });
 
-        $.ajax({                                     // Get Glass types
+        $.ajax({                                     // Get Glass types (add to list)
             type: "GET",
             url: "@Url.Action("GetGlassesTypes")",
             @*data: {i: 1},*@
@@ -83,9 +88,11 @@
                 console.log("Error:Unable to load data from server (Glasses Types)");
             }
         });
+        
+        //-------------------------------------------------------------------------------------------------------------------------//
 
-        $('#TypeGlSelector .__select__label').click(function () {       // Click on type look for th
-            var selectedType = $(this).html();
+        $('#TypeGlSelector .__select__label').click(function () {                                         // Click on type look for th
+            selectedType = $(this).html();
             $('#GlThSelector .__select__label').each(function (i, elem) {
                 var LTh = ($(elem).html());
                 $.ajax({
@@ -109,17 +116,41 @@
                         console.log("Error:Unable to load data from server (Glasses Th)");
                     }
                     });
-                });
+            });
+
+            // get glass price (click on type)
+            selectedThPrice = $('#2_select .__select__title').html();
+            $.ajax({
+            type: "POST",
+            url: "@Url.Action("GetGlassPrice")",
+            data: { type: selectedType, th: selectedThPrice },
+            dataType: "text",
+            success: function (result) {
+                if (result == -1) {
+                    setGlPrice(0);
+                    console.log('gl type: returned -1');
+                }
+                else {
+                    //setGlPrice(result);
+                    outCalc(result, 0);
+                    glPrSave = result;
+                }
+
+            },
+            error: function (e) {
+                console.log("Error:Unable to load data from server (Glass types, get price)");
+            }
+            });
         });
 
-        $('#GlThSelector .__select__label').click(function () {         // Click on th look for type
-            var SelectedTh = ($(this).html());
+        $('#GlThSelector .__select__label').click(function () {                                          // Click on th look for type
+            selectedTh = ($(this).html());
             $('#TypeGlSelector .__select__label').each(function (i, elem) {
                 var LType = ($(elem).html());
                 $.ajax({
                     type: "POST",
                     url: "@Url.Action("GetGlassPrice")",
-                    data: { type: LType, th: SelectedTh },
+                    data: { type: LType, th: selectedTh },
                     dataType: "text",
                     success: function (result) {
                         if (result == -1) {
@@ -138,12 +169,58 @@
                     }
                 });
             });
+            // get glass price (click on th)
+            selectedTypePrice = $('#1_select .__select__title').html();
+            $.ajax({
+            type: "POST",
+            url: "@Url.Action("GetGlassPrice")",
+            data: { type: selectedTypePrice, th: selectedTh },
+            dataType: "text",
+            success: function (result) {
+                if (result == -1) {
+                    setGlPrice(0);
+                    console.log('gl th: returned -1');
+                }
+                else {
+                    //setGlPrice(result);
+                    outCalc(result, 0);
+                    glPrSave = result;
+                    //alert(result);
+                }
+
+            },
+            error: function (e) {
+                console.log("Error:Unable to load data from server (Glass types, get price)");
+            }
         });
 
         });
+
+        $('#FittingsSelector .__select__label').click(function () {
+                var selectedFit = $('#3_select .__select__title').html();
+                $.ajax({
+                type: "POST",
+                url: "@Url.Action("GetFittPrice")",
+                data: { type: selectedFit },
+                dataType: "text",
+                    success: function (result) {
+
+                    outCalc(glPrSave, result);
+                    //setFitPrice(result);
+                    //console.log('gl type: returned -1');
+
+                },
+                error: function (e) {
+                    console.log("Error:Unable to load data from server (Fittings, get price)");
+                }
+            });
+        });
+
+        }); //Document ready end
 
 
 </script>
+<script src="~/JS/Calc.js"></script>
 <form>
  
     <div id="forCalcShow">
@@ -184,7 +261,7 @@
 
             <div class="selectCl">
                 <b>1.2 Толщина стекла</b>
-                <div class="__select" data-state="1">
+                <div class="__select" data-state="1"  id="2_select">
                     <div class="__select__title" data-default="Option 0">Выбрать</div>
                     <div class="__select__content" id="GlThSelector">
 
@@ -197,7 +274,7 @@
 
             <div class="selectCl">
                 <b>1.3 Тип фурнитуры</b>
-                <div class="__select" data-state="2">
+                <div class="__select" data-state="2" id="3_select">
                     <div class="__select__title" data-default="Option 0">Стандарт</div>
                     <div class="__select__content" id="FittingsSelector">
 

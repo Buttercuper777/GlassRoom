@@ -5,7 +5,6 @@ D:\GlassRoom\GlassRoomWebApp\bin\Debug\netcoreapp3.1\GlassRoomWebApp.runtimeconf
 D:\GlassRoom\GlassRoomWebApp\bin\Debug\netcoreapp3.1\GlassRoomWebApp.runtimeconfig.dev.json
 D:\GlassRoom\GlassRoomWebApp\bin\Debug\netcoreapp3.1\GlassRoomWebApp.dll
 D:\GlassRoom\GlassRoomWebApp\bin\Debug\netcoreapp3.1\GlassRoomWebApp.pdb
-D:\GlassRoom\GlassRoomWebApp\obj\Debug\netcoreapp3.1\GlassRoomWebApp.csprojAssemblyReference.cache
 D:\GlassRoom\GlassRoomWebApp\obj\Debug\netcoreapp3.1\GlassRoomWebApp.AssemblyInfoInputs.cache
 D:\GlassRoom\GlassRoomWebApp\obj\Debug\netcoreapp3.1\GlassRoomWebApp.AssemblyInfo.cs
 D:\GlassRoom\GlassRoomWebApp\obj\Debug\netcoreapp3.1\GlassRoomWebApp.RazorTargetAssemblyInfo.cache
@@ -180,3 +179,4 @@ D:\GlassRoom\GlassRoomWebApp\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Hom
 D:\GlassRoom\GlassRoomWebApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\CalculatorPartial.cshtml.g.cs
 D:\GlassRoom\GlassRoomWebApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\CalculatorModel\Default.cshtml.g.cs
 D:\GlassRoom\GlassRoomWebApp\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+D:\GlassRoom\GlassRoomWebApp\obj\Debug\netcoreapp3.1\GlassRoomWebApp.csprojAssemblyReference.cache

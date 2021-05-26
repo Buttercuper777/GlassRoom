@@ -37,6 +37,12 @@ namespace GlassRoomWebApp.Controllers
             return dataManager.Glasses.GetPriceByTypeTh(type, th);
         }
 
+        [HttpPost]
+        public float GetFittPrice(string type)
+        {
+            return dataManager.Fittings.GetFitPriceByType(type);
+        }
+
         public ActionResult GetFittingsTypes()
         {
             List<string> list = dataManager.Fittings.getJsonList();
@@ -63,6 +69,5 @@ namespace GlassRoomWebApp.Controllers
                 list
             });
         }
-
     }
 }
