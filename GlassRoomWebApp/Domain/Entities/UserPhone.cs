@@ -19,7 +19,7 @@ namespace GlassRoomWebApp.Domain.Entities
         [Display(Name = "Имя")]
         public string Name { get; set; }
 
-        [Required(ErrorMessage = "Введите номар")]
+        [Required(ErrorMessage = "Введите номер")]
         [Display(Name = "Номер телефона")]
         public string PhoneNum { get; set; }
     }

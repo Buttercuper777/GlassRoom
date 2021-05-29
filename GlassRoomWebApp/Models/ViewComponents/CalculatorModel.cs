@@ -17,7 +17,7 @@ namespace GlassRoomWebApp.Models.ViewComponents
         }
 
 
-        public IQueryable<GlassCalc> GlassPartial() {
+/*        public IQueryable<GlassCalc> GlassPartial() {
 
             return dataManager.Glasses.GetGlasses();
 
@@ -31,6 +31,11 @@ namespace GlassRoomWebApp.Models.ViewComponents
         public Task<IViewComponentResult> InvokeAsync()
         {
             return Task.FromResult((IViewComponentResult)View("Default", dataManager.Fittings.GetFitCalcData()));
+        }*/
+
+        public IViewComponentResult Invoke(UserOrder model)
+        {
+            return View("Default", model);
         }
 
     }

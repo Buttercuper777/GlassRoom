@@ -127,7 +127,16 @@
     margin:0;
 }
 
-.CalcBody{
+#CompleteMessage{
+    color: #fff;
+    font-family: GBold;
+    text-align: center;
+    font-size: 25px;
+    margin-top: 15%;
+    display:none;
+}
+
+.CalcBody {
     width: 70%;
     height: auto;
     display: grid;

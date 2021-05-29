@@ -1,5 +1,6 @@
-﻿@model IQueryable<FitCalc>
+﻿@*@model IQueryable<FitCalc>*@
 @*@model CalculatorModel*@
+@model UserOrder
 
 <script src="~/JS/JQ.js"></script>
 <script src="~/JS/Calc.js"></script>
@@ -120,6 +121,7 @@
 
             // get glass price (click on type)
             selectedThPrice = $('#2_select .__select__title').html();
+
             $.ajax({
             type: "POST",
             url: "@Url.Action("GetGlassPrice")",
@@ -171,6 +173,7 @@
             });
             // get glass price (click on th)
             selectedTypePrice = $('#1_select .__select__title').html();
+            
             $.ajax({
             type: "POST",
             url: "@Url.Action("GetGlassPrice")",
@@ -198,6 +201,7 @@
 
         $('#FittingsSelector .__select__label').click(function () {
                 var selectedFit = $('#3_select .__select__title').html();
+                $('#aspSendFittings').attr('value', selectedFit);
                 $.ajax({
                 type: "POST",
                 url: "@Url.Action("GetFittPrice")",
@@ -221,29 +225,31 @@
 
 </script>
 <script src="~/JS/Calc.js"></script>
-<form>
- 
+<form asp-area="Home" asp-controller="UserOrder" asp-action="Edit" method="post" enctype="multipart/form-data">
+    <p id="calcCloseBtn">×</p>
+    <h3>Рассчитать стоимость заказа</h3>
+    <h2 id="CompleteMessage">Спасибо!<br />Скоро мы Вам перезвоним.</h2>
     <div id="forCalcShow">
-        <p id="calcCloseBtn">×</p>
-        <h3>Рассчитать стоимость заказа</h3>
+        <div asp-validation-summary="All"></div>
         <div class="CalcBody">
             <input type="button" value="Душевая перегородка" class="BtnCalc active" id="LockedForChoose" data-state="wall">
             <input type="button" value="П-образная душевая" class="BtnCalc" data-state="uSh">
             <input type="button" value="Угловая душевая" class="BtnCalc" data-state="lSh">
+            <input hidden id="aspSendShType" value="W" asp-for="ShType">
 
             <div class="glSize">
                 <b>Ширина, (мм)</b>
-                <input type="number" id="widthInput" required class="onlyNums">
+                <input type="number" asp-for="LengthVal" id="widthInput" required class="onlyNums">
             </div>
 
             <div class="glSize">
                 <b>Длина, (мм)</b>
-                <input type="number" id="lengthInput" required>
+                <input type="number" asp-for="WidthVal" id="lengthInput" required>
             </div>
 
             <div class="glSize">
                 <b>Высота, (мм)</b>
-                <input type="number" id="heightInput" required>
+                <input type="number" asp-for="HeightVal" id="heightInput" required>
             </div>
 
             <div class="selectCl">
@@ -259,9 +265,11 @@
                 </div>
             </div>
 
+            <input hidden id="aspSendGlassType" value="Не выбрано" asp-for="GlassType">
+
             <div class="selectCl">
                 <b>1.2 Толщина стекла</b>
-                <div class="__select" data-state="1"  id="2_select">
+                <div class="__select" data-state="1" id="2_select">
                     <div class="__select__title" data-default="Option 0">Выбрать</div>
                     <div class="__select__content" id="GlThSelector">
 
@@ -271,6 +279,8 @@
                     </div>
                 </div>
             </div>
+
+            <input hidden id="aspSendGlassTh" value="Не выбрано" asp-for="GlassTh">
 
             <div class="selectCl">
                 <b>1.3 Тип фурнитуры</b>
@@ -285,13 +295,19 @@
                 </div>
             </div>
 
+            <input hidden id="aspSendFittings" value="Не выбрано" asp-for="Fittings">
 
             <p class="CalcResVal">Итого: </p>
+            <input hidden id="aspSendShPrice" value="Уточнить по телефону" asp-for="ShPrice">
 
         </div>
         <div class="CalcBodyOrderForms">
-            <input type="text" placeholder="Имя:" class="InputNameCheck"></input>
-            <input type="phone" placeholder="Телефон:" class="InputMobileCheck"></input>
+
+
+            <input type="text" asp-for="UName" placeholder="Имя:" class="InputNameCheck"></input>
+
+            <input type="phone" asp-for="PhoneNum" placeholder="Телефон:" class="InputMobileCheck"></input>
+
             <input type="submit" id="SendUserOrder" value="Заказать" disabled></input>
         </div>
     </div>

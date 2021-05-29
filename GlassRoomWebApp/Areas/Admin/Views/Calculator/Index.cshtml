@@ -1,0 +1,107 @@
+﻿@model IEnumerable<UserOrder>
+@{
+    //var count = @Model.Count();
+    var DateVal = @DateTime.Today.Date;
+    int CheckToday = 0;
+    string Minute;
+
+    string color;
+}
+
+
+<script>
+    function myFunction(str, obj) {
+        const el = document.createElement('textarea');
+        el.value = str;
+        document.body.appendChild(el);
+        el.select();
+        document.execCommand('copy');
+        document.body.removeChild(el);
+        $('.UsPhoneCopy').css('background', 'rgb(248, 99, 99)');
+        $(obj).css('background', '#0ca926');
+    }
+</script>
+
+<h2>Сегодня (@DateVal.ToString("dd.MM.yyyy")) :</h2>
+
+@if (Model.Any())
+{
+    <ul>
+        @foreach (UserOrder entity in Model.Reverse())
+        {
+            @if (@entity.DateUPAdded.Date == DateVal)
+            {
+                CheckToday = CheckToday + 1;
+                <li>
+                    <a style="font-size: 18px;">
+                        @if (@entity.DateUPAdded.Minute < 10)
+                            Minute = "0" + (@entity.DateUPAdded.Minute).ToString();
+                        else
+                            Minute = (@entity.DateUPAdded.Minute).ToString();
+
+                        @entity.DateUPAdded.Hour:@Minute<br />
+                        <i style="font-size: 14px;"> @entity.DateUPAdded.Date.ToString("dd.MM.yyyy")</i>
+                    </a>
+                    <a class="UserDate">@entity.UName - @entity.ShPrice &#8381; <br />@entity.PhoneNum</a>
+
+                    @if (@entity.Checked == true)
+                        color = "#0ca926";
+                    else
+                        color = "#a3b6c5";
+
+                    <form style="display: inline-block;" id="@entity.Id" asp-area="Admin" asp-controller="Calculator" asp-action="Check" method="post">
+                        <input type="hidden" name="id" value="@entity.Id">
+                        <input type="submit" value="&#10003;" style="background: @color" ; onclick="document.getElementById('form-@entity.Id')" />
+                    </form>
+
+                    <input type="submit" name="delButton" value="&#128196;" class="UsPhoneCopy" onclick="myFunction(@entity.PhoneNum, this) " />
+                </li>
+            }
+        }
+    </ul>
+
+}
+
+@if (CheckToday == 0)
+{
+    <h1>Сегодня заказы не поступали :(</h1>
+}
+
+<h2>Ранее:</h2>
+
+@if (Model.Any())
+{
+    <ul>
+        @foreach (UserOrder entity in Model.Reverse())
+        {
+            @if (@entity.DateUPAdded.Date != DateVal)
+            {
+                <li>
+                    <a style="font-size: 18px;">
+
+                        @if (@entity.DateUPAdded.Minute < 10)
+                            Minute = "0" + (@entity.DateUPAdded.Minute).ToString();
+                        else
+                            Minute = (@entity.DateUPAdded.Minute).ToString();
+
+                        @entity.DateUPAdded.Hour:@Minute<br />
+                        <i style="font-size: 14px;"> @entity.DateUPAdded.Date.ToString("dd.MM.yyyy")</i>
+                    </a>
+                    <a class="UserDate">@entity.UName - @entity.ShPrice &#8381;<br />@entity.PhoneNum</a>
+
+                    @if (@entity.Checked == true)
+                        color = "#0ca926";
+                    else
+                        color = "#a3b6c5";
+
+                    <form style="display: inline-block;" id="@entity.Id" asp-area="Admin" asp-controller="Calculator" asp-action="Check" method="post">
+                        <input type="hidden" name="id" value="@entity.Id">
+                        <input type="submit" value="&#10003;" style="background: @color" ; onclick="document.getElementById('form-@entity.Id')" />
+                    </form>
+
+                    <input type="submit" name="delButton" value="&#128196;" class="UsPhoneCopy" onclick="myFunction(@entity.PhoneNum, this)" />
+                </li>
+            }
+        }
+    </ul>
+}

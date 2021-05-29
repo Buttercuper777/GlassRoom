@@ -180,3 +180,4 @@ D:\GlassRoom\GlassRoomWebApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Calculat
 D:\GlassRoom\GlassRoomWebApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\CalculatorModel\Default.cshtml.g.cs
 D:\GlassRoom\GlassRoomWebApp\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
 D:\GlassRoom\GlassRoomWebApp\obj\Debug\netcoreapp3.1\GlassRoomWebApp.csprojAssemblyReference.cache
+D:\GlassRoom\GlassRoomWebApp\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Calculator\Index.cshtml.g.cs

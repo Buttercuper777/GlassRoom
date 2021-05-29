@@ -14,6 +14,7 @@ namespace GlassRoomWebApp.Domain
         public DbSet<ServiceItem> ServiceItems { get; set; }
         public DbSet<CitiesList> CitiesOfList { get; set; } 
         public DbSet<UserPhone> UserPhones { get; set; }
+        public DbSet<UserOrder> UserOrders { get; set; }
         public DbSet<FitCalc> Fittings { get; set; }
         public DbSet<GlassCalc> Glasses { get; set; }
         

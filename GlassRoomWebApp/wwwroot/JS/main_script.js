@@ -87,6 +87,7 @@ $(document).ready(function () {
     });
 
 
+
     //---------------------------------------------------------------------------------------------
 
     $('.input h1').css("display", "none");
@@ -97,11 +98,9 @@ $(document).ready(function () {
         $('.popup a').text = "Спасибо!";
     });
 
-
-
     $('#border_svg, #Front, #Back, .cls-bordder-1, .cls-bordder-2, .cls-bordder-3, .cls-bordder-4, .cls-bordder-5, .cls-bordder-6, .cls-bordder-7, .cls-bordder-8, .cls-bordder-9, .cls-bordder-10, .cls-bordder-11, .cls-bordder-12, .cls-bordder-13, .cls-bordder-14').addClass('active');
     //$('#forCalcShow').hide(100);
-    $('#forCalcShow').fadeToggle();
+    $('#forCalcShow, #ChooseForm h3, #ChooseForm p').fadeToggle();
 
     $("#CalcBtn, #headerNavLinkCalc").click(function (e) { 
         $('.headerNavigationBlock, #ChooseForm, .leftContent, .buttonBtm, #BackWall').addClass('active');
@@ -116,7 +115,7 @@ $(document).ready(function () {
             $('#border_svg, #Front, #Back, .cls-bordder-1, .cls-bordder-2, .cls-bordder-3, .cls-bordder-4, .cls-bordder-5, .cls-bordder-6, .cls-bordder-7, .cls-bordder-8, .cls-bordder-9, .cls-bordder-10, .cls-bordder-11, .cls-bordder-12, .cls-bordder-13, .cls-bordder-14').removeClass('active');
         //});
 
-        $('#forCalcShow').delay(400).fadeTo(1000, 1);
+        $('#forCalcShow, #ChooseForm h3, #ChooseForm p').delay(400).fadeTo(1000, 1);
     });
 
     /*$("#CalcBtn, #headerNavLinkCalc").click(function (e) {
@@ -125,9 +124,10 @@ $(document).ready(function () {
 
 
     $("#BackWall, .close_svg, #calcCloseBtn").click(function (e) { 
-        $('#forCalcShow').fadeTo(100, 0);
+        $('#forCalcShow, #ChooseForm h3, #ChooseForm p').fadeTo(100, 0);
         $('.headerNavigationBlock, #ChooseForm, .leftContent, .buttonBtm, #BackWall').removeClass('active')
         $('#BackWall, .popup, .PlacePop').removeClass('CallPop');
+        $('#ChooseForm h2').css('display', 'none');
         $('.chooseBlock').removeClass('active');
         $('.aboutBlock').removeClass('active');     
         $('body').css("overflow-y", "auto");
@@ -140,6 +140,12 @@ $(document).ready(function () {
 
             $('#bath, .bath_svg, .cls-mask, .border_bath_bottom, .front_wall, .right_wall, .bath_top, .line_bottom, .line_right').removeClass('activate');
         //});
+    });
+
+    $("#SendUserOrder").click(function () {
+        $('#forCalcShow').fadeTo(50, 0);
+        $('#forCalcShow').css('display', 'none');
+        $('#ChooseForm h2').css('display', 'block');
     });
 
     $("#CallBtn, #call_svg").click(function (e) { 

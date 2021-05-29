@@ -8,10 +8,13 @@ namespace GlassRoomWebApp.Domain
         public IServiceItemsRepository ServiceItems { get; set; }
         public ICityListRepository CitiesOfList { get; set; }
         public IUserPhoneRepository UserPhones { get; set; }
+        public IUserOrderRepository UserOrders { get; set; }
         public IFitCalcRepository Fittings { get; set; }
         public IGlassesRepository Glasses { get; set; }
 
-        public DataManager(ITextFieldsRepository textFieldsRepository, IServiceItemsRepository serviceItemsRepository, ICityListRepository cityListRepository, IUserPhoneRepository userPhoneRepository, IFitCalcRepository fitCalcRepository, IGlassesRepository glassesRepository)
+        public DataManager(ITextFieldsRepository textFieldsRepository, IServiceItemsRepository serviceItemsRepository, 
+            ICityListRepository cityListRepository, IUserPhoneRepository userPhoneRepository, IFitCalcRepository fitCalcRepository, 
+            IGlassesRepository glassesRepository, IUserOrderRepository userOrderRepository)
         {
             TextFields = textFieldsRepository;
             ServiceItems = serviceItemsRepository;
@@ -19,6 +22,7 @@ namespace GlassRoomWebApp.Domain
             UserPhones = userPhoneRepository;
             Fittings = fitCalcRepository;
             Glasses = glassesRepository;
+            UserOrders = userOrderRepository;
         }
     }
 }

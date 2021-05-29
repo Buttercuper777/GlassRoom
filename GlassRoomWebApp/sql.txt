@@ -34,3 +34,21 @@ ThGl INT NOT NULL,
 PriceGl FLOAT NOT NULL
 )
 
+CREATE TABLE UserOrders
+(
+id INT IDENTITY(1,1),
+DateUPAdded datetime2(7) NOT NULL,
+Checked bit NOT NULL default 0,
+WidthVal real NOT NULL,
+HeightVal real NOT NULL, 
+LengthVal real NOT NULL, 
+GlassType nvarchar(35) NOT NULL,
+GlassTh int NOT NULL, 
+Fittings nvarchar(35) NOT NULL,
+ShType nvarchar(35) NOT NULL,
+ShPrice real NOT NULL,
+OrderNote nvarchar(MAX),
+UName nvarchar(35) NOT NULL,
+PhoneNum nvarchar(35) NOT NULL
+)
+

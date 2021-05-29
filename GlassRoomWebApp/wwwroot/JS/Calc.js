@@ -20,7 +20,7 @@ function setFitPrice(price) {
 function mCalculate(w, h, l, index, fit, gl) {      // main calc function 
     var lrWalls = ((w * h) / 1000000) * index;
     var frontWall = ((l * h) / 1000000);
-    var result = (frontWall * gl) + (lrWalls * gl) + parseFloat(fit);
+    var result = String((frontWall * gl) + (lrWalls * gl) + parseFloat(fit)).replace('.', ',');
     return result + ' \&#8381;';
 }
 
@@ -47,6 +47,7 @@ $(document).ready(function () {
         $(this).parent('.__select__content').parent('.__select').attr('data-state', '');
     });
 
+    // $('#aspSendGlassType').attr('value');
 
     $('.BtnCalc').click(function(){
         $('.BtnCalc').removeClass('active');
@@ -61,12 +62,15 @@ $(document).ready(function () {
     $('.BtnCalc').click(function (e) {
         if ($(this).attr('data-state') == 'lSh') {
             typeIndex = 1;
+            $('#aspSendShType').attr('value', 'L');
         }
         if ($(this).attr('data-state') == 'uSh') {
             typeIndex = 2;
+            $('#aspSendShType').attr('value', 'U');
         }
         if ($(this).attr('data-state') == 'wall') {
             typeIndex = 1;
+            $('#aspSendShType').attr('value', 'wall');
         }
 
 
@@ -91,7 +95,16 @@ $(document).ready(function () {
         
         //$('.CalcResVal').html($('.CalcResVal').html() + ' ' + (((shWidth * shLength) * typeIndex) + (shHeight * shLength)) * 1 );
         $('.CalcResVal').html(mCalculate(shWidth, shHeight, shLength, typeIndex, fitPrice, GlPrice));
+        /*$('#aspSendShPrice').attr('value', $('.CalcResVal').html().slice(0, -2));*/
+
+        //alert($('#aspSendShPrice').attr('value'));
         //alert($(this).val());
+    });
+
+    $('#SendUserOrder').click(function () {
+        $('#aspSendShPrice').attr('value', $('.CalcResVal').html().slice(0, -2));
+        $('#aspSendGlassType').attr('value', $('#1_select .__select__title').html());
+        $('#aspSendGlassTh').attr('value', $('#2_select .__select__title').html());
     });
 
 /*    $('#TypeGlSelector .__select__label').click(function () {

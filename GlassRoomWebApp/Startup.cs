@@ -33,6 +33,7 @@ namespace GlassRoomWebApp
             services.AddTransient<IUserPhoneRepository, EFUserPhoneRepository>();
             services.AddTransient<IFitCalcRepository, EFFittingsRepository>();
             services.AddTransient<IGlassesRepository, EFGlassesRepository>();
+            services.AddTransient<IUserOrderRepository, EFUserOrderRepository>();
             services.AddTransient<DataManager>();
 
 
