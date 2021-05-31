@@ -107,6 +107,8 @@ $(document).ready(function () {
         $('#aspSendGlassTh').attr('value', $('#2_select .__select__title').html());
     });
 
+
+
 /*    $('#TypeGlSelector .__select__label').click(function () {
         $('.CalcResVal').html(mCalculate(shWidth, shHeight, shLength, typeIndex, fitPrice, GlPrice));
         //alert(GlPrice);

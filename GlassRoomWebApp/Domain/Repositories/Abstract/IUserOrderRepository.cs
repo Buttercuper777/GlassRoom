@@ -12,5 +12,7 @@ namespace GlassRoomWebApp.Domain.Repositories.Abstract
         void SaveUserOrder(UserOrder entity);
         void DeleteUserOrder(int id);
         void CheckUserOrder(int id);
+        void SetOrderNote(int id, string note);
+        string GetOrderNote(int id);
     }
 }

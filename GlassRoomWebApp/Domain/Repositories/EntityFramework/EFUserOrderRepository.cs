@@ -31,6 +31,11 @@ namespace GlassRoomWebApp.Domain.Repositories.EntityFramework
             throw new NotImplementedException();
         }
 
+        public string GetOrderNote(int id)
+        {
+            return GetUserOrderById(id).OrderNote;
+        }
+
         public IQueryable<UserOrder> GetUPDate()
         {
             return context.UserOrders;
@@ -52,6 +57,13 @@ namespace GlassRoomWebApp.Domain.Repositories.EntityFramework
                 context.Entry(entity).State = EntityState.Added;
             else
                 context.Entry(entity).State = EntityState.Modified;
+            context.SaveChanges();
+        }
+
+        public void SetOrderNote(int id, string note)
+        {
+            UserOrder entity = GetUserOrderById(id);
+            entity.OrderNote = note;
             context.SaveChanges();
         }
     }

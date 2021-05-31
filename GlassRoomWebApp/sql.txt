@@ -50,5 +50,5 @@ ShPrice real NOT NULL,
 OrderNote nvarchar(MAX),
 UName nvarchar(35) NOT NULL,
 PhoneNum nvarchar(35) NOT NULL
-)
 
+stwklo1324pro5768ug

@@ -181,3 +181,5 @@ D:\GlassRoom\GlassRoomWebApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Componen
 D:\GlassRoom\GlassRoomWebApp\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
 D:\GlassRoom\GlassRoomWebApp\obj\Debug\netcoreapp3.1\GlassRoomWebApp.csprojAssemblyReference.cache
 D:\GlassRoom\GlassRoomWebApp\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Calculator\Index.cshtml.g.cs
+D:\GlassRoom\GlassRoomWebApp\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Calculator\Fittings.cshtml.g.cs
+D:\GlassRoom\GlassRoomWebApp\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Fittings\Edit.cshtml.g.cs

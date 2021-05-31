@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using GlassRoomWebApp.Domain.Entities;
 using GlassRoomWebApp.Domain.Repositories.Abstract;
+using Microsoft.EntityFrameworkCore;
 
 namespace GlassRoomWebApp.Domain.Repositories.EntityFramework
 {
@@ -70,12 +71,16 @@ namespace GlassRoomWebApp.Domain.Repositories.EntityFramework
 
         public IQueryable<FitCalc> GetUPDate()
         {
-            throw new NotImplementedException();
+            return context.Fittings;
         }
 
-        public void SaveFitting(int id)
+        public void SaveFitting(FitCalc entity)
         {
-            throw new NotImplementedException();
+            if (entity.id == default)
+                context.Entry(entity).State = EntityState.Added;
+            else
+                context.Entry(entity).State = EntityState.Modified;
+            context.SaveChanges();
         }
     }
 }

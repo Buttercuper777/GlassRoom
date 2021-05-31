@@ -12,7 +12,7 @@ namespace GlassRoomWebApp.Domain.Repositories.Abstract
         IQueryable<FitCalc> GetFitCalcData();
         FitCalc GetFitCalcById(int id);
         float GetFitPriceByType(string type);
-        void SaveFitting(int id);
+        void SaveFitting(FitCalc entity);
         void DeleteFitting(int id);
         int GetFitSize();
         List<string> getJsonList();

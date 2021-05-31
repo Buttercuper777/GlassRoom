@@ -20,10 +20,15 @@ namespace GlassRoomWebApp.Areas.Admin.Controllers
             this.hostingEnvironment = hostingEnvironment;
         }
 
-        
+
         public IActionResult Index()
         {
             return View(dataManager.UserOrders.GetUserOrders());
+        }
+
+        public IActionResult Fittings()
+        {
+            return View(dataManager.Fittings.GetUPDate());
         }
 
         [HttpPost]
@@ -31,6 +36,19 @@ namespace GlassRoomWebApp.Areas.Admin.Controllers
         {
             dataManager.UserOrders.CheckUserOrder(id);
             return RedirectToAction(nameof(CalculatorController.Index), nameof(CalculatorController).CutController());
+        }
+
+        [HttpPost]
+        public IActionResult SendNote(int id, string Data)
+        {
+            dataManager.UserOrders.SetOrderNote(id, Data);
+            return NoContent();
+        }
+
+        [HttpPost]
+        public string GetNote(int id)
+        {
+            return dataManager.UserOrders.GetOrderNote(id);
         }
     }
 }

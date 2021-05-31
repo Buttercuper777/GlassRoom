@@ -465,6 +465,16 @@ transition: 0.3s;
     font-size: 18px;
 }
 
+.UserDate p {
+    background: var(--bl_color);
+    width: fit-content;
+    float: right;
+    padding: 10px;
+    border-radius: 20px;
+    color: #fff;
+    margin-right: 25px;
+}
+
 .MainContentAdmin ul li{
     margin-bottom: 2px;
     background: var(--lm_color);
@@ -536,6 +546,72 @@ transition: 0.3s;
     transition:0.3s;
     background: #348bd3;
 }
+
+/* ------------------------------------------------ */
+.OrderDataSlider h2 {
+    float: left;
+    width: 500px;
+    color: rgb(44, 44, 44);
+    font-size: 21px;
+    margin-bottom: 5px;
+    margin-top: 10px;
+    padding: 2px;
+}
+
+.OrderDataSlider h3 {
+    float: left;
+    width: 500px;
+    color: rgb(85, 80, 220);
+    font-size: 18px;
+    margin-bottom: -5px;
+    margin-left: 9px;
+}
+
+
+.OrderDataSlider div {
+    width: 100%;
+    border: 2px solid rgb(85, 80, 220);
+    background: #f8f8f8;
+    border-radius: 10px;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 30px;
+    max-width: 40%;
+    margin-left: 20px;
+    float: left;
+}
+
+    .OrderDataSlider div a {
+        width: 100%;
+        float: left;
+        display: fit-content;
+        margin-top: -10px;
+    }
+
+.SliderCloser {
+    cursor: pointer;
+}
+
+
+.OrderDataSlider textarea {
+    float: left;
+    resize: none;
+    margin-right: 60px;
+    border-radius: 10px;
+    outline: none;
+    border: 2px solid rgb(85, 80, 220);
+}
+
+.OrderDataSlider textarea.active {
+    border: 2px solid #58DB39;
+    box-shadow: 0px 0px 4px #58DB39;
+    transition: 0.3s;
+}
+
+    .OrderDataSlider {
+        width: 800px;
+    }
 
 /*@media (min-width: 575.98px){
     header{

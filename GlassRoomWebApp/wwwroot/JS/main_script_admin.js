@@ -70,7 +70,19 @@ function ready()
     });
 }
 
+function delay(callback, ms) {
+    var timer = 0;
+    return function () {
+        var context = this, args = arguments;
+        clearTimeout(timer);
+        timer = setTimeout(function () {
+            callback.apply(context, args);
+        }, ms || 0);
+    };
+}
 
+var urlSend = window.location + '/' + 'SendNote';
+var urlGet = window.location + '/' + 'GetNote';
 
 $(document).ready(function () { 
     $(function() {
@@ -104,5 +116,65 @@ $(document).ready(function () {
         alert('sdcsdcds');
         this.css('background', '#0ca926');
     });
+
+    var sliderChecker = 0;
+    var senderChecker = 0;
+
+
+    $('.OrderDataSlider').slideUp(0);
+    $('.MainContentAdmin ul li').click(function () {
+        if (sliderChecker == 0) {
+            $(this).children('.OrderDataSlider').slideDown(400);
+            var idGet = $($(this).children('.OrderDataSlider')).attr('name');
+            var taObj = $($(this).children('.OrderDataSlider').children('.areaInput'));
+
+            $.ajax({        // Get Order Note
+                type: "POST",
+                url: urlGet,
+                data: { id: idGet },
+                dataType: "text",
+                success: function (result) {
+
+                    taObj.val(result);
+                    console.log("ID: " + idSend + " Note received!");
+                },
+                error: function (e) {
+                    console.log("Error: Get note)");
+                }
+            });
+        }
+        sliderChecker = 0;
+    });
+
+    $('.SliderCloser').click(function () {
+        $(this).parent('.OrderDataSlider').slideUp();
+        sliderChecker = 1;
+    });
+
+    $('.OrderDataSlider textarea').keyup(function () {
+        $(this).removeClass('active');
+    });
+
+    $('.OrderDataSlider textarea').keyup(delay(function (e) {
+        //alert(this.value);
+        $(this).addClass('active');
+        var idSend = $($(this).parent('.OrderDataSlider')).attr('name');
+        //alert(idSend);
+
+        $.ajax({    // Send Order Note
+            type: "POST",
+            url: urlSend,
+            data: { id: idSend, Data: (this.value) },
+            dataType: "text",
+            success: function (result) {
+                //alert('1'); 
+                console.log("ID: " + idSend + " Updated!");
+            },
+            error: function (e) {
+                console.log("Error: Send note)");
+            }
+        });
+
+    }, 1500));
 
 });

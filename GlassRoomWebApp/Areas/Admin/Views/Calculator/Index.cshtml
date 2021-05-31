@@ -6,8 +6,8 @@
     string Minute;
 
     string color;
+    string shType = "Ошибка";
 }
-
 
 <script>
     function myFunction(str, obj) {
@@ -32,30 +32,69 @@
             @if (@entity.DateUPAdded.Date == DateVal)
             {
                 CheckToday = CheckToday + 1;
-                <li>
-                    <a style="font-size: 18px;">
-                        @if (@entity.DateUPAdded.Minute < 10)
-                            Minute = "0" + (@entity.DateUPAdded.Minute).ToString();
-                        else
-                            Minute = (@entity.DateUPAdded.Minute).ToString();
+        <li style="cursor: pointer">
+            <a style="font-size: 18px;">
+                @if (@entity.DateUPAdded.Minute < 10)
+                    Minute = "0" + (@entity.DateUPAdded.Minute).ToString();
+                else
+                    Minute = (@entity.DateUPAdded.Minute).ToString();
 
-                        @entity.DateUPAdded.Hour:@Minute<br />
-                        <i style="font-size: 14px;"> @entity.DateUPAdded.Date.ToString("dd.MM.yyyy")</i>
-                    </a>
-                    <a class="UserDate">@entity.UName - @entity.ShPrice &#8381; <br />@entity.PhoneNum</a>
+                @entity.DateUPAdded.Hour:@Minute<br />
+                <i style="font-size: 14px;"> @entity.DateUPAdded.Date.ToString("dd.MM.yyyy")</i>
+            </a>
+            <a class="UserDate">@entity.UName <p>@entity.ShPrice &#8381;</p> <br />@entity.PhoneNum</a>
 
-                    @if (@entity.Checked == true)
-                        color = "#0ca926";
-                    else
-                        color = "#a3b6c5";
+            @if (@entity.Checked == true)
+                color = "#0ca926";
+            else
+                color = "#a3b6c5";
 
-                    <form style="display: inline-block;" id="@entity.Id" asp-area="Admin" asp-controller="Calculator" asp-action="Check" method="post">
-                        <input type="hidden" name="id" value="@entity.Id">
-                        <input type="submit" value="&#10003;" style="background: @color" ; onclick="document.getElementById('form-@entity.Id')" />
-                    </form>
+            <form style="display: inline-block;" id="@entity.Id" asp-area="Admin" asp-controller="Calculator" asp-action="Check" method="post">
+                <input type="hidden" name="id" value="@entity.Id">
+                <input type="submit" value="&#10003;" style="background: @color" ; onclick="document.getElementById('form-@entity.Id')" />
+            </form>
 
-                    <input type="submit" name="delButton" value="&#128196;" class="UsPhoneCopy" onclick="myFunction(@entity.PhoneNum, this) " />
-                </li>
+            <input type="submit" name="delButton" value="&#128196;" class="UsPhoneCopy" onclick="myFunction(@entity.PhoneNum, this) " />
+
+            <div class="OrderDataSlider" name="@entity.Id">
+
+                <h2>Детали заказа:</h2>
+                @if (@entity.ShType == "U")
+                {
+                    shType = "П-Образная душевая";
+                }
+                else if (@entity.ShType == "L")
+                {
+                    shType = "Угловая душевая";
+                }
+                else
+                {
+                    shType = "Душевая перегородка";
+                }
+
+                <h3>@shType</h3>
+                <div>
+                    <a>Длинна: @entity.WidthVal мм</a>
+                    <a>Ширина: @entity.LengthVal мм</a>
+                    <a>Высота: @entity.HeightVal мм</a>
+
+                    <a>Тип: @entity.GlassType</a>
+                    <a>Толщина: @entity.GlassTh мм</a>
+                    <a>Фурнитура: @entity.Fittings</a>
+                </div>
+
+                <textarea placeholder="Детали заказа (заполняется администрацией)"
+                          rows="9" cols="40" class="areaInput"></textarea>
+
+                <a class="SliderCloser" style="color:rgb(103, 116, 255);
+                        text-decoration:underline">
+                    Скрыть подробности
+                </a>
+
+            </div>
+
+        </li>
+
             }
         }
     </ul>
@@ -76,32 +115,74 @@
         {
             @if (@entity.DateUPAdded.Date != DateVal)
             {
-                <li>
-                    <a style="font-size: 18px;">
+        <li style="cursor: pointer">
+            <a style="font-size: 18px;">
 
-                        @if (@entity.DateUPAdded.Minute < 10)
-                            Minute = "0" + (@entity.DateUPAdded.Minute).ToString();
-                        else
-                            Minute = (@entity.DateUPAdded.Minute).ToString();
+                @if (@entity.DateUPAdded.Minute < 10)
+                    Minute = "0" + (@entity.DateUPAdded.Minute).ToString();
+                else
+                    Minute = (@entity.DateUPAdded.Minute).ToString();
 
-                        @entity.DateUPAdded.Hour:@Minute<br />
-                        <i style="font-size: 14px;"> @entity.DateUPAdded.Date.ToString("dd.MM.yyyy")</i>
-                    </a>
-                    <a class="UserDate">@entity.UName - @entity.ShPrice &#8381;<br />@entity.PhoneNum</a>
+                @entity.DateUPAdded.Hour:@Minute<br />
+                <i style="font-size: 14px;"> @entity.DateUPAdded.Date.ToString("dd.MM.yyyy")</i>
+            </a>
+            <a class="UserDate">@entity.UName <p>@entity.ShPrice &#8381;</p> <br />@entity.PhoneNum</a>
 
-                    @if (@entity.Checked == true)
-                        color = "#0ca926";
-                    else
-                        color = "#a3b6c5";
+            @if (@entity.Checked == true)
+                color = "#0ca926";
+            else
+                color = "#a3b6c5";
 
-                    <form style="display: inline-block;" id="@entity.Id" asp-area="Admin" asp-controller="Calculator" asp-action="Check" method="post">
-                        <input type="hidden" name="id" value="@entity.Id">
-                        <input type="submit" value="&#10003;" style="background: @color" ; onclick="document.getElementById('form-@entity.Id')" />
-                    </form>
+            <form style="display: inline-block;" id="@entity.Id" asp-area="Admin" asp-controller="Calculator" asp-action="Check" method="post">
+                <input type="hidden" name="id" value="@entity.Id">
+                <input type="submit" value="&#10003;" style="background: @color" ; onclick="document.getElementById('form-@entity.Id')" />
+            </form>
 
-                    <input type="submit" name="delButton" value="&#128196;" class="UsPhoneCopy" onclick="myFunction(@entity.PhoneNum, this)" />
-                </li>
+            <input type="submit" name="delButton" value="&#128196;" class="UsPhoneCopy" onclick="myFunction(@entity.PhoneNum, this)" />
+
+            <div class="OrderDataSlider" name="@entity.Id">
+
+                <h2>Детали заказа:</h2>
+                @if (@entity.ShType == "U")
+                {
+                    shType = "П-Образная душевая";
+                }
+                else if (@entity.ShType == "L")
+                {
+                    shType = "Угловая душевая";
+                }
+                else
+                {
+                    shType = "Душевая перегородка";
+                }
+
+                <h3>@shType</h3>
+                <div>
+                    <a>Длинна: @entity.WidthVal мм</a>
+                    <a>Ширина: @entity.LengthVal мм</a>
+                    <a>Высота: @entity.HeightVal мм</a>
+
+                    <a>Тип: @entity.GlassType</a>
+                    <a>Толщина: @entity.GlassTh мм</a>
+                    <a>Фурнитура: @entity.Fittings</a>
+                </div>
+
+                <textarea placeholder="Детали заказа (заполняется администрацией)"
+                          rows="9" cols="40" class="areaInput"></textarea>
+
+                <a class="SliderCloser" style="color:rgb(103, 116, 255);
+                            text-decoration:underline">
+                    Скрыть подробности
+                </a>
+
+            </div>
+
+        </li>
             }
         }
     </ul>
+
+    <style>
+
+    </style>
 }
