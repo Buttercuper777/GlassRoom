@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using GlassRoomWebApp.Domain.Entities;
 using GlassRoomWebApp.Domain.Repositories.Abstract;
+using Microsoft.EntityFrameworkCore;
 
 namespace GlassRoomWebApp.Domain.Repositories.EntityFramework
 {
@@ -18,7 +19,8 @@ namespace GlassRoomWebApp.Domain.Repositories.EntityFramework
 
         public void DeleteGlass(int Id)
         {
-            throw new NotImplementedException();
+            context.Glasses.Remove(new GlassCalc() { id = Id });
+            context.SaveChanges();
         }
 
         public IQueryable<GlassCalc> GetGlasses()
@@ -34,8 +36,15 @@ namespace GlassRoomWebApp.Domain.Repositories.EntityFramework
             {
                 for (int i = 0; i < size; i++)
                 {
-                    if (ThList.Contains(GetGlById(i + 1).ThGl) == false)
-                        ThList.Add(GetGlById(i + 1).ThGl);
+                    try
+                    {
+                        if (ThList.Contains(GetGlById(i + 1).ThGl) == false)
+                            ThList.Add(GetGlById(i + 1).ThGl);
+                    }
+                    catch
+                    {
+                        continue;
+                    }
                 }
 
                 return ThList;
@@ -55,8 +64,15 @@ namespace GlassRoomWebApp.Domain.Repositories.EntityFramework
             {
                 for (int i = 0; i < size; i++)
                 {
-                    if (TyList.Contains(GetGlById(i + 1).TypeGl) == false)
-                        TyList.Add(GetGlById(i + 1).TypeGl);
+                    try
+                    {
+                        if (TyList.Contains(GetGlById(i + 1).TypeGl) == false)
+                            TyList.Add(GetGlById(i + 1).TypeGl);
+                    }
+                    catch
+                    {
+                        continue;
+                    }
                 }
 
                 return TyList;
@@ -91,9 +107,13 @@ namespace GlassRoomWebApp.Domain.Repositories.EntityFramework
             }
         }
 
-        public void SaveGlass(int Id)
+        public void SaveGlass(GlassCalc entity)
         {
-            throw new NotImplementedException();
+            if (entity.id == default)
+                context.Entry(entity).State = EntityState.Added;
+            else
+                context.Entry(entity).State = EntityState.Modified;
+            context.SaveChanges();
         }
     }
 }

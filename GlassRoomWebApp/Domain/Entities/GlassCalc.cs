@@ -11,7 +11,8 @@ namespace GlassRoomWebApp.Domain.Entities
         [Required]
         public int id { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Введите название")]
+        [Display(Name = "Стекло")]
         public string TypeGl { get; set; }
 
         [Required]

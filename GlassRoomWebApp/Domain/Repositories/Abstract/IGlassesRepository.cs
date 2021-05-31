@@ -9,7 +9,7 @@ namespace GlassRoomWebApp.Domain.Repositories.Abstract
     {
         IQueryable<GlassCalc> GetGlasses();
         float GetPriceByTypeTh(string type, int th);
-        void SaveGlass(int Id);
+        void SaveGlass(GlassCalc entity);
         void DeleteGlass(int Id);
         int GetGlSize();
         GlassCalc GetGlById(int Id);

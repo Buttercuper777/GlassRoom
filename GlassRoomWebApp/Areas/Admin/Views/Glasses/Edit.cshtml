@@ -1,0 +1,37 @@
+﻿@model GlassCalc
+@{
+    string strTitle = "Фурнитура редактирование";
+    ViewBag.Title = strTitle;
+}
+
+<div>
+    <h2>@strTitle:</h2>
+    <div>
+        <form asp-area="Admin" asp-controller="Glasses" asp-action="Edit" method="post" enctype="multipart/form-data">
+
+            <div class="EditSpace">
+                <div asp-validation-summary="All"></div>
+
+                <div>
+                    <h3>Наименование:</h3>
+                    <input asp-for="TypeGl" value="@(Model.TypeGl)">
+                    <span asp-validation-for="TypeGl"></span>
+                </div>
+
+                <div>
+                    <h3>Толщина стекла:</h3>
+                    <input asp-for="ThGl" value="@(Model.ThGl)" type="text">
+                    <span asp-validation-for="ThGl"></span>
+                </div>
+
+                <div>
+                    <h3>Цена:</h3>
+                    <input asp-for="PriceGl" value="@(Model.PriceGl)">
+                    <span asp-validation-for="PriceGl"></span>
+                </div>
+
+                <input type="submit" value="Сохранить">
+            </div>
+        </form>
+    </div>
+</div>

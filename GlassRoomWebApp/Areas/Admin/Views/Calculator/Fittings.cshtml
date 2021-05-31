@@ -14,14 +14,14 @@
         @foreach (FitCalc entity in Model)
         {
             <li>
-                <input type="checkbox"><a>@($"{entity.TypeFit}")</a>
+                <input type="checkbox"><a class="notForOrders">@($"{entity.TypeFit}") <p class="pValue">@($"{entity.PriceFit}") &#8381;</p> </a>
 
-                <a asp-area="Admin" asp-controller="City" asp-action="Edit" asp-route-id="@entity.id">
+                <a asp-area="Admin" asp-controller="Fittings" asp-action="Edit" asp-route-id="@entity.id">
                     <input type="submit" value="🖊" />
                 </a>
 
 
-                <form style="display: inline-block;" id="@entity.id" asp-area="Admin" asp-controller="City" asp-action="Delete" method="post">
+                <form style="display: inline-block;" id="@entity.id" asp-area="Admin" asp-controller="Fittings" asp-action="Delete" method="post">
                     <input type="hidden" name="id" value="@entity.id">
                     <input type="submit" name="delButton" value="🗑" onclick="document.getElementById('form-@entity.id')" />
                 </form>

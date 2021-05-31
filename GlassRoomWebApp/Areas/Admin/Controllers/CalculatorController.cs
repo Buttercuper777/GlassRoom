@@ -30,6 +30,10 @@ namespace GlassRoomWebApp.Areas.Admin.Controllers
         {
             return View(dataManager.Fittings.GetUPDate());
         }
+        public IActionResult Glasses()
+        {
+            return View(dataManager.Glasses.GetGlasses());
+        }
 
         [HttpPost]
         public IActionResult Check(int id)

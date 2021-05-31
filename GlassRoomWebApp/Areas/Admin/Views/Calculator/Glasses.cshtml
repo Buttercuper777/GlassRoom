@@ -1,0 +1,36 @@
+﻿@model IQueryable<GlassCalc>
+
+<h2>Стекла (редактирование):</h2>
+
+<div class="globalEditSpace">
+    <form asp-area="Admin" asp-controller="Glasses" asp-action="Edit" asp-route-id="" method="post">
+        <input type="submit" value="Добавить" />
+    </form>
+</div>
+
+<ul>
+    @if (Model.Any())
+    {
+        @foreach (GlassCalc entity in Model)
+        {
+            <li>
+                <input type="checkbox"><a class="notForOrders">
+                <p class="GlassThForList">@($"{entity.ThGl}")</p>             @*Th*@
+                @($"{entity.TypeGl}") <p class="pValue">                      @*Type*@
+                @($"{entity.PriceGl}") &#8381;</p> </a>                       @*Price*@
+
+                <a asp-area="Admin" asp-controller="Glasses" asp-action="Edit" asp-route-id="@entity.id">
+                    <input type="submit" value="🖊" />
+                </a>
+
+
+                <form style="display: inline-block;" id="@entity.id" asp-area="Admin" asp-controller="Glasses" asp-action="Delete" method="post">
+                    <input type="hidden" name="id" value="@entity.id">
+                    <input type="submit" name="delButton" value="🗑" onclick="document.getElementById('form-@entity.id')" />
+                </form>
+
+            </li>
+
+        }
+    }
+</ul>

@@ -50,15 +50,24 @@ namespace GlassRoomWebApp.Domain.Repositories.EntityFramework
             {
                 string uType = GetFitCalcById(1).TypeFit;
                 TypeList.Add(uType);
-
-                for (int i = 1; i <= GetFitSize(); i++)
                 {
-                    if (GetFitCalcById(i).TypeFit != uType)
+                    for (int i = 1; i <= GetFitSize(); i++)
                     {
-                        uType = GetFitCalcById(i).TypeFit;
-                        TypeList.Add(uType);
+                        try
+                        {
+                            if (GetFitCalcById(i).TypeFit != uType)
+                            {
+                                uType = GetFitCalcById(i).TypeFit;
+                                TypeList.Add(uType);
+                            }
+                        }
+                        catch
+                        {
+                            continue;
+                        }
                     }
                 }
+
 
                 return TypeList;
             }

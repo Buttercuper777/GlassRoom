@@ -11,11 +11,11 @@ using GlassRoomWebApp.Domain.Entities;
 namespace GlassRoomWebApp.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    public class FittingsController : Controller
+    public class GlassesController : Controller
     {
         private readonly DataManager dataManager;
         private readonly IWebHostEnvironment hostingEnvironment;
-        public FittingsController(DataManager dataManager, IWebHostEnvironment hostingEnvironment)
+        public GlassesController(DataManager dataManager, IWebHostEnvironment hostingEnvironment)
         {
             this.dataManager = dataManager;
             this.hostingEnvironment = hostingEnvironment;
@@ -24,17 +24,17 @@ namespace GlassRoomWebApp.Areas.Admin.Controllers
 
         public IActionResult Edit(int id)
         {
-            var entity = id == default ? new FitCalc() : dataManager.Fittings.GetFitCalcById(id);
+            var entity = id == default ? new GlassCalc() : dataManager.Glasses.GetGlById(id);
             return View(entity);
         }
 
         [HttpPost]
-        public IActionResult Edit(FitCalc model)
+        public IActionResult Edit(GlassCalc model)
         {
             if (ModelState.IsValid)
             {
-                dataManager.Fittings.SaveFitting(model);
-                return RedirectToAction(nameof(CalculatorController.Fittings), nameof(CalculatorController).CutController());
+                dataManager.Glasses.SaveGlass(model);
+                return RedirectToAction(nameof(CalculatorController.Glasses), nameof(CalculatorController).CutController());
             }
             return View(model);
         }
@@ -42,8 +42,8 @@ namespace GlassRoomWebApp.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult Delete(int id)
         {
-            dataManager.Fittings.DeleteFitting(id);
-            return RedirectToAction(nameof(CalculatorController.Fittings), nameof(CalculatorController).CutController());
+            dataManager.Glasses.DeleteGlass(id);
+            return RedirectToAction(nameof(CalculatorController.Glasses), nameof(CalculatorController).CutController());
         }
     }
 }
