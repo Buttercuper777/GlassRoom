@@ -3,6 +3,22 @@ function validatePhone(phone) {
     return regex.test(phone);
 }
 
+function HeaderNavFunc() {
+
+    var urlStr = window.location.href;
+
+    if (urlStr.indexOf('Services') != -1) {
+        $("#main_link").removeAttr("id");
+        $(".headerNav a:contains('Каталог')").attr("id", "main_link");
+        $(".fs_block").css('display', 'none');
+    }
+
+    else {
+        $("#main_link").removeAttr("id");
+        $(".headerNav a:contains('Главная')").attr("id", "main_link");
+    }
+}
+
 function myFunction(element) { //copy 
     var $temp = $("<input>");
     $("body").append($temp);
@@ -167,7 +183,7 @@ $(document).ready(function () {
         $('.aboutBlock').addClass('active');   
     });
 
-    $("#contacts_menu_click").click(function (e) { 
+    $("#contacts_menu_click, #ProdOpenContacts").click(function (e) { 
         $('.chooseBlock').addClass('active');
         $('#BackWall, .PlacePop').addClass('CallPop'); 
         $('.chooseBlock').addClass('active');
@@ -268,5 +284,7 @@ $(document).ready(function () {
         }
     });
 
+
+    HeaderNavFunc();
 
 });

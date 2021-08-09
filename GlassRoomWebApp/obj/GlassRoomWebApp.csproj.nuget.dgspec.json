@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\GlassRoom\\GlassRoomWebApp\\GlassRoomWebApp.csproj": {}
+    "D:\\GR_WEB\\GlassRoom\\GlassRoomWebApp\\GlassRoomWebApp.csproj": {}
   },
   "projects": {
-    "D:\\GlassRoom\\GlassRoomWebApp\\GlassRoomWebApp.csproj": {
+    "D:\\GR_WEB\\GlassRoom\\GlassRoomWebApp\\GlassRoomWebApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\GlassRoom\\GlassRoomWebApp\\GlassRoomWebApp.csproj",
+        "projectUniqueName": "D:\\GR_WEB\\GlassRoom\\GlassRoomWebApp\\GlassRoomWebApp.csproj",
         "projectName": "GlassRoomWebApp",
-        "projectPath": "D:\\GlassRoom\\GlassRoomWebApp\\GlassRoomWebApp.csproj",
-        "packagesPath": "C:\\Users\\black\\.nuget\\packages\\",
-        "outputPath": "D:\\GlassRoom\\GlassRoomWebApp\\obj\\",
+        "projectPath": "D:\\GR_WEB\\GlassRoom\\GlassRoomWebApp\\GlassRoomWebApp.csproj",
+        "packagesPath": "C:\\Users\\webma\\.nuget\\packages\\",
+        "outputPath": "D:\\GR_WEB\\GlassRoom\\GlassRoomWebApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\black\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\webma\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,6 +26,7 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -37,6 +38,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
@@ -87,7 +89,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.411\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.205\\RuntimeIdentifierGraph.json"
         }
       }
     }
