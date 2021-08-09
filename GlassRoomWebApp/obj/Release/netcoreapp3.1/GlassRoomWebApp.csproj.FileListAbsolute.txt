@@ -178,3 +178,10 @@ D:\GlassRoom\GlassRoomWebApp\obj\Release\netcoreapp3.1\staticwebassets\GlassRoom
 D:\GlassRoom\GlassRoomWebApp\obj\Release\netcoreapp3.1\GlassRoomWebApp.dll
 D:\GlassRoom\GlassRoomWebApp\obj\Release\netcoreapp3.1\GlassRoomWebApp.pdb
 D:\GlassRoom\GlassRoomWebApp\obj\Release\netcoreapp3.1\GlassRoomWebApp.genruntimeconfig.cache
+D:\GlassRoom\GlassRoomWebApp\obj\Release\netcoreapp3.1\Razor\Areas\Admin\Views\Calculator\Fittings.cshtml.g.cs
+D:\GlassRoom\GlassRoomWebApp\obj\Release\netcoreapp3.1\Razor\Areas\Admin\Views\Calculator\Glasses.cshtml.g.cs
+D:\GlassRoom\GlassRoomWebApp\obj\Release\netcoreapp3.1\Razor\Areas\Admin\Views\Calculator\Index.cshtml.g.cs
+D:\GlassRoom\GlassRoomWebApp\obj\Release\netcoreapp3.1\Razor\Areas\Admin\Views\Fittings\Edit.cshtml.g.cs
+D:\GlassRoom\GlassRoomWebApp\obj\Release\netcoreapp3.1\Razor\Areas\Admin\Views\Glasses\Edit.cshtml.g.cs
+D:\GlassRoom\GlassRoomWebApp\obj\Release\netcoreapp3.1\Razor\Views\Shared\CalculatorPartial.cshtml.g.cs
+D:\GlassRoom\GlassRoomWebApp\obj\Release\netcoreapp3.1\Razor\Views\Shared\Components\CalculatorModel\Default.cshtml.g.cs

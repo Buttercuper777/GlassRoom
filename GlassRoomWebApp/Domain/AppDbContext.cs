@@ -38,7 +38,7 @@ namespace GlassRoomWebApp.Domain
                 Email = "my@email.com",
                 NormalizedEmail = "MY@EMAIL.COM",
                 EmailConfirmed = true,
-                PasswordHash = new PasswordHasher<IdentityUser>().HashPassword(null, "steklo1324pro5768ug"),
+                PasswordHash = new PasswordHasher<IdentityUser>().HashPassword(null, "password123"),
                 SecurityStamp = string.Empty
             });
 
